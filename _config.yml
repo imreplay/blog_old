@@ -20,9 +20,9 @@ title                    : "Imreplay blog"
 title_separator          : "-"
 name                     : "Imreplay"
 description              : "Imreplay's personal website."
-url                      : "https://imreplay.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://blog.imreplay.xyz" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "imreplay/imreplay.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "imreplay/blog" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -285,9 +285,9 @@ defaults:
 safe: False
 lsi: False
 username: imreplay
-repo: imreplay.github.io
+repo: blog
 branch: master
-relative_source: ../imreplay.github.io/
+relative_source: ../blog/
 destination: ../posts
-production_url:  https://imreplay.github.io
-source_url:  https://github.com/imreplay/imreplay.github.io/
+production_url:  https://blog.imreplay.xyz
+source_url:  https://github.com/imreplay/blog/
