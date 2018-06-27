@@ -63,7 +63,7 @@ search_full_content      : true # true, false (default)
 search_provider          : algolia # lunr (default), algolia, google
 algolia:
   application_id         : 237ZENFYNY # YOUR_APPLICATION_ID
-  index_name             : my_blog # YOUR_INDEX_NAME
+  index_name             : blog # YOUR_INDEX_NAME
   search_only_api_key    : 5cfd50ded1da95d695708070be40e3b9 # YOUR_SEARCH_ONLY_API_KEY
   powered_by             : # true (default), false
 google:
