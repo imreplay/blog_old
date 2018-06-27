@@ -6,7 +6,7 @@ install:
   - bundle install
 
 script:
-  - bundle exec algolia rake site:deploy --quiet
+  - bundle exec rake site:deploy --quiet
 branches:
   only:
     # Change this to gh-pages if you're deploying using the gh-pages branch
