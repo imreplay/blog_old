@@ -37,6 +37,6 @@ toc: true
 
 ## What I did
  - 카카오톡 API 이용 **[목포대학교 정보봇](http://pf.kakao.com/_RdDHM)** 제작
- - [개인 메일서버](https://mail.imreplay.xyz) 및 [연구실용 GIT 서버](https://git.imreplay.xyz) 구축
+ - **개인 메일서버** 및 연구실용 **GIT 서버** 구축
  - github.io와 jekyll공부를 위해 [프로미스나인팬페이지](https://fromis9.kr) 구축
 {% include gallery id="gallery" caption="My Projects" %}
