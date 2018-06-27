@@ -102,10 +102,10 @@ analytics:
 author:
   name             : "Imreplay"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "목포대학교 정보보호학과(휴학 중)</br>대한민국 공군 정보보호병(2017.01-2019.01)"
+  bio              : "천천히 굴러가는 개인 공부 블로그"
   location         : "Republic of Korea"
   email            : "imreplay@imreplay.xyz"
-  uri              : "https://imreplay.github.io"
+  uri              : "https://blog.imreplay.xyz"
   home             : # null (default), "absolute or relative url to link to author home"
   bitbucket        :
   codepen          :
@@ -160,8 +160,6 @@ exclude:
   - Rakefile
   - README
   - tmp
-  - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
 keep_files:
   - .git
   - .svn
