@@ -269,7 +269,7 @@ gallery: #이미지 갤러리
     alt: "placeholder image 2"
     title: "Image 2 title caption"
 #다음과 같이 본문에서 사용한다.
-{% include gallery caption="This is a sample gallery with **Markdown support**." %}
+{% raw %}{% include gallery caption="This is a sample gallery with **Markdown support**." %}{% endraw %}
 
 header:  # 헤더에 유튜브 비디오 삽입
   video:
