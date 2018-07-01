@@ -46,7 +46,8 @@ toc_sticky: true
 - `screenshot-layouts.png`
 - `screenshot.png`
 
-샘플페이지에 대한 데이터는 `docs/` 디렉터리에 저장되어 있으니 참고하실 분들은 삭제 하지 않으셔도 되지만 사이트에 샘플 포스트가 표시될 수 있습니다. {: .notice}
+샘플페이지에 대한 데이터는 `docs/` 디렉터리에 저장되어 있으니 참고하실 분들은 삭제 하지 않으셔도 되지만 사이트에 샘플 포스트가 표시될 수 있습니다. 
+{: .notice}
 
 ---
 
@@ -185,7 +186,8 @@ minimal-mistake에서 [샘플](https://github.com/mmistakes/minimal-mistakes/tre
 추가적으로 필요한 페이지가 있다면 가져오시면 되겠습니다.
 
 
-`about.md` 페이지를 제외한 나머지 페이지들은 크게 수정할 부분이 없으니 그대로 사용하고, about 페이지는 개인의 취향에 맞게 수정하여 사용하시면 됩니다.{: .notice}
+`about.md` 페이지를 제외한 나머지 페이지들은 크게 수정할 부분이 없으니 그대로 사용하고, about 페이지는 개인의 취향에 맞게 수정하여 사용하시면 됩니다.
+{: .notice}
 
 그 후  `_config.yml` 파일에 \_pages에 대한 내용을 추가해줍니다. 
 
@@ -280,7 +282,8 @@ link: https://github.com # Direct Link 만들기
 
 
 github pages 로는 테스트틀 안해봐서 잘 동작할지 모르겠네요..
-이번 주 내로 테스트 후 수정할 부분이 생기면 추가하겠습니다!{: .notice}
+이번 주 내로 테스트 후 수정할 부분이 생기면 추가하겠습니다!
+{: .notice}
 
 다음 포스팅은 travis-ci를 통해 push를 하면 자동으로 Build되어 gh-pages 브랜치로 결과 파일을 push 해주는 방법에 대하여 포스팅 하도록 하겠습니다.
 
