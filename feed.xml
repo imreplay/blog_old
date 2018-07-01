@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://blog.imreplay.xyz/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.imreplay.xyz/" rel="alternate" type="text/html" /><updated>2018-07-02T04:15:38+09:00</updated><id>https://blog.imreplay.xyz/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's personal website.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email><uri>https://blog.imreplay.xyz</uri></author><entry><title type="html">minimal mistakes 테마를 이용해 github.io 블로그 구축하기</title><link href="https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="minimal mistakes 테마를 이용해 github.io 블로그 구축하기" /><published>2018-07-01T00:00:00+09:00</published><updated>2018-07-01T13:00:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://blog.imreplay.xyz/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.imreplay.xyz/" rel="alternate" type="text/html" /><updated>2018-07-02T04:20:37+09:00</updated><id>https://blog.imreplay.xyz/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's personal website.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email><uri>https://blog.imreplay.xyz</uri></author><entry><title type="html">minimal mistakes 테마를 이용해 github.io 블로그 구축하기</title><link href="https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="minimal mistakes 테마를 이용해 github.io 블로그 구축하기" /><published>2018-07-01T00:00:00+09:00</published><updated>2018-07-01T13:00:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
 
 &lt;p&gt;처음 만들어보는 페이지이다 보니 부족한 부분이 많습니다.&lt;br /&gt;
 언제든지 댓글 남겨주시면 수정하도록 하겠습니다!&lt;/p&gt;
@@ -35,7 +35,7 @@
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;screenshot.png&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;샘플페이지에 대한 데이터는 &lt;code class=&quot;highlighter-rouge&quot;&gt;docs/&lt;/code&gt; 디렉터리에 저장되어 있으니 참고하실 분들은 삭제 하지 않으셔도 되지만 사이트에 샘플 포스트가 표시될 수 있습니다. {: .notice}&lt;/p&gt;
+&lt;p class=&quot;notice&quot;&gt;샘플페이지에 대한 데이터는 &lt;code class=&quot;highlighter-rouge&quot;&gt;docs/&lt;/code&gt; 디렉터리에 저장되어 있으니 참고하실 분들은 삭제 하지 않으셔도 되지만 사이트에 샘플 포스트가 표시될 수 있습니다.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -166,7 +166,7 @@ https://github.com/imreplay/minimal-mistakes#github-pages-method 를 참고하�
 
 &lt;p&gt;추가적으로 필요한 페이지가 있다면 가져오시면 되겠습니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;about.md&lt;/code&gt; 페이지를 제외한 나머지 페이지들은 크게 수정할 부분이 없으니 그대로 사용하고, about 페이지는 개인의 취향에 맞게 수정하여 사용하시면 됩니다.{: .notice}&lt;/p&gt;
+&lt;p class=&quot;notice&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;about.md&lt;/code&gt; 페이지를 제외한 나머지 페이지들은 크게 수정할 부분이 없으니 그대로 사용하고, about 페이지는 개인의 취향에 맞게 수정하여 사용하시면 됩니다.&lt;/p&gt;
 
 &lt;p&gt;그 후  &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 파일에 _pages에 대한 내용을 추가해줍니다.&lt;/p&gt;
 
@@ -265,8 +265,8 @@ toc: true
 &lt;span class=&quot;na&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;https://github.com&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Direct Link 만들기&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;github pages 로는 테스트틀 안해봐서 잘 동작할지 모르겠네요..
-이번 주 내로 테스트 후 수정할 부분이 생기면 추가하겠습니다!{: .notice}&lt;/p&gt;
+&lt;p class=&quot;notice&quot;&gt;github pages 로는 테스트틀 안해봐서 잘 동작할지 모르겠네요..
+이번 주 내로 테스트 후 수정할 부분이 생기면 추가하겠습니다!&lt;/p&gt;
 
 &lt;p&gt;다음 포스팅은 travis-ci를 통해 push를 하면 자동으로 Build되어 gh-pages 브랜치로 결과 파일을 push 해주는 방법에 대하여 포스팅 하도록 하겠습니다.&lt;/p&gt;
 
