@@ -267,6 +267,7 @@ defaults:
       read_time: true
       comments: true
       share: true
+      search: true
       related: true
 
   # _pages
