@@ -1,0 +1,820 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.12.0 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>minimal mistakes 테마를 이용해 github.io 블로그 구축하기 - Imreplay blog</title>
+<meta name="description" content="Intro">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Imreplay blog">
+<meta property="og:title" content="minimal mistakes 테마를 이용해 github.io 블로그 구축하기">
+<meta property="og:url" content="https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/">
+
+
+  <meta property="og:description" content="Intro">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2018-07-01T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2018-07-01T13:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Imreplay",
+      "url": "https://blog.imreplay.xyz",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Imreplay blog Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Imreplay blog</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="https://blog.imreplay.xyz/about/" >About</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="https://blog.imreplay.xyz/categories/" >Category</a>
+            </li>
+          
+        </ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Imreplay</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        천천히 굴러가는 개인 공부 블로그
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Republic of Korea</span>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://blog.imreplay.xyz" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i> 웹사이트
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:imreplay@imreplay.xyz">
+            <meta itemprop="email" content="imreplay@imreplay.xyz" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> 이메일
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/imreplay08" itemprop="sameAs">
+            <i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/imreplay" itemprop="sameAs">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="minimal mistakes 테마를 이용해 github.io 블로그 구축하기">
+    <meta itemprop="description" content="Intro">
+    <meta itemprop="datePublished" content="July 01, 2018">
+    <meta itemprop="dateModified" content="July 01, 2018">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">minimal mistakes 테마를 이용해 github.io 블로그 구축하기
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 분 소요
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#intro">Intro</a></li>
+  <li><a href="#테마-fork-후-불필요한-내용-삭제">테마 Fork 후 불필요한 내용 삭제</a></li>
+  <li><a href="#_configyml-변경">_config.yml 변경</a></li>
+  <li><a href="#gemfile-설정">Gemfile 설정</a>
+    <ul>
+      <li><a href="#gemfile">Gemfile?</a></li>
+    </ul>
+  </li>
+  <li><a href="#navigationyml-수정하기">navigation.yml 수정하기</a></li>
+  <li><a href="#_pages-추가하기">_pages 추가하기</a>
+    <ul>
+      <li><a href="#_configyml">_config.yml</a></li>
+    </ul>
+  </li>
+  <li><a href="#포스팅-하기">포스팅 하기</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <h2 id="intro">Intro</h2>
+
+<p>처음 만들어보는 페이지이다 보니 부족한 부분이 많습니다.<br />
+언제든지 댓글 남겨주시면 수정하도록 하겠습니다!</p>
+
+<div class="notice">
+<p>본 포스팅은 블로그 구축 후 작성하는 것으로,  minimal mistakes 테마를 Fork 하여 본인의 입맛에 맞게 수정하는 과정입니다.</p>
+
+<p>또한 일부 내용은 https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/ 의 내용을 참고하였습니다.</p>
+
+</div>
+
+<hr />
+
+<h2 id="테마-fork-후-불필요한-내용-삭제">테마 Fork 후 불필요한 내용 삭제</h2>
+
+<p>저의 경우 <a href="https://github.com/mmistakes/minimal-mistakes">minimal mistakes 테마</a> 를 사용했습니다.</p>
+
+<p>위 저장소에 접속 하여 우측 상단의 Fork 버튼을 눌러 자신의 저장소로 복제 해 줍시다.</p>
+
+<p>그 후 테마에 포함되어있는 불필요한 파일들을 삭제 해 줍니다.</p>
+
+<p>목록은 아래와 같습니다.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">.editorconfig</code></li>
+  <li><code class="highlighter-rouge">.gitattributes</code></li>
+  <li><code class="highlighter-rouge">.github</code></li>
+  <li><code class="highlighter-rouge">/docs</code></li>
+  <li><code class="highlighter-rouge">/test</code></li>
+  <li><code class="highlighter-rouge">CHANGELOG.md</code></li>
+  <li><code class="highlighter-rouge">minimal-mistakes-jekyll.gemspec</code></li>
+  <li><code class="highlighter-rouge">README.md</code></li>
+  <li><code class="highlighter-rouge">screenshot-layouts.png</code></li>
+  <li><code class="highlighter-rouge">screenshot.png</code></li>
+</ul>
+
+<p>샘플페이지에 대한 데이터는 <code class="highlighter-rouge">docs/</code> 디렉터리에 저장되어 있으니 참고하실 분들은 삭제 하지 않으셔도 되지만 사이트에 샘플 포스트가 표시될 수 있습니다. {:notice}</p>
+
+<hr />
+
+<h2 id="_configyml-변경">_config.yml 변경</h2>
+<p>저장소 최상위 디렉토리에 존재하는 <code class="highlighter-rouge">_config.yml</code> 파일을 사용자의 취향에 맞게 설정 해 줍니다.</p>
+
+<p>현재 사이트의 설정은 <a href="https://blog.imreplay.xyz/blogging/config-yml">_config.yml 설정하기</a> 에서 확인할 수 있습니다.</p>
+
+<p>_config.yml 에 대한 자세한 설명은 https://mmistakes.github.io/minimal-mistakes/docs/configuration/ 에서 확인할 수 있습니다.</p>
+
+<div class="notice--warning">
+<p>github pages 를 이용하시는 분들은
+https://github.com/imreplay/minimal-mistakes#github-pages-method 를 참고하여</p>
+
+<p><code class="highlighter-rouge">gem "github-pages", group: :jekyll_plugins</code>
+ 추가 및<br />
+ <code class="highlighter-rouge">remote_theme: "mmistakes/minimal-mistakes"</code>  설정, theme 부분 주석 처리 해주셔야 합니다!</p>
+
+</div>
+
+<hr />
+
+<h2 id="gemfile-설정">Gemfile 설정</h2>
+<p>최상위 디렉토리에 위치한 Gemfile을 수정해 줍니다.</p>
+
+<p>Gemfile에 대해서는 모르는 부분이 많아 샘플 Gemfile을 참고하시는것을 추천드립니다.</p>
+
+<div class="notice--info">
+<h3 id="gemfile">Gemfile?</h3>
+<ul>
+  <li>다양한 Gem을 등록하는 파일 입니다.</li>
+  <li>Gem은 루비에서 지원하는 패키지 시스템으로 필요한 프로그램을 관리할 수 있도록 도와줍니다.</li>
+</ul>
+
+</div>
+
+<p>아래는 예제 파일입니다.</p>
+
+<p>minimal mistake 에서 샘플로 제공하는 <code class="highlighter-rouge">Gemfile</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">source</span> <span class="s2">"https://rubygems.org"</span>
+
+<span class="n">gem</span> <span class="s2">"github-pages"</span><span class="p">,</span> <span class="ss">group: :jekyll_plugins</span>
+
+<span class="n">gem</span> <span class="s2">"tzinfo-data"</span>
+<span class="n">gem</span> <span class="s2">"wdm"</span><span class="p">,</span> <span class="s2">"~&gt; 0.1.0"</span> <span class="k">if</span> <span class="no">Gem</span><span class="p">.</span><span class="nf">win_platform?</span>
+
+<span class="c1"># If you have any plugins, put them here!</span>
+<span class="n">group</span> <span class="ss">:jekyll_plugins</span> <span class="k">do</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-paginate"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-sitemap"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-gist"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-feed"</span>
+  <span class="n">gem</span> <span class="s2">"jemoji"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-algolia"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>현재 사이트에 적용되어있는 <code class="highlighter-rouge">Gemfile</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">source</span> <span class="s2">"https://rubygems.org"</span>
+
+<span class="n">gem</span> <span class="s2">"minimal-mistakes-jekyll"</span>
+
+<span class="n">gem</span> <span class="s2">"jekyll"</span><span class="p">,</span> <span class="s2">"~&gt; 3.6.2"</span>
+<span class="n">gem</span> <span class="s2">"github-pages"</span><span class="p">,</span> <span class="s2">"~&gt; 168"</span>
+<span class="n">gem</span> <span class="s2">"rake"</span><span class="p">,</span> <span class="s2">"~&gt; 12.3.0"</span>
+
+<span class="n">group</span> <span class="ss">:jekyll_plugins</span> <span class="k">do</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-feed"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-seo-tag"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-sitemap"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-paginate"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-algolia"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="navigationyml-수정하기">navigation.yml 수정하기</h2>
+
+<p>최상위 디렉토리의 _data/navigation.yml 을 수정합니다.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># main links</span>
+<span class="na">main</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">About"</span> <span class="c1"># 네비게이션 바에 표시 되는 이름</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/about/"</span> <span class="c1"># 클릭시 이동할 URL</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Category"</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">/categories/</span>
+  <span class="c1"># - title: "Sample Collections"</span>
+  <span class="c1">#   url: /collection-archive/</span>
+  <span class="c1"># - title: "Sitemap"</span>
+  <span class="c1">#   url: /sitemap</span>
+</code></pre></div></div>
+
+<p>또한 이 파일을 통해 Sidebar를 커스터마이징 하는 기능또한 제공되고 있습니다.</p>
+
+<p>해당 기능에 대한 설명은 <a href="https://mmistakes.github.io/minimal-mistakes/docs/layouts/#custom-sidebar-navigation-menu">custom-sidebar-navigation-menu</a> 에서 확인가능합니다.</p>
+
+<hr />
+
+<h2 id="_pages-추가하기">_pages 추가하기</h2>
+<p>기본 설정들은 어느정도 끝났으니 몇가지 페이지를 만들어봅시다.</p>
+
+<p>먼저 최상위 폴더에 _pages 라는 폴더를 만들어 준 후</p>
+
+<p>minimal-mistake에서 <a href="https://github.com/mmistakes/minimal-mistakes/tree/master/docs/_pages">샘플</a>로 제공되는 페이지 중 필요한 걸 몇가지 가져옵니다.</p>
+
+<p>이번 포스팅에서 추가할 페이지는</p>
+
+<ul>
+  <li>404 에러 페이지 (404.md)</li>
+  <li>about 페이지 (about.md)</li>
+  <li>카테고리 페이지 (category-archive.md)</li>
+  <li>태그 페이지 (tag-archive.md)</li>
+</ul>
+
+<p>정도만 가져오도록 하겠습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/_pages
+ ㄴ404.md
+ ㄴabout.md
+ ㄴcategory-archive.md
+ ㄴtag-archive.md
+</code></pre></div></div>
+
+<p>이런 구조가 되겠군요.</p>
+
+<p>추가적으로 필요한 페이지가 있다면 가져오시면 되겠습니다.</p>
+
+<p><code class="highlighter-rouge">about.md</code> 페이지를 제외한 나머지 페이지들은 크게 수정할 부분이 없으니 그대로 사용하고, about 페이지는 개인의 취향에 맞게 수정하여 사용하시면 됩니다.{:notice}</p>
+
+<p>그 후  <code class="highlighter-rouge">_config.yml</code> 파일에 _pages에 대한 내용을 추가해줍니다.</p>
+
+<h3 id="_configyml">_config.yml</h3>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">defaults</span><span class="pi">:</span>
+  <span class="c1"># _posts</span>
+  <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">posts</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s">single</span>
+      <span class="na">author_profile</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">read_time</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">comments</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">share</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">related</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="c1">#&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; 여기서부터 추가 됨</span>
+  <span class="c1"># _pages 부분입니다.</span>
+  <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">_pages"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">pages</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s">single</span>
+      <span class="na">author_profile</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="c1"># &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; 여기까지 추가 됨</span>
+</code></pre></div></div>
+
+<h2 id="포스팅-하기">포스팅 하기</h2>
+<p>_posts 디렉토리를 최상위 폴더에 생성한 후</p>
+
+<p><code class="highlighter-rouge">YYYY-MM-DD-제목.md</code> 형식으로 포스팅을 생성합니다.</p>
+
+<p><code class="highlighter-rouge">2018-01-01-hello-world.md</code> 와 같이 작성하시면 됩니다.</p>
+
+<p>그 후, 헤더를 작성하고 글을 포스팅하면 됩니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+---
+title: "minimal mistakes 테마를 이용해 github.io 블로그 구축하기"
+categories: 
+  - blogging
+last_modified_at: 2018-07-01T13:00:00+09:00
+toc: true
+---
+
+</code></pre></div></div>
+
+<p>위와같이 작성 할 수 있으며, 들어가는 항목은 title, categories, tags 등이 있다.</p>
+
+<p>https://mmistakes.github.io/minimal-mistakes/ 에서 여러가지 샘플들을 보며 참고하면 편할 듯 합니다.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">tags</span><span class="pi">:</span> <span class="c1"># 태그 사용</span>
+    <span class="pi">-</span> <span class="s">tag1</span>
+    <span class="pi">-</span> <span class="s">tag2</span>
+
+<span class="na">categories</span><span class="pi">:</span> <span class="c1">#카테고리</span>
+  <span class="pi">-</span> <span class="s">category a</span>
+
+<span class="na">author_profile</span><span class="pi">:</span> <span class="no">true</span><span class="s"> / </span><span class="no">false</span> <span class="c1">#작성자 프로필 출력여부</span>
+<span class="na">read_time</span><span class="pi">:</span> <span class="no">false</span> <span class="c1"># read_time을 출력할지 여부 1min read 같은것!</span>
+
+<span class="na">toc</span><span class="pi">:</span> <span class="no">true</span> <span class="c1">#Table Of Contents 목차 보여줌</span>
+<span class="na">toc_label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">My</span><span class="nv"> </span><span class="s">Table</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">Contents"</span> <span class="c1"># toc 이름 정의</span>
+<span class="na">toc_icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">cog"</span> <span class="c1">#font Awesome아이콘으로 toc 아이콘 설정</span>
+<span class="na">toc_sticky</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># 스크롤 내릴때 같이 내려가는 목차</span>
+
+<span class="na">gallery</span><span class="pi">:</span> <span class="c1">#이미지 갤러리</span>
+  <span class="pi">-</span> <span class="na">url</span><span class="pi">:</span> <span class="s">/assets/images/unsplash-gallery-image-1.jpg</span>
+    <span class="na">image_path</span><span class="pi">:</span> <span class="s">/assets/images/unsplash-gallery-image-1-th.jpg</span>
+    <span class="na">alt</span><span class="pi">:</span> <span class="s2">"</span><span class="s">placeholder</span><span class="nv"> </span><span class="s">image</span><span class="nv"> </span><span class="s">1"</span>
+    <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Image</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">title</span><span class="nv"> </span><span class="s">caption"</span>
+  <span class="pi">-</span> <span class="na">url</span><span class="pi">:</span> <span class="s">/assets/images/unsplash-gallery-image-2.jpg</span>
+    <span class="na">image_path</span><span class="pi">:</span> <span class="s">/assets/images/unsplash-gallery-image-2-th.jpg</span>
+    <span class="na">alt</span><span class="pi">:</span> <span class="s2">"</span><span class="s">placeholder</span><span class="nv"> </span><span class="s">image</span><span class="nv"> </span><span class="s">2"</span>
+    <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Image</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">title</span><span class="nv"> </span><span class="s">caption"</span>
+<span class="c1">#다음과 같이 본문에서 사용한다.</span>
+
+
+
+
+<span class="s">&lt;figure class=" "&gt;</span>
+  
+  
+    <span class="s">&lt;figcaption&gt;This is a sample gallery with &lt;strong&gt;Markdown support&lt;/strong&gt;.</span>
+<span class="s">&lt;/figcaption&gt;</span>
+  
+<span class="s">&lt;/figure&gt;</span>
+
+<span class="na">header</span><span class="pi">:</span>  <span class="c1"># 헤더에 유튜브 비디오 삽입</span>
+  <span class="na">video</span><span class="pi">:</span>
+    <span class="na">id</span><span class="pi">:</span> <span class="s">XsxDH4HcOWA</span>
+    <span class="na">provider</span><span class="pi">:</span> <span class="s">youtube</span>
+
+
+<span class="na">link</span><span class="pi">:</span> <span class="s">https://github.com</span> <span class="c1"># Direct Link 만들기</span>
+</code></pre></div></div>
+
+<p>github pages 로는 테스트틀 안해봐서 잘 동작할지 모르겠네요..
+이번 주 내로 테스트 후 수정할 부분이 생기면 추가하겠습니다!{:notice}</p>
+
+<p>다음 포스팅은 travis-ci를 통해 push를 하면 자동으로 Build되어 gh-pages 브랜치로 결과 파일을 push 해주는 방법에 대하여 포스팅 하도록 하겠습니다.</p>
+
+<p>혹시 안되거나 에러나는 부분들, 설명이 부족한 부분은 댓글로 남겨주세요!</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#blogging" class="page__taxonomy-item" rel="tag">blogging</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2018-07-01">July 01, 2018</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=minimal+mistakes+%ED%85%8C%EB%A7%88%EB%A5%BC+%EC%9D%B4%EC%9A%A9%ED%95%B4+github.io+%EB%B8%94%EB%A1%9C%EA%B7%B8+%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0%20https%3A%2F%2Fblog.imreplay.xyz%2Fblogging%2Fminimal-mistakes-%25ED%2585%258C%25EB%25A7%2588%25EB%25A5%25BC-%25EC%259D%25B4%25EC%259A%25A9%25ED%2595%25B4-githubio-%25EB%25B8%2594%25EB%25A1%259C%25EA%25B7%25B8-%25EA%25B5%25AC%25EC%25B6%2595%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.imreplay.xyz%2Fblogging%2Fminimal-mistakes-%25ED%2585%258C%25EB%25A7%2588%25EB%25A5%25BC-%25EC%259D%25B4%25EC%259A%25A9%25ED%2595%25B4-githubio-%25EB%25B8%2594%25EB%25A1%259C%25EA%25B7%25B8-%25EA%25B5%25AC%25EC%25B6%2595%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fblog.imreplay.xyz%2Fblogging%2Fminimal-mistakes-%25ED%2585%258C%25EB%25A7%2588%25EB%25A5%25BC-%25EC%259D%25B4%25EC%259A%25A9%25ED%2595%25B4-githubio-%25EB%25B8%2594%25EB%25A1%259C%25EA%25B7%25B8-%25EA%25B5%25AC%25EC%25B6%2595%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fblog.imreplay.xyz%2Fblogging%2Fminimal-mistakes-%25ED%2585%258C%25EB%25A7%2588%25EB%25A5%25BC-%25EC%259D%25B4%25EC%259A%25A9%25ED%2595%25B4-githubio-%25EB%25B8%2594%25EB%25A1%259C%25EA%25B7%25B8-%25EA%25B5%25AC%25EC%25B6%2595%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/" rel="permalink">minimal mistakes 테마를 이용해 github.io 블로그 구축하기
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 분 소요
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Intro
+
+</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+    <div class="search-hits"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+    
+    
+      <li><a href="https://www.facebook.com/imreplay08"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+    
+    
+      <li><a href="https://github.com/imreplay"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Imreplay. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '237ZENFYNY',
+  apiKey: '5cfd50ded1da95d695708070be40e3b9',
+  indexName: 'blog',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+
+
+    
+
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/blogging/minimal-mistakes-테마를-이용해-githubio-블로그-구축하기"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://imreplay-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+  </body>
+</html>
