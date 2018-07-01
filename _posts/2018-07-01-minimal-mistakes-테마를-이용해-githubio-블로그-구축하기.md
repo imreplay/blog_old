@@ -17,7 +17,7 @@ toc_sticky: true
 
 본 포스팅은 블로그 구축 후 작성하는 것으로,  minimal mistakes 테마를 Fork 하여 본인의 입맛에 맞게 수정하는 과정입니다.
 
-또한 일부 내용은 https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/ 의 내용을 참고하였습니다.
+또한 일부 내용은 [https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/) 의 내용을 참고하였습니다.
 
 {% endcapture %}
 
@@ -56,7 +56,7 @@ toc_sticky: true
 
 현재 사이트의 설정은 [\_config.yml 설정하기](https://blog.imreplay.xyz/blogging/config-yml) 에서 확인할 수 있습니다.
 
-\_config.yml 에 대한 자세한 설명은 https://mmistakes.github.io/minimal-mistakes/docs/configuration/ 에서 확인할 수 있습니다.
+\_config.yml 에 대한 자세한 설명은 [configuration](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) 에서 확인할 수 있습니다.
 
 {% capture gp-user %}
 
@@ -239,9 +239,11 @@ toc: true
 
 ```
 
-위와같이 작성 할 수 있으며, 들어가는 항목은 title, categories, tags 등이 있다.
+위와같이 작성 할 수 있으며, 들어가는 항목은 title, categories, tags 등이 있습니다다.
 
 https://mmistakes.github.io/minimal-mistakes/ 에서 여러가지 샘플들을 보며 참고하면 편할 듯 합니다.
+
+아래는 몇가지 헤더부분에 들어가는 몇가지 예제입니다.
 
 ```yml
 tags: # 태그 사용
