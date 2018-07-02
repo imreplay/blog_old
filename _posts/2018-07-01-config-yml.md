@@ -3,6 +3,8 @@ title:  _config.yml 설정하기
 search: true
 categories: 
   - blogging
+tags: 
+  - jekyll
 last_modified_at: 2018-07-01T13:05:00+09:00
 ---
 
