@@ -318,11 +318,7 @@
   <li><a href="#intro">Intro</a></li>
   <li><a href="#테마-fork-후-불필요한-내용-삭제">테마 Fork 후 불필요한 내용 삭제</a></li>
   <li><a href="#_configyml-변경">_config.yml 변경</a></li>
-  <li><a href="#gemfile-설정">Gemfile 설정</a>
-    <ul>
-      <li><a href="#gemfile">Gemfile?</a></li>
-    </ul>
-  </li>
+  <li><a href="#gemfile-설정">Gemfile 설정</a></li>
   <li><a href="#navigationyml-수정하기">navigation.yml 수정하기</a></li>
   <li><a href="#_pages-추가하기">_pages 추가하기</a>
     <ul>
@@ -390,6 +386,12 @@ https://github.com/imreplay/minimal-mistakes#github-pages-method 를 참고하�
  추가 및<br />
  <code class="highlighter-rouge">remote_theme: "mmistakes/minimal-mistakes"</code>  설정, theme 부분 주석 처리 해주셔야 합니다!</p>
 
+<p>Settings 에서 github pages 브랜치 설정을 <code class="highlighter-rouge">master</code> 로 설정해주시면</p>
+
+<p><code class="highlighter-rouge">계정명.github.io/저장소명</code> 으로 접근 가능합니다!</p>
+
+<p>예를 들면 <a href="https://imreplay.github.io/test/">https://imreplay.github.io/test/</a> 처럼요!</p>
+
 </div>
 
 <hr />
@@ -400,7 +402,7 @@ https://github.com/imreplay/minimal-mistakes#github-pages-method 를 참고하�
 <p>Gemfile에 대해서는 모르는 부분이 많아 샘플 Gemfile을 참고하시는것을 추천드립니다.</p>
 
 <div class="notice--info">
-<h3 id="gemfile">Gemfile?</h3>
+<p><strong>Gemfile?</strong></p>
 <ul>
   <li>다양한 Gem을 등록하는 파일 입니다.</li>
   <li>Gem은 루비에서 지원하는 패키지 시스템으로 필요한 프로그램을 관리할 수 있도록 도와줍니다.</li>
@@ -593,8 +595,7 @@ toc: true
 <span class="na">link</span><span class="pi">:</span> <span class="s">https://github.com</span> <span class="c1"># Direct Link 만들기</span>
 </code></pre></div></div>
 
-<p class="notice">github pages 로는 테스트틀 안해봐서 잘 동작할지 모르겠네요..
-이번 주 내로 테스트 후 수정할 부분이 생기면 추가하겠습니다!</p>
+<p>결과 페이지는 <a href="https://imreplay.github.io/test/">https://imreplay.github.io/test/</a> 처럼 나오네요!</p>
 
 <p>다음 포스팅은 travis-ci를 통해 push를 하면 자동으로 Build되어 gh-pages 브랜치로 결과 파일을 push 해주는 방법에 대하여 포스팅 하도록 하겠습니다.</p>
 
