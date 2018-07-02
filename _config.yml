@@ -101,7 +101,7 @@ analytics:
 # Site Author
 author:
   name             : "Imreplay"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/img/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "천천히 굴러가는 개인 공부 블로그"
   location         : "Republic of Korea"
   email            : "imreplay@imreplay.xyz"
