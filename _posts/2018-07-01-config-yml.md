@@ -1,5 +1,6 @@
 ---
 title:  _config.yml 설정하기
+excerpt: "minimal-mistakes 테마에서의 _config.yml 설정에 대하여"
 search: true
 categories: 
   - blogging

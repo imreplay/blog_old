@@ -1,5 +1,6 @@
 ---
 title: "minimal mistakes 테마를 이용해 github.io 블로그 구축하기"
+excerpt: "저장소를 fork하여 github pages 또는 travis-ci설정에 맞게 기본적인 환경설정을 하는 방법에 대하여"
 categories: 
   - blogging
 tags: 
