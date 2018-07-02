@@ -1,6 +1,6 @@
 ---
-title:  _config.yml 설정하기
-excerpt: "minimal-mistakes 테마에서의 _config.yml 설정에 대하여"
+title:  \_config.yml 설정하기
+excerpt: "minimal-mistakes 테마에서의 \_config.yml 설정에 대하여"
 search: true
 categories: 
   - blogging
@@ -10,13 +10,12 @@ last_modified_at: 2018-07-01T13:05:00+09:00
 ---
 
 
-
-minimal-mistakes 테마의 기본 _config.yml을 수정한 내용입니다
+minimal-mistakes 테마의 기본 \_config.yml을 수정한 내용입니다
 
 개인적인 의견으로 작성 시 기본 설정 파일을 가지고 내용을 추가해 나가는 것이 편합니다!
 
 
-### _config.yml
+### \_config.yml
 
 ```yml
 # Welcome to Jekyll!
