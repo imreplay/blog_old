@@ -66,7 +66,13 @@ https://github.com/imreplay/minimal-mistakes#github-pages-method 를 참고하�
 `gem "github-pages", group: :jekyll_plugins`
  추가 및  
  `remote_theme: "mmistakes/minimal-mistakes"`  설정, theme 부분 주석 처리 해주셔야 합니다!
-
+ 
+ Settings 에서 github pages 브랜치 설정을 `master` 로 설정해주시면
+ 
+ `계정명.github.io/저장소명` 으로 접근 가능합니다!
+ 
+ 예를 들면 [https://imreplay.github.io/test/](https://imreplay.github.io/test/) 처럼요!
+ 
 {% endcapture %}
 
 <div class="notice--warning">{{ gp-user | markdownify }}</div>
@@ -80,7 +86,7 @@ Gemfile에 대해서는 모르는 부분이 많아 샘플 Gemfile을 참고하�
 
 {% capture what-is-gem %}
 
-### Gemfile?
+**Gemfile?**
  - 다양한 Gem을 등록하는 파일 입니다.  
  - Gem은 루비에서 지원하는 패키지 시스템으로 필요한 프로그램을 관리할 수 있도록 도와줍니다.
 
@@ -283,9 +289,7 @@ link: https://github.com # Direct Link 만들기
 ```
 
 
-github pages 로는 테스트틀 안해봐서 잘 동작할지 모르겠네요..
-이번 주 내로 테스트 후 수정할 부분이 생기면 추가하겠습니다!
-{: .notice}
+결과 페이지는 [https://imreplay.github.io/test/](https://imreplay.github.io/test/) 처럼 나오네요!
 
 다음 포스팅은 travis-ci를 통해 push를 하면 자동으로 Build되어 gh-pages 브랜치로 결과 파일을 push 해주는 방법에 대하여 포스팅 하도록 하겠습니다.
 
