@@ -1,4 +1,269 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://blog.imreplay.xyz/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.imreplay.xyz/" rel="alternate" type="text/html" /><updated>2018-07-02T12:35:28+09:00</updated><id>https://blog.imreplay.xyz/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's personal website.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email><uri>https://blog.imreplay.xyz</uri></author><entry><title type="html">minimal mistakes 테마를 이용해 github.io 블로그 구축하기</title><link href="https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="minimal mistakes 테마를 이용해 github.io 블로그 구축하기" /><published>2018-07-01T00:00:00+09:00</published><updated>2018-07-01T13:00:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://blog.imreplay.xyz/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.imreplay.xyz/" rel="alternate" type="text/html" /><updated>2018-07-02T12:43:44+09:00</updated><id>https://blog.imreplay.xyz/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's personal website.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email><uri>https://blog.imreplay.xyz</uri></author><entry><title type="html">Travis-ci를 이용해 배포 자동화 시키기</title><link href="https://blog.imreplay.xyz/blogging/Travis-ci%EB%A5%BC-%ED%86%B5%ED%95%B4-%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94/" rel="alternate" type="text/html" title="Travis-ci를 이용해 배포 자동화 시키기" /><published>2018-07-02T00:00:00+09:00</published><updated>2018-07-02T12:33:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/Travis-ci%EB%A5%BC%20%ED%86%B5%ED%95%B4%20%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/Travis-ci%EB%A5%BC-%ED%86%B5%ED%95%B4-%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94/">&lt;p&gt;저번 포스팅에서는 minimal-mistake 테마를 이용해서 기본적인 설정을 했습니다.&lt;/p&gt;
+
+&lt;p&gt;이번 포스팅에서는 minimal-mistake 테마에서 Travis-ci라는 서비스를 이용하여 Github에 push하면 자동으로 build 및 gh-pages 브랜치에 push 하는 방법에 대하여 포스팅 하고자 합니다.&lt;/p&gt;
+
+&lt;p class=&quot;notice&quot;&gt;travis-ci 부분의 내용은 대부분 &lt;a href=&quot;https://github.com/jekyller/jasper2&quot;&gt;jasper2&lt;/a&gt;에서 사용한 코드를 참고 하였습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;_configyml-수정하기&quot;&gt;_config.yml 수정하기&lt;/h2&gt;
+&lt;p&gt;먼저 상단에 위치한 &lt;code class=&quot;highlighter-rouge&quot;&gt;theme&lt;/code&gt; / &lt;code class=&quot;highlighter-rouge&quot;&gt;remote_theme&lt;/code&gt; 부분을 확인합니다.&lt;/p&gt;
+
+&lt;p&gt;Github pages 를 사용하는지, travis-ci를 사용하는지에 따라 설정이 달라지기 때문인데요,&lt;/p&gt;
+
+&lt;p&gt;먼저, travis-ci를 쓸경우&lt;/p&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;na&quot;&gt;theme                  &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;minimal-mistakes-jekyll&quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#remote_theme           : &quot;mmistakes/minimal-mistakes&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위와 같이 remote_theme는 주석처리 하도록 합니다.&lt;/p&gt;
+
+&lt;p&gt;반대로 github pages 를 사용할 경우, theme를 주석 처리 해주시면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;그 다음 아래의 코드를 추가 후 자신의 환경에 맞게 수정해 줍니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Settings for builing master branch with travis-ci&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# with jekyll-travis&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Settings for deploy rake task&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Username and repo of Github repo, e.g.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# https://github.com/USERNAME/REPO.git&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# username defaults to ENV['GIT_NAME'] used by Travis&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# repo defaults to USERNAME.github.io&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Branch defaults to &quot;source&quot; for USERNAME.github.io&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# or &quot;master&quot; otherwise&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;safe&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;False&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;lsi&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;False&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Superman&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#Github username&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;repo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;my-blog&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#Github repo&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;relative_source&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;../my-blog/&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;destination&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;../posts&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;production_url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;https://blog.imreplay.xyz&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# https://[username].github.io/[repo] or Your Custom URL&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;source_url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;https://github.com/imreplay/blog/&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Github repo URL&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;travisyml-수정하기&quot;&gt;.travis.yml 수정하기&lt;/h2&gt;
+
+&lt;p&gt;다음으로 .travis.yml을 수정해줍니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ruby&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;cache&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bundler&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# Install Jekyll and dependencies&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bundle install&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bundle exec rake site:deploy --quiet&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Change this to gh-pages if you're deploying using the gh-pages branch&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;rvm&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2.4.2&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Generate your secure token with the travis gem:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# get Github token from your Travis CI profile page&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# gem install travis&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# GH_TOKEN from https://github.com/settings/tokens&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# travis encrypt 'GIT_NAME=&quot;YOUR_USERNAME&quot; GIT_EMAIL=&quot;YOUR_EMAIL&quot; GH_TOKEN=YOUR_TOKEN'&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;global&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;secure&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;your&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Secure&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Key&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;gemfile에-rake-추가-하기&quot;&gt;Gemfile에 rake 추가 하기&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;을 열어 &lt;code class=&quot;highlighter-rouge&quot;&gt;gem &quot;rake&quot;&lt;/code&gt;를 추가해 줍니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;없으면 빨리 추가하라고 에러를..&lt;/del&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;gh-pages-브랜치-만들기&quot;&gt;gh-pages 브랜치 만들기&lt;/h2&gt;
+
+&lt;p&gt;제일 간편한 방법으로 가봅시다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Github 저장소로 갑니다!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;왼쪽 상단에 &lt;code class=&quot;highlighter-rouge&quot;&gt;Branch: master&lt;/code&gt; 부분을 클릭합니다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Find or create a branch...&lt;/code&gt; 라는 부분이 보인다면 &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; 를 입력하고 엔터!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;짠! gh-pages 브랜치가 생성되었습니다!&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이제 travis-ci 가 빌드한 결과 파일은 gh-pages 브랜치로 Push 될겁니다!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;travis-ci-연결하고-토큰-발급-받기&quot;&gt;travis-ci 연결하고 토큰 발급 받기&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/&quot;&gt;travis-ci.org&lt;/a&gt; 에 접속하여 github 계정으로 로그인 합니다.&lt;/p&gt;
+
+&lt;p&gt;우측 상단의 프로필 메뉴를 클릭해 들어가서,&lt;/p&gt;
+
+&lt;p&gt;목록에 보이는 repo 목록중 해당하는 repo를 찾아 활성화 시켜줍니다.&lt;/p&gt;
+
+&lt;p&gt;travis-ci 서비스에서 github에 push 할 수 있게 Token을 발급해줍니다.&lt;/p&gt;
+
+&lt;p&gt;토큰은 Setting - Developer settings - Personal access tokens 에서 발급받을 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;Generate new Token을 눌러 새로운 토큰을 만들어 줍니다.&lt;/p&gt;
+
+&lt;p&gt;description을 쓴 후 Select scopes 에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;repo&lt;/code&gt; 를 선택한 후&lt;/p&gt;
+
+&lt;p&gt;Generate Token 을 누르면 토큰을 발급받을 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;해당 토큰을 바로 사용할 경우 보안상의 위험이 있어, 암호화 하여 사용합니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;secure-값-발급-받기&quot;&gt;secure 값 발급 받기&lt;/h2&gt;
+
+&lt;p&gt;이번 부분은 Command 환경에서 작업합니다.&lt;/p&gt;
+
+&lt;p&gt;저는 우분투 환경에서 작업하였습니다.&lt;/p&gt;
+
+&lt;p&gt;ruby가 설치되지 않은경우 ruby를 먼저 설치해 줍니다.&lt;/p&gt;
+
+&lt;p&gt;그 후 프로젝트 디렉토리로 이동후 진행 합니다. 아직 clone 하지 않았을 경우 clone 하여 해당 디렉토리로 이동합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;git clone https://github.com/[username]/[repo]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;먼저 travis gem을 설치해 줍니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;gem install travis&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;설치를 마친 후 아래 명령어를 자신에게 맞게 수정하여 입력합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;travis encrypt 'GIT_NAME=&quot;YOUR_USERNAME&quot; GIT_EMAIL=&quot;YOUR_EMAIL&quot; GH_TOKEN=YOUR_TOKEN'&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;GIT_NAME에는 Github 사용자 이름, GIT_EMAIL에는 Github에서 사용하는 email 주소, GH_TOKEN에는 위에서 발급받았던 토큰 값을 입력해줍니다.&lt;/p&gt;
+
+&lt;p class=&quot;notice&quot;&gt;따옴표 부분은 잘못 된 것이 아니며, 그대로 사용하시면 됩니다!!&lt;/p&gt;
+
+&lt;p&gt;결과 값으로 나오는 값을 &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; 파일의 secure 부분에 붙여넣어줍니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;rakefile-작성&quot;&gt;Rakefile 작성&lt;/h2&gt;
+
+&lt;p&gt;최상위 경로에 &lt;code class=&quot;highlighter-rouge&quot;&gt;Rakefile&lt;/code&gt; 파일을 수정합니다.&lt;/p&gt;
+
+&lt;p&gt;해당 파일은 jasper2의 &lt;a href=&quot;https://github.com/jekyller/jasper2/blob/master/Rakefile&quot;&gt;Rakefile&lt;/a&gt;을 사용하였습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#############################################################################&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Modified version of jekyllrb Rakefile&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# https://github.com/jekyll/jekyll/blob/master/Rakefile&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#############################################################################&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'rake'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'date'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'yaml'&lt;/span&gt;
+
+
+&lt;span class=&quot;no&quot;&gt;CONFIG&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;YAML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'_config.yml'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;USERNAME&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CONFIG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;username&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;REPO&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CONFIG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;repo&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;SOURCE_BRANCH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CONFIG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;branch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;DESTINATION_BRANCH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;gh-pages&quot;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;check_destination&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;exist?&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CONFIG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;destination&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;git clone https://$GIT_NAME:$GH_TOKEN@github.com/&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;USERNAME&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;REPO&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.git &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;CONFIG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;destination&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:site&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Generate the site&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:build&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;check_destination&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;bundle exec jekyll build&quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Generate the site and serve locally&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:serve&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;check_destination&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;bundle exec jekyll serve&quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Generate the site, serve locally and watch for changes&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:watch&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;bundle exec jekyll serve --watch&quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Generate the site and push changes to remote origin&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:deploy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Detect pull request&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'TRAVIS_PULL_REQUEST'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to_s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to_i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Pull request detected. Not proceeding with deploy.'&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Configure git if this is run in Travis CI&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;TRAVIS&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;git config --global user.name $GIT_NAME&quot;&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;git config --global user.email $GIT_EMAIL&quot;&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;git config --global push.default simple&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Make sure destination folder exists as git repo&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;check_destination&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;git checkout &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;SOURCE_BRANCH&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;chdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;CONFIG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;destination&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;git checkout &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;DESTINATION_BRANCH&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Generate the site&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;bundle exec jekyll build&quot;&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;# Commit and push to github&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sha&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`git log`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/[a-z0-9]{40}/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;chdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;CONFIG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;destination&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# check if there is anything to add and commit, and pushes it&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;if [ -n '$(git status)' ]; then
+            git add --all .;
+            git commit -m 'Updating to &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;USERNAME&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;REPO&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sha&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.';
+            git push --quiet origin &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;DESTINATION_BRANCH&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;;
+         fi&quot;&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Pushed updated branch &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;DESTINATION_BRANCH&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; to GitHub Pages&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;저장 후 travis-ci가 잘 작동하는지 확인해 봅니다.&lt;/p&gt;
+
+&lt;p&gt;Commit - Push!&lt;/p&gt;
+
+&lt;p&gt;진행상황은 travis-ci 페이지에서 확인 할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;두근두근.. &lt;del&gt;에러-수정-빌드-에러-수정-빌드-에러…-빌드&lt;/del&gt; 완성!!&lt;/p&gt;
+
+&lt;p&gt;약 2~3분정도의 시간이 소요됩니다! 2분 45초정도 소요 되었네요..!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;마치며&quot;&gt;마치며&lt;/h2&gt;
+&lt;p&gt;새로운 저장소를 만들고 한번더 &lt;code class=&quot;highlighter-rouge&quot;&gt;theme&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;travis-ci&lt;/code&gt;를 연동시켜보니 어느정도 익숙해진 것 같습니다&lt;/p&gt;
+
+&lt;p&gt;이제 다음 포스팅에서는 검색 서비스인 &lt;code class=&quot;highlighter-rouge&quot;&gt;algolia&lt;/code&gt;, 댓글 기능을 제공하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;disqus&lt;/code&gt; 를 적용시켜보고 &lt;code class=&quot;highlighter-rouge&quot;&gt;blogging&lt;/code&gt; 포스팅을 마치겠습니다!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email><uri>https://blog.imreplay.xyz</uri></author><category term="travis-ci" /><summary type="html">저번 포스팅에서는 minimal-mistake 테마를 이용해서 기본적인 설정을 했습니다.</summary></entry><entry><title type="html">minimal mistakes 테마를 이용해 github.io 블로그 구축하기</title><link href="https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="minimal mistakes 테마를 이용해 github.io 블로그 구축하기" /><published>2018-07-01T00:00:00+09:00</published><updated>2018-07-01T13:00:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
 
 &lt;p&gt;처음 만들어보는 페이지이다 보니 부족한 부분이 많습니다.&lt;br /&gt;
 언제든지 댓글 남겨주시면 수정하도록 하겠습니다!&lt;/p&gt;
@@ -267,7 +532,7 @@ toc: true
 
 &lt;p&gt;다음 포스팅은 travis-ci를 통해 push를 하면 자동으로 Build되어 gh-pages 브랜치로 결과 파일을 push 해주는 방법에 대하여 포스팅 하도록 하겠습니다.&lt;/p&gt;
 
-&lt;p&gt;혹시 안되거나 에러나는 부분들, 설명이 부족한 부분은 댓글로 남겨주세요!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email><uri>https://blog.imreplay.xyz</uri></author><summary type="html">Intro</summary></entry><entry><title type="html">_config.yml 설정하기</title><link href="https://blog.imreplay.xyz/blogging/config-yml/" rel="alternate" type="text/html" title="_config.yml 설정하기" /><published>2018-07-01T00:00:00+09:00</published><updated>2018-07-01T13:05:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/config-yml</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/config-yml/">&lt;p&gt;minimal-mistakes 테마의 기본 _config.yml을 수정한 내용입니다&lt;/p&gt;
+&lt;p&gt;혹시 안되거나 에러나는 부분들, 설명이 부족한 부분은 댓글로 남겨주세요!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email><uri>https://blog.imreplay.xyz</uri></author><category term="jekyll" /><summary type="html">Intro</summary></entry><entry><title type="html">_config.yml 설정하기</title><link href="https://blog.imreplay.xyz/blogging/config-yml/" rel="alternate" type="text/html" title="_config.yml 설정하기" /><published>2018-07-01T00:00:00+09:00</published><updated>2018-07-01T13:05:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/config-yml</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/config-yml/">&lt;p&gt;minimal-mistakes 테마의 기본 _config.yml을 수정한 내용입니다&lt;/p&gt;
 
 &lt;p&gt;개인적인 의견으로 작성 시 기본 설정 파일을 가지고 내용을 추가해 나가는 것이 편합니다!&lt;/p&gt;
 
@@ -595,4 +860,4 @@ toc: true
 &lt;span class=&quot;na&quot;&gt;destination&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;../posts&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 빌드시 작업파일이 저장될 경로&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;production_url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;https://blog.imreplay.xyz&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 사이트 URL&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;source_url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;https://github.com/imreplay/blog/&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Github 저장소 URL&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email><uri>https://blog.imreplay.xyz</uri></author><summary type="html">minimal-mistakes 테마의 기본 _config.yml을 수정한 내용입니다</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email><uri>https://blog.imreplay.xyz</uri></author><category term="jekyll" /><summary type="html">minimal-mistakes 테마의 기본 _config.yml을 수정한 내용입니다</summary></entry></feed>

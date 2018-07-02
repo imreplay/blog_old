@@ -1,0 +1,877 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.12.0 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Travis-ci를 이용해 배포 자동화 시키기 - Imreplay blog</title>
+<meta name="description" content="저번 포스팅에서는 minimal-mistake 테마를 이용해서 기본적인 설정을 했습니다.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Imreplay blog">
+<meta property="og:title" content="Travis-ci를 이용해 배포 자동화 시키기">
+<meta property="og:url" content="https://blog.imreplay.xyz/blogging/Travis-ci%EB%A5%BC-%ED%86%B5%ED%95%B4-%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94/">
+
+
+  <meta property="og:description" content="저번 포스팅에서는 minimal-mistake 테마를 이용해서 기본적인 설정을 했습니다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2018-07-02T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2018-07-02T12:33:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://blog.imreplay.xyz/blogging/Travis-ci%EB%A5%BC-%ED%86%B5%ED%95%B4-%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Imreplay",
+      "url": "https://blog.imreplay.xyz",
+      "sameAs": null
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="xB_FaqQvoAp-dvqEfpniaX0-RI1i_ZPBaISJEOphzR0" />
+
+
+
+
+
+  <meta name="naver-site-verification" content="33fb43905fdb96708b2bde0a9edace6cd2638167">
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Imreplay blog Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- google ad sense -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5072558553152830",
+    enable_page_level_ads: true
+  });
+</script>
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Imreplay blog</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="https://blog.imreplay.xyz/about/" >About</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="https://blog.imreplay.xyz/categories/" >Category</a>
+            </li>
+          
+        </ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Imreplay</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        천천히 굴러가는 개인 공부 블로그
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Republic of Korea</span>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://blog.imreplay.xyz" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i> 웹사이트
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:imreplay@imreplay.xyz">
+            <meta itemprop="email" content="imreplay@imreplay.xyz" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> 이메일
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/imreplay08" itemprop="sameAs">
+            <i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/imreplay" itemprop="sameAs">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Travis-ci를 이용해 배포 자동화 시키기">
+    <meta itemprop="description" content="저번 포스팅에서는 minimal-mistake 테마를 이용해서 기본적인 설정을 했습니다.">
+    <meta itemprop="datePublished" content="July 02, 2018">
+    <meta itemprop="dateModified" content="July 02, 2018">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Travis-ci를 이용해 배포 자동화 시키기
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 분 소요
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#_configyml-수정하기">_config.yml 수정하기</a></li>
+  <li><a href="#travisyml-수정하기">.travis.yml 수정하기</a></li>
+  <li><a href="#gemfile에-rake-추가-하기">Gemfile에 rake 추가 하기</a></li>
+  <li><a href="#gh-pages-브랜치-만들기">gh-pages 브랜치 만들기</a></li>
+  <li><a href="#travis-ci-연결하고-토큰-발급-받기">travis-ci 연결하고 토큰 발급 받기</a></li>
+  <li><a href="#secure-값-발급-받기">secure 값 발급 받기</a></li>
+  <li><a href="#rakefile-작성">Rakefile 작성</a></li>
+  <li><a href="#마치며">마치며</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <p>저번 포스팅에서는 minimal-mistake 테마를 이용해서 기본적인 설정을 했습니다.</p>
+
+<p>이번 포스팅에서는 minimal-mistake 테마에서 Travis-ci라는 서비스를 이용하여 Github에 push하면 자동으로 build 및 gh-pages 브랜치에 push 하는 방법에 대하여 포스팅 하고자 합니다.</p>
+
+<p class="notice">travis-ci 부분의 내용은 대부분 <a href="https://github.com/jekyller/jasper2">jasper2</a>에서 사용한 코드를 참고 하였습니다.</p>
+
+<hr />
+
+<h2 id="_configyml-수정하기">_config.yml 수정하기</h2>
+<p>먼저 상단에 위치한 <code class="highlighter-rouge">theme</code> / <code class="highlighter-rouge">remote_theme</code> 부분을 확인합니다.</p>
+
+<p>Github pages 를 사용하는지, travis-ci를 사용하는지에 따라 설정이 달라지기 때문인데요,</p>
+
+<p>먼저, travis-ci를 쓸경우</p>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">theme                  </span><span class="pi">:</span> <span class="s2">"</span><span class="s">minimal-mistakes-jekyll"</span>
+<span class="c1">#remote_theme           : "mmistakes/minimal-mistakes"</span>
+</code></pre></div></div>
+<p>위와 같이 remote_theme는 주석처리 하도록 합니다.</p>
+
+<p>반대로 github pages 를 사용할 경우, theme를 주석 처리 해주시면 됩니다.</p>
+
+<p>그 다음 아래의 코드를 추가 후 자신의 환경에 맞게 수정해 줍니다.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Settings for builing master branch with travis-ci</span>
+<span class="c1"># with jekyll-travis</span>
+
+<span class="c1"># Settings for deploy rake task</span>
+<span class="c1"># Username and repo of Github repo, e.g.</span>
+<span class="c1"># https://github.com/USERNAME/REPO.git</span>
+<span class="c1"># username defaults to ENV['GIT_NAME'] used by Travis</span>
+<span class="c1"># repo defaults to USERNAME.github.io</span>
+<span class="c1"># Branch defaults to "source" for USERNAME.github.io</span>
+<span class="c1"># or "master" otherwise</span>
+<span class="na">safe</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">lsi</span><span class="pi">:</span> <span class="s">False</span>
+<span class="na">username</span><span class="pi">:</span> <span class="s">Superman</span> <span class="c1">#Github username</span>
+<span class="na">repo</span><span class="pi">:</span> <span class="s">my-blog</span> <span class="c1">#Github repo</span>
+<span class="na">branch</span><span class="pi">:</span> <span class="s">master</span>
+<span class="na">relative_source</span><span class="pi">:</span> <span class="s">../my-blog/</span>
+<span class="na">destination</span><span class="pi">:</span> <span class="s">../posts</span>
+<span class="na">production_url</span><span class="pi">:</span>  <span class="s">https://blog.imreplay.xyz</span> <span class="c1"># https://[username].github.io/[repo] or Your Custom URL</span>
+<span class="na">source_url</span><span class="pi">:</span>  <span class="s">https://github.com/imreplay/blog/</span> <span class="c1"># Github repo URL</span>
+</code></pre></div></div>
+<hr />
+
+<h2 id="travisyml-수정하기">.travis.yml 수정하기</h2>
+
+<p>다음으로 .travis.yml을 수정해줍니다.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">language</span><span class="pi">:</span> <span class="s">ruby</span>
+<span class="na">cache</span><span class="pi">:</span> <span class="s">bundler</span>
+
+<span class="na">install</span><span class="pi">:</span>
+  <span class="c1"># Install Jekyll and dependencies</span>
+  <span class="pi">-</span> <span class="s">bundle install</span>
+
+<span class="na">script</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">bundle exec rake site:deploy --quiet</span>
+<span class="na">branches</span><span class="pi">:</span>
+  <span class="na">only</span><span class="pi">:</span>
+    <span class="c1"># Change this to gh-pages if you're deploying using the gh-pages branch</span>
+    <span class="pi">-</span> <span class="s">master</span>
+<span class="na">rvm</span><span class="pi">:</span>
+ <span class="pi">-</span> <span class="s">2.4.2</span>
+
+<span class="c1"># Generate your secure token with the travis gem:</span>
+<span class="c1"># get Github token from your Travis CI profile page</span>
+<span class="c1"># gem install travis</span>
+<span class="c1"># GH_TOKEN from https://github.com/settings/tokens</span>
+<span class="c1"># travis encrypt 'GIT_NAME="YOUR_USERNAME" GIT_EMAIL="YOUR_EMAIL" GH_TOKEN=YOUR_TOKEN'</span>
+
+<span class="na">env</span><span class="pi">:</span>
+  <span class="na">global</span><span class="pi">:</span>
+    <span class="na">secure</span><span class="pi">:</span> <span class="s2">"</span><span class="s">your</span><span class="nv"> </span><span class="s">Secure</span><span class="nv"> </span><span class="s">Key"</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="gemfile에-rake-추가-하기">Gemfile에 rake 추가 하기</h2>
+
+<p><code class="highlighter-rouge">Gemfile</code>을 열어 <code class="highlighter-rouge">gem "rake"</code>를 추가해 줍니다.</p>
+
+<p><del>없으면 빨리 추가하라고 에러를..</del></p>
+
+<hr />
+
+<h2 id="gh-pages-브랜치-만들기">gh-pages 브랜치 만들기</h2>
+
+<p>제일 간편한 방법으로 가봅시다.</p>
+
+<ol>
+  <li>
+    <p>Github 저장소로 갑니다!</p>
+  </li>
+  <li>
+    <p>왼쪽 상단에 <code class="highlighter-rouge">Branch: master</code> 부분을 클릭합니다</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Find or create a branch...</code> 라는 부분이 보인다면 <code class="highlighter-rouge">gh-pages</code> 를 입력하고 엔터!</p>
+  </li>
+  <li>
+    <p>짠! gh-pages 브랜치가 생성되었습니다!</p>
+  </li>
+</ol>
+
+<p>이제 travis-ci 가 빌드한 결과 파일은 gh-pages 브랜치로 Push 될겁니다!</p>
+
+<hr />
+
+<h2 id="travis-ci-연결하고-토큰-발급-받기">travis-ci 연결하고 토큰 발급 받기</h2>
+
+<p><a href="https://travis-ci.org/">travis-ci.org</a> 에 접속하여 github 계정으로 로그인 합니다.</p>
+
+<p>우측 상단의 프로필 메뉴를 클릭해 들어가서,</p>
+
+<p>목록에 보이는 repo 목록중 해당하는 repo를 찾아 활성화 시켜줍니다.</p>
+
+<p>travis-ci 서비스에서 github에 push 할 수 있게 Token을 발급해줍니다.</p>
+
+<p>토큰은 Setting - Developer settings - Personal access tokens 에서 발급받을 수 있습니다.</p>
+
+<p>Generate new Token을 눌러 새로운 토큰을 만들어 줍니다.</p>
+
+<p>description을 쓴 후 Select scopes 에서 <code class="highlighter-rouge">repo</code> 를 선택한 후</p>
+
+<p>Generate Token 을 누르면 토큰을 발급받을 수 있습니다.</p>
+
+<p>해당 토큰을 바로 사용할 경우 보안상의 위험이 있어, 암호화 하여 사용합니다.</p>
+
+<hr />
+
+<h2 id="secure-값-발급-받기">secure 값 발급 받기</h2>
+
+<p>이번 부분은 Command 환경에서 작업합니다.</p>
+
+<p>저는 우분투 환경에서 작업하였습니다.</p>
+
+<p>ruby가 설치되지 않은경우 ruby를 먼저 설치해 줍니다.</p>
+
+<p>그 후 프로젝트 디렉토리로 이동후 진행 합니다. 아직 clone 하지 않았을 경우 clone 하여 해당 디렉토리로 이동합니다.</p>
+
+<blockquote>
+  <p>git clone https://github.com/[username]/[repo]</p>
+</blockquote>
+
+<p>먼저 travis gem을 설치해 줍니다.</p>
+
+<blockquote>
+  <p>gem install travis</p>
+</blockquote>
+
+<p>설치를 마친 후 아래 명령어를 자신에게 맞게 수정하여 입력합니다.</p>
+
+<p><code class="highlighter-rouge">travis encrypt 'GIT_NAME="YOUR_USERNAME" GIT_EMAIL="YOUR_EMAIL" GH_TOKEN=YOUR_TOKEN'</code></p>
+
+<p>GIT_NAME에는 Github 사용자 이름, GIT_EMAIL에는 Github에서 사용하는 email 주소, GH_TOKEN에는 위에서 발급받았던 토큰 값을 입력해줍니다.</p>
+
+<p class="notice">따옴표 부분은 잘못 된 것이 아니며, 그대로 사용하시면 됩니다!!</p>
+
+<p>결과 값으로 나오는 값을 <code class="highlighter-rouge">.travis.yml</code> 파일의 secure 부분에 붙여넣어줍니다.</p>
+
+<hr />
+
+<h2 id="rakefile-작성">Rakefile 작성</h2>
+
+<p>최상위 경로에 <code class="highlighter-rouge">Rakefile</code> 파일을 수정합니다.</p>
+
+<p>해당 파일은 jasper2의 <a href="https://github.com/jekyller/jasper2/blob/master/Rakefile">Rakefile</a>을 사용하였습니다.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#############################################################################</span>
+<span class="c1">#</span>
+<span class="c1"># Modified version of jekyllrb Rakefile</span>
+<span class="c1"># https://github.com/jekyll/jekyll/blob/master/Rakefile</span>
+<span class="c1">#</span>
+<span class="c1">#############################################################################</span>
+
+<span class="nb">require</span> <span class="s1">'rake'</span>
+<span class="nb">require</span> <span class="s1">'date'</span>
+<span class="nb">require</span> <span class="s1">'yaml'</span>
+
+
+<span class="no">CONFIG</span> <span class="o">=</span> <span class="no">YAML</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="s1">'_config.yml'</span><span class="p">))</span>
+<span class="no">USERNAME</span> <span class="o">=</span> <span class="no">CONFIG</span><span class="p">[</span><span class="s2">"username"</span><span class="p">]</span>
+<span class="no">REPO</span> <span class="o">=</span> <span class="no">CONFIG</span><span class="p">[</span><span class="s2">"repo"</span><span class="p">]</span>
+<span class="no">SOURCE_BRANCH</span> <span class="o">=</span> <span class="no">CONFIG</span><span class="p">[</span><span class="s2">"branch"</span><span class="p">]</span>
+<span class="no">DESTINATION_BRANCH</span> <span class="o">=</span> <span class="s2">"gh-pages"</span>
+
+<span class="k">def</span> <span class="nf">check_destination</span>
+  <span class="k">unless</span> <span class="no">Dir</span><span class="p">.</span><span class="nf">exist?</span> <span class="no">CONFIG</span><span class="p">[</span><span class="s2">"destination"</span><span class="p">]</span>
+    <span class="n">sh</span> <span class="s2">"git clone https://$GIT_NAME:$GH_TOKEN@github.com/</span><span class="si">#{</span><span class="no">USERNAME</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="no">REPO</span><span class="si">}</span><span class="s2">.git </span><span class="si">#{</span><span class="no">CONFIG</span><span class="p">[</span><span class="s2">"destination"</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">namespace</span> <span class="ss">:site</span> <span class="k">do</span>
+  <span class="n">desc</span> <span class="s2">"Generate the site"</span>
+  <span class="n">task</span> <span class="ss">:build</span> <span class="k">do</span>
+    <span class="n">check_destination</span>
+    <span class="n">sh</span> <span class="s2">"bundle exec jekyll build"</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s2">"Generate the site and serve locally"</span>
+  <span class="n">task</span> <span class="ss">:serve</span> <span class="k">do</span>
+    <span class="n">check_destination</span>
+    <span class="n">sh</span> <span class="s2">"bundle exec jekyll serve"</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s2">"Generate the site, serve locally and watch for changes"</span>
+  <span class="n">task</span> <span class="ss">:watch</span> <span class="k">do</span>
+    <span class="n">sh</span> <span class="s2">"bundle exec jekyll serve --watch"</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s2">"Generate the site and push changes to remote origin"</span>
+  <span class="n">task</span> <span class="ss">:deploy</span> <span class="k">do</span>
+    <span class="c1"># Detect pull request</span>
+    <span class="k">if</span> <span class="no">ENV</span><span class="p">[</span><span class="s1">'TRAVIS_PULL_REQUEST'</span><span class="p">].</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">to_i</span> <span class="o">&gt;</span> <span class="mi">0</span>
+      <span class="nb">puts</span> <span class="s1">'Pull request detected. Not proceeding with deploy.'</span>
+      <span class="nb">exit</span>
+    <span class="k">end</span>
+
+    <span class="c1"># Configure git if this is run in Travis CI</span>
+    <span class="k">if</span> <span class="no">ENV</span><span class="p">[</span><span class="s2">"TRAVIS"</span><span class="p">]</span>
+      <span class="n">sh</span> <span class="s2">"git config --global user.name $GIT_NAME"</span>
+      <span class="n">sh</span> <span class="s2">"git config --global user.email $GIT_EMAIL"</span>
+      <span class="n">sh</span> <span class="s2">"git config --global push.default simple"</span>
+    <span class="k">end</span>
+
+    <span class="c1"># Make sure destination folder exists as git repo</span>
+    <span class="n">check_destination</span>
+
+    <span class="n">sh</span> <span class="s2">"git checkout </span><span class="si">#{</span><span class="no">SOURCE_BRANCH</span><span class="si">}</span><span class="s2">"</span>
+    <span class="no">Dir</span><span class="p">.</span><span class="nf">chdir</span><span class="p">(</span><span class="no">CONFIG</span><span class="p">[</span><span class="s2">"destination"</span><span class="p">])</span> <span class="p">{</span> <span class="n">sh</span> <span class="s2">"git checkout </span><span class="si">#{</span><span class="no">DESTINATION_BRANCH</span><span class="si">}</span><span class="s2">"</span> <span class="p">}</span>
+
+    <span class="c1"># Generate the site</span>
+    <span class="n">sh</span> <span class="s2">"bundle exec jekyll build"</span>
+    
+    <span class="c1"># Commit and push to github</span>
+    <span class="n">sha</span> <span class="o">=</span> <span class="sb">`git log`</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/[a-z0-9]{40}/</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="no">Dir</span><span class="p">.</span><span class="nf">chdir</span><span class="p">(</span><span class="no">CONFIG</span><span class="p">[</span><span class="s2">"destination"</span><span class="p">])</span> <span class="k">do</span>
+      <span class="c1"># check if there is anything to add and commit, and pushes it</span>
+      <span class="n">sh</span> <span class="s2">"if [ -n '$(git status)' ]; then
+            git add --all .;
+            git commit -m 'Updating to </span><span class="si">#{</span><span class="no">USERNAME</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="no">REPO</span><span class="si">}</span><span class="s2">@</span><span class="si">#{</span><span class="n">sha</span><span class="si">}</span><span class="s2">.';
+            git push --quiet origin </span><span class="si">#{</span><span class="no">DESTINATION_BRANCH</span><span class="si">}</span><span class="s2">;
+         fi"</span>
+      <span class="nb">puts</span> <span class="s2">"Pushed updated branch </span><span class="si">#{</span><span class="no">DESTINATION_BRANCH</span><span class="si">}</span><span class="s2"> to GitHub Pages"</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre></div></div>
+<p>저장 후 travis-ci가 잘 작동하는지 확인해 봅니다.</p>
+
+<p>Commit - Push!</p>
+
+<p>진행상황은 travis-ci 페이지에서 확인 할 수 있습니다.</p>
+
+<p>두근두근.. <del>에러-수정-빌드-에러-수정-빌드-에러…-빌드</del> 완성!!</p>
+
+<p>약 2~3분정도의 시간이 소요됩니다! 2분 45초정도 소요 되었네요..!</p>
+
+<hr />
+
+<h2 id="마치며">마치며</h2>
+<p>새로운 저장소를 만들고 한번더 <code class="highlighter-rouge">theme</code>와 <code class="highlighter-rouge">travis-ci</code>를 연동시켜보니 어느정도 익숙해진 것 같습니다</p>
+
+<p>이제 다음 포스팅에서는 검색 서비스인 <code class="highlighter-rouge">algolia</code>, 댓글 기능을 제공하는 <code class="highlighter-rouge">disqus</code> 를 적용시켜보고 <code class="highlighter-rouge">blogging</code> 포스팅을 마치겠습니다!</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#travis-ci" class="page__taxonomy-item" rel="tag">travis-ci</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#blogging" class="page__taxonomy-item" rel="tag">blogging</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2018-07-02">July 02, 2018</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Travis-ci%EB%A5%BC+%EC%9D%B4%EC%9A%A9%ED%95%B4+%EB%B0%B0%ED%8F%AC+%EC%9E%90%EB%8F%99%ED%99%94+%EC%8B%9C%ED%82%A4%EA%B8%B0%20https%3A%2F%2Fblog.imreplay.xyz%2Fblogging%2FTravis-ci%25EB%25A5%25BC-%25ED%2586%25B5%25ED%2595%25B4-%25EB%25B0%25B0%25ED%258F%25AC%25EC%259E%2590%25EB%258F%2599%25ED%2599%2594%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.imreplay.xyz%2Fblogging%2FTravis-ci%25EB%25A5%25BC-%25ED%2586%25B5%25ED%2595%25B4-%25EB%25B0%25B0%25ED%258F%25AC%25EC%259E%2590%25EB%258F%2599%25ED%2599%2594%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fblog.imreplay.xyz%2Fblogging%2FTravis-ci%25EB%25A5%25BC-%25ED%2586%25B5%25ED%2595%25B4-%25EB%25B0%25B0%25ED%258F%25AC%25EC%259E%2590%25EB%258F%2599%25ED%2599%2594%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fblog.imreplay.xyz%2Fblogging%2FTravis-ci%25EB%25A5%25BC-%25ED%2586%25B5%25ED%2595%25B4-%25EB%25B0%25B0%25ED%258F%25AC%25EC%259E%2590%25EB%258F%2599%25ED%2599%2594%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/" class="pagination--pager" title="minimal mistakes 테마를 이용해 github.io 블로그 구축하기
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/" rel="permalink">minimal mistakes 테마를 이용해 github.io 블로그 구축하기
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 분 소요
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Intro
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blogging/config-yml/" rel="permalink">_config.yml 설정하기
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  5 분 소요
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">minimal-mistakes 테마의 기본 _config.yml을 수정한 내용입니다
+
+</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+    <div class="search-hits"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+    
+    
+      <li><a href="https://www.facebook.com/imreplay08"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+    
+    
+      <li><a href="https://github.com/imreplay"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Imreplay. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '237ZENFYNY',
+  apiKey: '5cfd50ded1da95d695708070be40e3b9',
+  indexName: 'blog',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+
+
+    
+
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.imreplay.xyz/blogging/Travis-ci%EB%A5%BC-%ED%86%B5%ED%95%B4-%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/blogging/Travis-ci를 통해 배포자동화"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://imreplay-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+  </body>
+</html>
