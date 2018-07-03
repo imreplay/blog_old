@@ -1,0 +1,801 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.12.0 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Travis-ci를 이용해 Github.io 블로그에 검색도구인 Algoria를 적용시켜보자. - Imreplay blog</title>
+<meta name="description" content="검색 도구인 algolia를 github.io에 적용시키기">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Imreplay blog">
+<meta property="og:title" content="Travis-ci를 이용해 Github.io 블로그에 검색도구인 Algoria를 적용시켜보자.">
+<meta property="og:url" content="https://blog.imreplay.xyz/blogging/%EA%B2%80%EC%83%89-%EB%8F%84%EA%B5%AC%EC%9D%B8-Algoria%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90/">
+
+
+  <meta property="og:description" content="검색 도구인 algolia를 github.io에 적용시키기">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2018-07-03T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2018-07-03T16:07:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://blog.imreplay.xyz/blogging/%EA%B2%80%EC%83%89-%EB%8F%84%EA%B5%AC%EC%9D%B8-Algoria%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Imreplay",
+      "url": "https://blog.imreplay.xyz",
+      "sameAs": null
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="xB_FaqQvoAp-dvqEfpniaX0-RI1i_ZPBaISJEOphzR0" />
+
+
+
+
+
+  <meta name="naver-site-verification" content="33fb43905fdb96708b2bde0a9edace6cd2638167">
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Imreplay blog Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- google ad sense -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5072558553152830",
+    enable_page_level_ads: true
+  });
+</script>
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Imreplay blog</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="https://blog.imreplay.xyz/about/" >About</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="https://blog.imreplay.xyz/categories/" >Category</a>
+            </li>
+          
+        </ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/img/profile.jpg" alt="Imreplay" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Imreplay</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        천천히 굴러가는 개인 공부 블로그
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Republic of Korea</span>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://blog.imreplay.xyz" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i> 웹사이트
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="mailto:imreplay@imreplay.xyz">
+            <meta itemprop="email" content="imreplay@imreplay.xyz" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> 이메일
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/imreplay08" itemprop="sameAs">
+            <i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/imreplay" itemprop="sameAs">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Travis-ci를 이용해 Github.io 블로그에 검색도구인 Algoria를 적용시켜보자.">
+    <meta itemprop="description" content="검색 도구인 algolia를 github.io에 적용시키기">
+    <meta itemprop="datePublished" content="July 03, 2018">
+    <meta itemprop="dateModified" content="July 03, 2018">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Travis-ci를 이용해 Github.io 블로그에 검색도구인 Algoria를 적용시켜보자.
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 분 소요
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#intro">Intro</a></li>
+  <li><a href="#algolia-설정하기">algolia 설정하기</a></li>
+  <li><a href="#요금-정책-선택">요금 정책 선택</a></li>
+  <li><a href="#설정하기">설정하기</a></li>
+  <li><a href="#gemfile-에-gem-추가하기">Gemfile 에 Gem 추가하기</a></li>
+  <li><a href="#travis-ci에-api-key-추가-해주기">Travis-ci에 API key 추가 해주기</a></li>
+  <li><a href="#rakefile-수정하기">Rakefile 수정하기</a></li>
+  <li><a href="#outtro">Outtro</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <h2 id="intro">Intro</h2>
+
+<p>이번 포스팅에서는 검색도구인 algolia를 jekyll에서 적용시키는 방법에 대해 포스팅하겠습니다.</p>
+
+<p>먼저 어떻게 생긴 친구인지 한번 보고 시작하는 것도 나쁘지 않겠죠?</p>
+
+<p><img src="/assets/img/algolia.jpg" alt="algolia" /></p>
+
+<p>검색한 키워드를 하이라이팅 해주고 비슷한 단어에 대한 검색도 해줘서 오타가 있어도 어느정도 검색결과가 안정적으로 나오는 것을 보고 선택하게 되었습니다.</p>
+
+<h2 id="algolia-설정하기">algolia 설정하기</h2>
+
+<p class="notice">포스팅에서 사용되는 환경은 Travis-ci 를 사용한 환경입니다.
+Githib pages 를 사용한 환경은 <a href="https://community.algolia.com/jekyll-algolia/github-pages.html">https://community.algolia.com/jekyll-algolia/github-pages.html</a> 를 참고 바랍니다.</p>
+
+<p>먼저 <a href="https://www.algolia.com/">algolia</a> 사이트에 접속하여 회원가입을 해줍니다.</p>
+
+<p><img src="/assets/img/algolia-signup.jpg" alt="algolia-signup.jpg" /></p>
+
+<p>Github를 통한 로그인 기능을 지원하므로 간단하게 가입이 가능합니다.</p>
+
+<p>간단한 개인정보를 입력하는 창이 나옵니다.</p>
+
+<p><img src="/assets/img/algolia-signup2.jpg" alt="algolia-signup2.jpg" /></p>
+
+<p>다음으로 데이터센터를 선택하는 부분입니다.</p>
+
+<p>가깝고 빠른 데이터 센터로 하시면 됩니다.</p>
+
+<p><img src="/assets/img/algolia-signup3.jpg" alt="algolia-signup3.jpg" /></p>
+
+<p>뭔가를 물어보는 것 같지만 <code class="highlighter-rouge">Skip</code> 이라는 버튼이 있는걸 보니 꼭 필요한건 아닌가 봅니다</p>
+
+<p>가볍게 <code class="highlighter-rouge">skip</code> 을 눌러줍니다.</p>
+
+<p><img src="/assets/img/algolia-signup4.jpg" alt="algolia-signup4.jpg" /></p>
+
+<p>이렇게 가입이 끝났습니다.</p>
+
+<p><img src="/assets/img/algolia-signup5.jpg" alt="algolia-signup5.jpg" /></p>
+
+<p>대시보드로 이동해봅시다.</p>
+
+<p>튜토리얼을 할것인지 물어봅니다. 원하시는 분들은 들어보시면 됩니다!</p>
+
+<p>튜토리얼부분은 넘어가도록하겠습니다.</p>
+
+<h2 id="요금-정책-선택">요금 정책 선택</h2>
+
+<p>메인페이지에서 가장 눈에 띄는 부분은 상단의 <code class="highlighter-rouge">ESSENTIAL plan - 14 free days remaining</code> 라는 부분입니다.</p>
+
+<p>검색 서비스 요금 정책에 관한 내용인거 같군요 14일 무료라고 하지만 뭔가 찝찝하신 분들은 우측 하단에 보이는 <code class="highlighter-rouge">CHAHNGE PLAN</code> 버튼을 눌러 COMMUNITY 를 선택하시면 됩니다.</p>
+
+<p>ESSENTIAL 부분에 <code class="highlighter-rouge">FREE FOR OPEN SOURCE</code> 라고 적혀있는 걸 보니 잘 살펴보시고 해당하시면 신청해보는 것도 좋은 것 같습니다!</p>
+
+<h2 id="설정하기">설정하기</h2>
+<p>이제 기본적인 설정을 해보겠습니다.</p>
+
+<p>좌측 메뉴중에 <code class="highlighter-rouge">Indices</code> 탭을 선택하여 줍니다.
+<img src="/assets/img/algolia-setup1.jpg" alt="algolia-set.jpg" /></p>
+
+<p>예제로 만들어진 인덱스가 존재하는 것 같군요. <code class="highlighter-rouge">MANAGE CURRENT INDEX</code> 를 눌러 DELETE 해줍니다.</p>
+
+<p><img src="/assets/img/algolia-setup1.5.jpg" alt="algolia-set.jpg" /></p>
+
+<p>다음으로 <code class="highlighter-rouge">New index</code>를 눌러 새로운 인덱스를 추가해 줍니다.</p>
+
+<p>적당한 Index name을 기입하여 준 후 <code class="highlighter-rouge">CREATE</code>를 눌러 새로운 인덱스를 생성합니다.</p>
+
+<p><img src="/assets/img/algolia-setup2.jpg" alt="algolia-set.jpg" /></p>
+
+<p>새로운 인덱스가 만들어 진것을 확인 후 좌측의 API Keys 를 선택해줍니다.</p>
+
+<p><img src="/assets/img/algolia-setup3.jpg" alt="algolia-set.jpg" /></p>
+
+<p><code class="highlighter-rouge">Application ID</code>와 <code class="highlighter-rouge">Search-Only API Key</code>를 확인할 수 있습니다.</p>
+
+<p>이제 블로그에 적용 시켜보도록 하겠습니다.</p>
+
+<p><code class="highlighter-rouge">_config.yml</code> 파일의 search 부분을 찾아 수정해줍니다.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">search                   </span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># true, false (default)</span>
+<span class="na">search_full_content      </span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># true, false (default)</span>
+<span class="na">search_provider          </span><span class="pi">:</span> <span class="s">algolia</span> <span class="c1"># lunr (default), algolia, google</span>
+<span class="na">algolia</span><span class="pi">:</span>
+  <span class="na">application_id         </span><span class="pi">:</span> <span class="s">237ZENFYNY</span> <span class="c1"># YOUR_APPLICATION_ID</span>
+  <span class="na">index_name             </span><span class="pi">:</span> <span class="s">blog</span> <span class="c1"># YOUR_INDEX_NAME</span>
+  <span class="na">search_only_api_key    </span><span class="pi">:</span> <span class="s">5cfd50ded1da95d695708070be40e3b9</span> <span class="c1"># YOUR_SEARCH_ONLY_API_KEY</span>
+  <span class="na">powered_by             </span><span class="pi">:</span> <span class="c1"># true (default), false</span>
+</code></pre></div></div>
+
+<p>search_provider 는 algolia 를 입력 해주고, <code class="highlighter-rouge">application_id</code>, <code class="highlighter-rouge">search_only_api_key</code> 는 API keys에서 보여지는 값들을 입력해줍니다.</p>
+
+<p><code class="highlighter-rouge">index_name</code> 에는 방금전에 index를 생성할 때 입력했던 값을 넣어주면 됩니다.</p>
+
+<h2 id="gemfile-에-gem-추가하기">Gemfile 에 Gem 추가하기</h2>
+
+<p><code class="highlighter-rouge">"jekyll-algolia"</code> Gem 을 Gemfile에 :jekyll_plugins 섹션에 추가해줍니다.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">group</span> <span class="ss">:jekyll_plugins</span> <span class="k">do</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-feed"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-seo-tag"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-sitemap"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-paginate"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-algolia"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h2 id="travis-ci에-api-key-추가-해주기">Travis-ci에 API key 추가 해주기</h2>
+
+<p><a href="https://travis-ci.org">Travis-ci</a> 에 접속하여 원하는 <code class="highlighter-rouge">repo</code> 의 Settings에 접속합니다.</p>
+
+<p>Name 값으로는 <code class="highlighter-rouge">ALGOLIA_API_KEY</code>를 , Value 값에는 algolia 사이트의 API keys 탭에 있는 Admin API Key 값을 복사하여 적어줍니다.</p>
+
+<p><img src="/assets/img/algolia-setup4.jpg" alt="algolia-setup4.jpg" /></p>
+
+<p>Build log에는 Display되면 안되므로 그대로 둔 후 Add 해줍니다.</p>
+
+<p><img src="/assets/img/algolia-setup5.jpg" alt="algolia-setup5.jpg" /></p>
+
+<p>이런식으로 환경변수에 추가된 것을 확인할 수 있습니다.</p>
+
+<h2 id="rakefile-수정하기">Rakefile 수정하기</h2>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">##중략</span>
+
+<span class="c1"># Generate the site</span>
+    <span class="n">sh</span> <span class="s2">"bundle exec jekyll build"</span>
+
+<span class="c1"># Run Algolia </span>
+    <span class="n">sh</span> <span class="s2">"bundle exec jekyll algolia"</span>
+
+
+<span class="c1">##중략</span>
+</code></pre></div></div>
+
+<p>빌드 후 algolia에 해당 내용을 전달하여 검색을 빠르게 진행할 수 있도록 합니다.</p>
+
+<p>저장 후 커밋 해주면 검색기능을 사용할 수 있습니다.</p>
+
+<h2 id="outtro">Outtro</h2>
+<p>포스팅을 작성하면서 <code class="highlighter-rouge">ESSENTIAL</code> 플랜에 <code class="highlighter-rouge">FREE FOR OPEN SOURCE</code> 문구가 달려있는걸 발견했네요 얼른 읽어보러 가야겠습니다!</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#disqus" class="page__taxonomy-item" rel="tag">disqus</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#blogging" class="page__taxonomy-item" rel="tag">blogging</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2018-07-03">July 03, 2018</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Travis-ci%EB%A5%BC+%EC%9D%B4%EC%9A%A9%ED%95%B4+Github.io+%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%97%90+%EA%B2%80%EC%83%89%EB%8F%84%EA%B5%AC%EC%9D%B8+Algoria%EB%A5%BC+%EC%A0%81%EC%9A%A9%EC%8B%9C%EC%BC%9C%EB%B3%B4%EC%9E%90.%20https%3A%2F%2Fblog.imreplay.xyz%2Fblogging%2F%25EA%25B2%2580%25EC%2583%2589-%25EB%258F%2584%25EA%25B5%25AC%25EC%259D%25B8-Algoria%25EB%25A5%25BC-%25EC%25A0%2581%25EC%259A%25A9%25ED%2595%25B4%25EB%25B3%25B4%25EC%259E%2590%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.imreplay.xyz%2Fblogging%2F%25EA%25B2%2580%25EC%2583%2589-%25EB%258F%2584%25EA%25B5%25AC%25EC%259D%25B8-Algoria%25EB%25A5%25BC-%25EC%25A0%2581%25EC%259A%25A9%25ED%2595%25B4%25EB%25B3%25B4%25EC%259E%2590%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fblog.imreplay.xyz%2Fblogging%2F%25EA%25B2%2580%25EC%2583%2589-%25EB%258F%2584%25EA%25B5%25AC%25EC%259D%25B8-Algoria%25EB%25A5%25BC-%25EC%25A0%2581%25EC%259A%25A9%25ED%2595%25B4%25EB%25B3%25B4%25EC%259E%2590%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fblog.imreplay.xyz%2Fblogging%2F%25EA%25B2%2580%25EC%2583%2589-%25EB%258F%2584%25EA%25B5%25AC%25EC%259D%25B8-Algoria%25EB%25A5%25BC-%25EC%25A0%2581%25EC%259A%25A9%25ED%2595%25B4%25EB%25B3%25B4%25EC%259E%2590%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/blogging/Travis-ci%EB%A5%BC-%ED%86%B5%ED%95%B4-%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94/" class="pagination--pager" title="Travis-ci를 이용해 배포 자동화 시키기
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blogging/Travis-ci%EB%A5%BC-%ED%86%B5%ED%95%B4-%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94/" rel="permalink">Travis-ci를 이용해 배포 자동화 시키기
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 분 소요
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Travis-ci 라는 배포자동화 도구를 통해 github에 푸시 하면 자동으로 빌드 후 gh-pages에 푸시 해주는 서비스를 블로그와 연동시키는 방법
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/" rel="permalink">minimal mistakes 테마를 이용해 github.io 블로그 구축하기
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 분 소요
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">저장소를 fork하여 github pages 또는 travis-ci설정에 맞게 기본적인 환경설정을 하는 방법에 대하여
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blogging/config-yml/" rel="permalink">_config.yml 설정하기
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  5 분 소요
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">minimal-mistakes 테마에서의 _config.yml 설정에 대하여
+</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+    <div class="search-hits"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+    
+    
+      <li><a href="https://www.facebook.com/imreplay08"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+    
+    
+      <li><a href="https://github.com/imreplay"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Imreplay. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '237ZENFYNY',
+  apiKey: '5cfd50ded1da95d695708070be40e3b9',
+  indexName: 'blog',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120523980-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120523980-2', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    
+
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.imreplay.xyz/blogging/%EA%B2%80%EC%83%89-%EB%8F%84%EA%B5%AC%EC%9D%B8-Algoria%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/blogging/검색 도구인 Algoria를 적용해보자"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://imreplay-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+  </body>
+</html>
