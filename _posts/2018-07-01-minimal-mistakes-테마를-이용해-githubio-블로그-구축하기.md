@@ -32,6 +32,8 @@ toc_sticky: true
 
 저의 경우 [minimal mistakes 테마](https://github.com/mmistakes/minimal-mistakes) 를 사용했습니다.
 
+![fork](/assets/img/fork.jpg)
+
 위 저장소에 접속 하여 우측 상단의 Fork 버튼을 눌러 자신의 저장소로 복제 해 줍시다.
 
 그 후 테마에 포함되어있는 불필요한 파일들을 삭제 해 줍니다.
