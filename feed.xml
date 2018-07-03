@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://blog.imreplay.xyz/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.imreplay.xyz/" rel="alternate" type="text/html" /><updated>2018-07-02T16:37:25+09:00</updated><id>https://blog.imreplay.xyz/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's personal website.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email><uri>https://blog.imreplay.xyz</uri></author><entry><title type="html">Travis-ci를 이용해 배포 자동화 시키기</title><link href="https://blog.imreplay.xyz/blogging/Travis-ci%EB%A5%BC-%ED%86%B5%ED%95%B4-%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94/" rel="alternate" type="text/html" title="Travis-ci를 이용해 배포 자동화 시키기" /><published>2018-07-02T00:00:00+09:00</published><updated>2018-07-02T12:33:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/Travis-ci%EB%A5%BC%20%ED%86%B5%ED%95%B4%20%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/Travis-ci%EB%A5%BC-%ED%86%B5%ED%95%B4-%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94/">&lt;p&gt;저번 포스팅에서는 minimal-mistake 테마를 이용해서 기본적인 설정을 했습니다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://blog.imreplay.xyz/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.imreplay.xyz/" rel="alternate" type="text/html" /><updated>2018-07-03T15:09:14+09:00</updated><id>https://blog.imreplay.xyz/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's personal website.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email><uri>https://blog.imreplay.xyz</uri></author><entry><title type="html">Travis-ci를 이용해 배포 자동화 시키기</title><link href="https://blog.imreplay.xyz/blogging/Travis-ci%EB%A5%BC-%ED%86%B5%ED%95%B4-%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94/" rel="alternate" type="text/html" title="Travis-ci를 이용해 배포 자동화 시키기" /><published>2018-07-02T00:00:00+09:00</published><updated>2018-07-02T12:33:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/Travis-ci%EB%A5%BC%20%ED%86%B5%ED%95%B4%20%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/Travis-ci%EB%A5%BC-%ED%86%B5%ED%95%B4-%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94/">&lt;p&gt;저번 포스팅에서는 minimal-mistake 테마를 이용해서 기본적인 설정을 했습니다.&lt;/p&gt;
 
 &lt;p&gt;이번 포스팅에서는 minimal-mistake 테마에서 Travis-ci라는 서비스를 이용하여 Github에 push하면 자동으로 build 및 gh-pages 브랜치에 push 하는 방법에 대하여 포스팅 하고자 합니다.&lt;/p&gt;
 
@@ -88,6 +88,8 @@
 
 &lt;p&gt;제일 간편한 방법으로 가봅시다.&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;/assets/img/gh-page.jpg&quot; alt=&quot;gh-page&quot; /&gt;&lt;/p&gt;
+
 &lt;ol&gt;
   &lt;li&gt;
     &lt;p&gt;Github 저장소로 갑니다!&lt;/p&gt;
@@ -111,13 +113,54 @@
 
 &lt;p&gt;&lt;a href=&quot;https://travis-ci.org/&quot;&gt;travis-ci.org&lt;/a&gt; 에 접속하여 github 계정으로 로그인 합니다.&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;/assets/img/travis-ci.jpg&quot; alt=&quot;travis-ci&quot; /&gt;&lt;/p&gt;
+
 &lt;p&gt;우측 상단의 프로필 메뉴를 클릭해 들어가서,&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;/assets/img/travis-profile.jpg&quot; alt=&quot;travis-profile&quot; /&gt;&lt;/p&gt;
+
 &lt;p&gt;목록에 보이는 repo 목록중 해당하는 repo를 찾아 활성화 시켜줍니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/travis-active.jpg&quot; alt=&quot;travis-active&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;travis-ci 서비스에서 github에 push 할 수 있게 Token을 발급해줍니다.&lt;/p&gt;
 
 &lt;p&gt;토큰은 Setting - Developer settings - Personal access tokens 에서 발급받을 수 있습니다.&lt;/p&gt;
+
+&lt;figure class=&quot;third &quot;&gt;
+  
+    
+      &lt;a href=&quot;/assets/img/git-set.jpg&quot;&gt;
+        &lt;img src=&quot;/assets/img/git-set.jpg&quot; alt=&quot;&quot; /&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;/assets/img/git-set2.jpg&quot;&gt;
+        &lt;img src=&quot;/assets/img/git-set2.jpg&quot; alt=&quot;&quot; /&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;/assets/img/git-set3.jpg&quot;&gt;
+        &lt;img src=&quot;/assets/img/git-set3.jpg&quot; alt=&quot;&quot; /&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;/assets/img/git-set4.jpg&quot;&gt;
+        &lt;img src=&quot;/assets/img/git-set4.jpg&quot; alt=&quot;&quot; /&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;/assets/img/git-set5.jpg&quot;&gt;
+        &lt;img src=&quot;/assets/img/git-set5.jpg&quot; alt=&quot;&quot; /&gt;
+      &lt;/a&gt;
+    
+  
+  
+&lt;/figure&gt;
 
 &lt;p&gt;Generate new Token을 눌러 새로운 토큰을 만들어 줍니다.&lt;/p&gt;
 
@@ -256,6 +299,8 @@
 
 &lt;p&gt;두근두근.. &lt;del&gt;에러-수정-빌드-에러-수정-빌드-에러…-빌드&lt;/del&gt; 완성!!&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;/assets/img/success.jpg&quot; alt=&quot;success&quot; /&gt;&lt;/p&gt;
+
 &lt;p&gt;약 2~3분정도의 시간이 소요됩니다! 2분 45초정도 소요 되었네요..!&lt;/p&gt;
 
 &lt;hr /&gt;
@@ -280,6 +325,8 @@
 &lt;h2 id=&quot;테마-fork-후-불필요한-내용-삭제&quot;&gt;테마 Fork 후 불필요한 내용 삭제&lt;/h2&gt;
 
 &lt;p&gt;저의 경우 &lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes&quot;&gt;minimal mistakes 테마&lt;/a&gt; 를 사용했습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/fork.jpg&quot; alt=&quot;fork&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;위 저장소에 접속 하여 우측 상단의 Fork 버튼을 눌러 자신의 저장소로 복제 해 줍시다.&lt;/p&gt;
 
