@@ -329,6 +329,7 @@
   <li><a href="#gh-pages-브랜치-만들기">gh-pages 브랜치 만들기</a></li>
   <li><a href="#travis-ci-연결하고-토큰-발급-받기">travis-ci 연결하고 토큰 발급 받기</a></li>
   <li><a href="#secure-값-발급-받기">secure 값 발급 받기</a></li>
+  <li><a href="#jekyll_env-환경변수-추가해주기">JEKYLL_ENV 환경변수 추가해주기</a></li>
   <li><a href="#rakefile-작성">Rakefile 작성</a></li>
   <li><a href="#마치며">마치며</a></li>
 </ul>
@@ -541,6 +542,18 @@
 
 <hr />
 
+<h2 id="jekyll_env-환경변수-추가해주기">JEKYLL_ENV 환경변수 추가해주기</h2>
+
+<p>몇몇 기능들은 <code class="highlighter-rouge">JEKYLL_ENV</code> 환경변수가 <code class="highlighter-rouge">production </code>일때만 작동하는 부분이 있습니다, 댓글기능, 구글 애널리틱스 등이 포함되어 있습니다.</p>
+
+<p>Default 값은 development 로 정의 되어있는데 이걸 <code class="highlighter-rouge">production</code> 으로 바꾸어 줍시다.</p>
+
+<p>travis-ci 페이지에서 프로필로 들어가 원하는 repo의 <code class="highlighter-rouge">Settings</code>로 들어갑니다.</p>
+
+<p><img src="/assets/img/env.jpg" alt="env" /></p>
+
+<p><code class="highlighter-rouge">Environment Variables</code> 부분을 찾아 그림과 같이 Name 부분에 <code class="highlighter-rouge">JEKYLL_ENV</code>, Value 부분에 <code class="highlighter-rouge">production</code>을 입력하고 build logdp 표시 될지 여부를 선택 한 후 <code class="highlighter-rouge">Add</code>를 눌러 환경변수를 추가 해 줍니다.</p>
+
 <h2 id="rakefile-작성">Rakefile 작성</h2>
 
 <p>최상위 경로에 <code class="highlighter-rouge">Rakefile</code> 파일을 수정합니다.</p>
@@ -726,14 +739,6 @@
 
     </div>
 
-    
-      <div class="page__comments">
-  
-  
-      <h4 class="page__comments-title">댓글남기기</h4>
-      <section id="disqus_thread"></section>
-    
-</div>
     
   </article>
 
