@@ -258,6 +258,24 @@ compress_html:
 
 # Defaults
 defaults:
+
+  # _posts/blogging
+  - scope:
+      path: "_posts/blogging"
+      type: posts
+    values:
+      layout: single
+      classes: wide
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      search: true
+      related: true
+      sidebar:
+        nav: sidebar-blogging
+
+
   # _posts
   - scope:
       path: ""
