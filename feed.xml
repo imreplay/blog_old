@@ -1,4 +1,129 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://blog.imreplay.xyz/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.imreplay.xyz/" rel="alternate" type="text/html" /><updated>2018-07-07T00:03:23+09:00</updated><id>https://blog.imreplay.xyz/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's personal website.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><entry><title type="html">Travis-ci를 이용해 Github.io 블로그에 검색도구인 Algolia를 적용시켜보자.</title><link href="https://blog.imreplay.xyz/blogging/%EA%B2%80%EC%83%89-%EB%8F%84%EA%B5%AC%EC%9D%B8-Algolia%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90/" rel="alternate" type="text/html" title="Travis-ci를 이용해 Github.io 블로그에 검색도구인 Algolia를 적용시켜보자." /><published>2018-07-03T00:00:00+09:00</published><updated>2018-07-03T16:07:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/%EA%B2%80%EC%83%89%20%EB%8F%84%EA%B5%AC%EC%9D%B8%20Algolia%EB%A5%BC%20%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/%EA%B2%80%EC%83%89-%EB%8F%84%EA%B5%AC%EC%9D%B8-Algolia%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90/">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://blog.imreplay.xyz/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.imreplay.xyz/" rel="alternate" type="text/html" /><updated>2018-07-07T00:06:45+09:00</updated><id>https://blog.imreplay.xyz/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's personal website.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><entry><title type="html">블로그 개발 환경 구축 정리</title><link href="https://blog.imreplay.xyz/blogging/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95/" rel="alternate" type="text/html" title="블로그 개발 환경 구축 정리" /><published>2018-07-06T00:00:00+09:00</published><updated>2018-07-07T00:03:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95/">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+
+&lt;p&gt;이번 포스팅에서는 블로그를 운영하는 환경에 대해 포스팅 해보려고 합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;기본적인-것들&quot;&gt;기본적인 것들&lt;/h2&gt;
+&lt;p&gt;먼저 현재 이 블로그는 &lt;code class=&quot;highlighter-rouge&quot;&gt;Github.io&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt;을 기반으로 합니다.&lt;/p&gt;
+
+&lt;p&gt;테마는 &lt;code class=&quot;highlighter-rouge&quot;&gt;minimal-mistake&lt;/code&gt; 테마를 사용하고 있으며,&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;travis-ci&lt;/code&gt;를 통해 &lt;code class=&quot;highlighter-rouge&quot;&gt;Github&lt;/code&gt;에 Push 되었을 경우 아래의 과정을 자동으로 수행합니다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Clone(저장소를 복제) -&amp;gt; build(정적 사이트 생성) -&amp;gt; Algolia에 검색 데이터 업데이트 
+-&amp;gt; Deploy(gh-pages 브랜치에 Push)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;디렉토리-구조&quot;&gt;디렉토리 구조&lt;/h2&gt;
+&lt;p&gt;현재 제가 구축한 페이지의 전반적인 구조입니다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;_data #다양한 데이터 파일 존재
+ ㄴ navigation.yml # 네비게이션바, 사이드바 등이 정의 되어있음
+ ㄴ ui-text.yml # 언어별 표시되는 단어들에 대한 설정
+ 
+_drafts # 포스팅 초안이 저장되는 곳이며 jekyll serve 명령에도 포스트가 생성되지 않음
+
+_includes # include 를 사용하여 가져올수 있는 파일들 (사실 너무 많아서 다 못봄..)
+
+_layouts # 사이트의 전체적인 레이아웃부터 부분부분에 대한 레이아웃을 설정해주는 부분
+
+_posts # 포스팅 작성용도
+ ㄴ blogging #블로그 만드는 과정 정리
+ 
+_pages #404 페이지, about 페이지 등이 있음
+
+_sass #css 파일들이 저장되어있는부분
+
+_assets # 이미지, js파일을 보관하는 용도로 사용
+
+files # 파일들을 올려두고 필요할때 다운받으려고 만들어둔 폴더, 포스팅과는 크게 관계 없음.
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;구름-ide&quot;&gt;구름 IDE&lt;/h2&gt;
+&lt;p&gt;기존까지의 개발환경은 Git 저장소를 매번 Clone 해서 &lt;code class=&quot;highlighter-rouge&quot;&gt;Visual Studio Code&lt;/code&gt; 를 통해 수정 후 Push 하는 방식이었으나, 며칠전 불편함을 느끼고 &lt;code class=&quot;highlighter-rouge&quot;&gt;구름 IDE&lt;/code&gt;로 변경하였습니다.&lt;/p&gt;
+
+&lt;p&gt;구름 IDE 개발 환경은 다음과 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ruby 빈 프로젝트 사용&lt;/li&gt;
+  &lt;li&gt;Free 요금 plan 사용&lt;/li&gt;
+  &lt;li&gt;구름 IDE에서 제공하는 URL을 통해 테스트 서버 구동 및 확인&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;jekyll-환경-구축&quot;&gt;jekyll 환경 구축&lt;/h2&gt;
+&lt;p&gt;구름 IDE에 Ruby 빈 프로젝트를 사용하여&lt;/p&gt;
+
+&lt;p&gt;jekyll을 구동할 환경을 설정해 주었습니다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install bundler
+gem install jekyll
+
+bundle instll
+
+# 테스트 서버 구동
+bundle exec jekyll serve --host 0.0.0.0 --port 80
+
+# 초안(_draft/ 안의 파일)포함하여 보기
+bundle exec jekyll serve --host 0.0.0.0 --port 80 --draft
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;gist&quot;&gt;Gist&lt;/h2&gt;
+
+&lt;p&gt;아직까지 한번도 사용된 적이 없지만 &lt;code class=&quot;highlighter-rouge&quot;&gt;Gist&lt;/code&gt;&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; 또한 사용할 예정입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-gist&lt;/code&gt; 라는 플러그인을 통해&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% gist imreplay/fddf777205fc2202fb66b0260ca22b7e %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위와 같이 사용하면 다음과 같은 결과를 확인할 수 있습니다.&lt;/p&gt;
+&lt;noscript&gt;&lt;pre&gt;print(&amp;quot;hello gist!!&amp;quot;)&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/imreplay/fddf777205fc2202fb66b0260ca22b7e.js&quot;&gt; &lt;/script&gt;
+
+&lt;h2 id=&quot;검색-및-댓글-서비스&quot;&gt;검색 및 댓글 서비스&lt;/h2&gt;
+
+&lt;p&gt;검색 서비스는 &lt;code class=&quot;highlighter-rouge&quot;&gt;Algolia&lt;/code&gt;라는 서비스를 사용하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;설정 방법에 관하여는 &lt;a href=&quot;/blogging/검색-도구인-Algolia를-적용해보자/&quot;&gt;이 곳&lt;/a&gt; 참조&lt;/p&gt;
+
+&lt;p&gt;댓글 서비스는 &lt;code class=&quot;highlighter-rouge&quot;&gt;disqus&lt;/code&gt;를 사용하고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;위 두가지 서비스 모두 &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;파일 안에서 설정할 수 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;포스팅-과정&quot;&gt;포스팅 과정&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;초안작성&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;테스트 서버 구동 후 오탈자 확인 및 수정&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;포스팅 완료 후 _posts 디렉토리로 이동&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;커밋 후 Push&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;업데이트 된 포스팅 확인 및 오탈자 재 확인&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;수정 필요시 지속 수정&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;outtro&quot;&gt;Outtro&lt;/h2&gt;
+
+&lt;p&gt;이 포스팅은 처음으로 구름 IDE로 써보는데 신세계입니다..&lt;/p&gt;
+
+&lt;p&gt;와우…&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://gist.github.com/&quot;&gt;gist.github.com&lt;/a&gt;, 간단한 코드 조각들을 공유할 수 있는 플랫폼&amp;nbsp;&lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><category term="jekyll" /><summary type="html">블로그 환경, 개발환경 정리</summary></entry><entry><title type="html">Travis-ci를 이용해 Github.io 블로그에 검색도구인 Algolia를 적용시켜보자.</title><link href="https://blog.imreplay.xyz/blogging/%EA%B2%80%EC%83%89-%EB%8F%84%EA%B5%AC%EC%9D%B8-Algolia%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90/" rel="alternate" type="text/html" title="Travis-ci를 이용해 Github.io 블로그에 검색도구인 Algolia를 적용시켜보자." /><published>2018-07-03T00:00:00+09:00</published><updated>2018-07-03T16:07:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/%EA%B2%80%EC%83%89%20%EB%8F%84%EA%B5%AC%EC%9D%B8%20Algolia%EB%A5%BC%20%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/%EA%B2%80%EC%83%89-%EB%8F%84%EA%B5%AC%EC%9D%B8-Algolia%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90/">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
 
 &lt;p&gt;이번 포스팅에서는 검색도구인 algolia를 jekyll에서 적용시키는 방법에 대해 포스팅하겠습니다.&lt;/p&gt;
 
