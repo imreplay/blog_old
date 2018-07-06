@@ -19,6 +19,9 @@ sidebar-blogging:
       url: "/blogging/Travis-ci%EB%A5%BC-%ED%86%B5%ED%95%B4-%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94/"
     - title: "Algolia를 적용시키기"
       url: "/blogging/%EA%B2%80%EC%83%89-%EB%8F%84%EA%B5%AC%EC%9D%B8-Algolia%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90/"
+    - title: "블로그 개발 환경 구축 정리"
+      url: "/blogging/블로그-환경-구축/"
+      
   - title: "참고 코드"
     children:
       - title: "_config.yml 설정하기"
