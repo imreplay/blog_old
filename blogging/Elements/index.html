@@ -420,6 +420,7 @@
   <li><a href="#정의" id="markdown-toc-정의">정의</a></li>
   <li><a href="#수평선" id="markdown-toc-수평선">수평선</a></li>
   <li><a href="#축약어" id="markdown-toc-축약어">(축)약어</a></li>
+  <li><a href="#주석" id="markdown-toc-주석">주석</a></li>
   <li><a href="#각주" id="markdown-toc-각주">각주</a></li>
 </ul>
 
@@ -682,6 +683,18 @@ print('hello world!')
 *[HTML]: HyperText Markup Language
 </code></pre></div></div>
 <p><abbr title="HyperText Markup Language">HTML</abbr>은 하이퍼텍스트 마크업 언어(HyperText Markup Language, 문화어: 초본문표식달기언어, 하이퍼본문표식달기언어)라는 의미의 웹 페이지를 위한 지배적인 마크업 언어다.</p>
+
+<h2 id="주석">주석</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{::comment}
+이곳은 표시되지 않습니다.
+{:/comment}
+
+{::comment}이곳 또한 표시되지 않습니다.{:/}
+</code></pre></div></div>
+
+<!-- 이곳은 표시되지 않습니다. -->
+
+<p><!-- 이곳 또한 표시되지 않습니다. --></p>
 
 <h2 id="각주">각주</h2>
 <p>페이지 최하단에 표시되어집니다.</p>
