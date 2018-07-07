@@ -1,6 +1,5 @@
 printf "커밋 메시지를 입력하세요 : "
 read message
-echo "$message"
 git pull
 cd /workspace/blog-jekyll/
 git add --all  /workspace/blog-jekyll/
