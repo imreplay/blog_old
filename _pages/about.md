@@ -17,7 +17,7 @@ gallery:
     alt: "메일 서버"
     title: Mail Server
 
-last_modified_at: 2018-06-27T14:39:24-04:00
+last_modified_at: 2018-07-08T00:11:24+09:00
 toc: true
 
 ---
@@ -36,7 +36,41 @@ toc: true
  - 대학정보보호동아리연합회 KUCIS 호남권 운영진(2016)
 
 ## What I did
- - 카카오톡 API 이용 **[목포대학교 정보봇](http://pf.kakao.com/_RdDHM)** 제작
- - **개인 메일서버** 및 연구실용 **GIT 서버** 구축
- - github.io와 jekyll공부를 위해 [프로미스나인팬페이지](https://fromis9.kr) 구축
+ - 카카오톡 API 이용 **[목포대학교 정보봇](http://pf.kakao.com/_RdDHM)** 제작[^bot]
+ - **개인 메일서버** 및 연구실용 **GIT 서버** 구축[^lab]
+ - github.io와 jekyll공부를 위해 [프로미스나인팬페이지](https://fromis9.kr) 구축[^fromis9]
 {% include gallery id="gallery" caption="My Projects" %}
+
+## History
+
+* **18.06.27 블로그 개설**
+* **18.07.07 블로그 기능 추가완료 및 Blogging 카테고리 글 작성 완료**
+
+## 짦은 소개
+현재 공군 정보보호병 복무중[^rokaf]
+
+군대와서 내내 놀다가 공부하려니 하나도 기억이 나지 않아 천천히, 조금씩, 꾸준히 공부하며 기록으로 남겨두기 위한 블로그.
+
+
+포스팅 계획:
+  * 블로그 만들기 과정 포스팅 (18.07.07 [완료](/categories/#blogging))
+  * 정보보안산업기사 공부내용 정리[^secu]
+  * 보안관련 워게임 / 문제 풀이 기록[^wargame]
+  * 짤막한 이런저런 파이썬 코드 기록[^py]
+  * 책읽고 요약정리
+  
+
+
+
+  
+##### 각주[Footnote]
+
+[^secu]: 분명 주문한지 일주일이 지났는데 왜 오질 않니...
+[^wargame]: 아직 어떤 문제를 풀지, 어떤 분야를 풀지 고민중 그냥 다하는것도 재밌을거같다
+[^py]: 코딩을 정말 더럽게 한다는 친구([UBUN](https://ubun.net))의 말이 있었다. UBUN曰 : "니 코드는 어휴..."
+[^rokaf]: [UBUN](https://ubun.net) 이라는 친구와 대학동기인데 군대도 같은곳으로 왔다. 전역하고 2년이다 더 봐야한다니 어휴..
+[^bot]: 2년동안 운영했는데 얻은건 Django개발방법 약간과 파이썬으로 챗봇만드는 능력정도..?
+[^lab]: 같이쓰려고 만든건데 나 혼자 다쓴다 전역하면 도메인 새로 사서 같이 써야지!
+[^fromis9]: jekyll블로그 만드는데 가장 많은 공부를 할 수 있었던 페이지, 만들었지만 관리가...
+
+
