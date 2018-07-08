@@ -1,0 +1,812 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.12.0 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Webhacking.kr] 6번(100) 문제 풀이 - Imreplay blog</title>
+<meta name="description" content="천천히 쉬운문제부터 시작하기로 생각하고 안풀었던 문제부터 풀기 시작했다.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Imreplay blog">
+<meta property="og:title" content="[Webhacking.kr] 6번(100) 문제 풀이">
+<meta property="og:url" content="https://blog.imreplay.xyz/wargame/Webhacking-kr-06/">
+
+
+  <meta property="og:description" content="천천히 쉬운문제부터 시작하기로 생각하고 안풀었던 문제부터 풀기 시작했다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2018-07-08T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2018-07-08T22:53:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://blog.imreplay.xyz/wargame/Webhacking-kr-06/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Imreplay",
+      "url": "https://blog.imreplay.xyz",
+      "sameAs": null
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="xB_FaqQvoAp-dvqEfpniaX0-RI1i_ZPBaISJEOphzR0" />
+
+
+
+
+
+  <meta name="naver-site-verification" content="33fb43905fdb96708b2bde0a9edace6cd2638167">
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Imreplay blog Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- google ad sense -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5072558553152830",
+    enable_page_level_ads: true
+  });
+</script>
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Imreplay blog</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item">
+              <a href="https://blog.imreplay.xyz/about/" >About</a>
+            </li>
+          
+            
+            <li class="masthead__menu-item">
+              <a href="https://blog.imreplay.xyz/categories/" >Category</a>
+            </li>
+          
+        </ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/img/profile.jpg" alt="Imreplay" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Imreplay</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        천천히 굴러가는 개인 공부 블로그
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Republic of Korea</span>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:imreplay@imreplay.xyz">
+            <meta itemprop="email" content="imreplay@imreplay.xyz" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> 이메일
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/imreplay08" itemprop="sameAs">
+            <i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/imreplay" itemprop="sameAs">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Webhacking.kr] 6번(100) 문제 풀이">
+    <meta itemprop="description" content="천천히 쉬운문제부터 시작하기로 생각하고 안풀었던 문제부터 풀기 시작했다.">
+    <meta itemprop="datePublished" content="July 08, 2018">
+    <meta itemprop="dateModified" content="July 08, 2018">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[Webhacking.kr] 6번(100) 문제 풀이
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 분 소요
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>천천히 쉬운문제부터 시작하기로 생각하고 안풀었던 문제부터 풀기 시작했다.</p>
+
+<p>처음 문제 페이지에 접속했을때 다음과 같은 화면을 볼 수 있다.</p>
+
+<p><img src="/assets/img/webhacking/web-06.jpg" alt="quest" /></p>
+
+<p>문제에서 제공하는 <code class="highlighter-rouge">index.phps</code> 의 소스코드를 확인 할 수 있다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="nx">user</span><span class="p">])</span> 
+<span class="p">{</span> 
+    <span class="nv">$val_id</span><span class="o">=</span><span class="s2">"guest"</span><span class="p">;</span> 
+    <span class="nv">$val_pw</span><span class="o">=</span><span class="s2">"123qwe"</span><span class="p">;</span> 
+
+    <span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nv">$i</span><span class="o">&lt;</span><span class="mi">20</span><span class="p">;</span><span class="nv">$i</span><span class="o">++</span><span class="p">)</span> 
+    <span class="p">{</span> 
+        <span class="nv">$val_id</span><span class="o">=</span><span class="nb">base64_encode</span><span class="p">(</span><span class="nv">$val_id</span><span class="p">);</span> 
+        <span class="nv">$val_pw</span><span class="o">=</span><span class="nb">base64_encode</span><span class="p">(</span><span class="nv">$val_pw</span><span class="p">);</span> 
+
+    <span class="p">}</span> 
+
+    <span class="nv">$val_id</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"1"</span><span class="p">,</span><span class="s2">"!"</span><span class="p">,</span><span class="nv">$val_id</span><span class="p">);</span> 
+    <span class="nv">$val_id</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"2"</span><span class="p">,</span><span class="s2">"@"</span><span class="p">,</span><span class="nv">$val_id</span><span class="p">);</span> 
+    <span class="nv">$val_id</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"3"</span><span class="p">,</span><span class="s2">"$"</span><span class="p">,</span><span class="nv">$val_id</span><span class="p">);</span> 
+    <span class="nv">$val_id</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"4"</span><span class="p">,</span><span class="s2">"^"</span><span class="p">,</span><span class="nv">$val_id</span><span class="p">);</span> 
+    <span class="nv">$val_id</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"5"</span><span class="p">,</span><span class="s2">"&amp;"</span><span class="p">,</span><span class="nv">$val_id</span><span class="p">);</span> 
+    <span class="nv">$val_id</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"6"</span><span class="p">,</span><span class="s2">"*"</span><span class="p">,</span><span class="nv">$val_id</span><span class="p">);</span> 
+    <span class="nv">$val_id</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"7"</span><span class="p">,</span><span class="s2">"("</span><span class="p">,</span><span class="nv">$val_id</span><span class="p">);</span> 
+    <span class="nv">$val_id</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"8"</span><span class="p">,</span><span class="s2">")"</span><span class="p">,</span><span class="nv">$val_id</span><span class="p">);</span> 
+
+    <span class="nv">$val_pw</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"1"</span><span class="p">,</span><span class="s2">"!"</span><span class="p">,</span><span class="nv">$val_pw</span><span class="p">);</span> 
+    <span class="nv">$val_pw</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"2"</span><span class="p">,</span><span class="s2">"@"</span><span class="p">,</span><span class="nv">$val_pw</span><span class="p">);</span> 
+    <span class="nv">$val_pw</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"3"</span><span class="p">,</span><span class="s2">"$"</span><span class="p">,</span><span class="nv">$val_pw</span><span class="p">);</span> 
+    <span class="nv">$val_pw</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"4"</span><span class="p">,</span><span class="s2">"^"</span><span class="p">,</span><span class="nv">$val_pw</span><span class="p">);</span> 
+    <span class="nv">$val_pw</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"5"</span><span class="p">,</span><span class="s2">"&amp;"</span><span class="p">,</span><span class="nv">$val_pw</span><span class="p">);</span> 
+    <span class="nv">$val_pw</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"6"</span><span class="p">,</span><span class="s2">"*"</span><span class="p">,</span><span class="nv">$val_pw</span><span class="p">);</span> 
+    <span class="nv">$val_pw</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"7"</span><span class="p">,</span><span class="s2">"("</span><span class="p">,</span><span class="nv">$val_pw</span><span class="p">);</span> 
+    <span class="nv">$val_pw</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"8"</span><span class="p">,</span><span class="s2">")"</span><span class="p">,</span><span class="nv">$val_pw</span><span class="p">);</span> 
+
+    <span class="nx">Setcookie</span><span class="p">(</span><span class="s2">"user"</span><span class="p">,</span><span class="nv">$val_id</span><span class="p">);</span> 
+    <span class="nx">Setcookie</span><span class="p">(</span><span class="s2">"password"</span><span class="p">,</span><span class="nv">$val_pw</span><span class="p">);</span> 
+
+    <span class="k">echo</span><span class="p">(</span><span class="s2">"&lt;meta http-equiv=refresh content=0&gt;"</span><span class="p">);</span> 
+<span class="p">}</span> 
+<span class="cp">?&gt;</span> 
+
+<span class="nt">&lt;html&gt;</span> 
+<span class="nt">&lt;head&gt;</span> 
+<span class="nt">&lt;title&gt;</span>Challenge 6<span class="nt">&lt;/title&gt;</span> 
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span> 
+<span class="nt">body</span> <span class="p">{</span> <span class="nl">background</span><span class="p">:</span><span class="no">black</span><span class="p">;</span> <span class="nl">color</span><span class="p">:</span><span class="no">white</span><span class="p">;</span> <span class="nl">font-size</span><span class="p">:</span><span class="m">10pt</span><span class="p">;</span> <span class="p">}</span> 
+<span class="nt">&lt;/style&gt;</span> 
+<span class="nt">&lt;/head&gt;</span> 
+<span class="nt">&lt;body&gt;</span> 
+
+<span class="cp">&lt;?</span> 
+
+<span class="nv">$decode_id</span><span class="o">=</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="nx">user</span><span class="p">];</span> 
+<span class="nv">$decode_pw</span><span class="o">=</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="nx">password</span><span class="p">];</span> 
+
+<span class="nv">$decode_id</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"!"</span><span class="p">,</span><span class="s2">"1"</span><span class="p">,</span><span class="nv">$decode_id</span><span class="p">);</span> 
+<span class="nv">$decode_id</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"@"</span><span class="p">,</span><span class="s2">"2"</span><span class="p">,</span><span class="nv">$decode_id</span><span class="p">);</span> 
+<span class="nv">$decode_id</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"$"</span><span class="p">,</span><span class="s2">"3"</span><span class="p">,</span><span class="nv">$decode_id</span><span class="p">);</span> 
+<span class="nv">$decode_id</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"^"</span><span class="p">,</span><span class="s2">"4"</span><span class="p">,</span><span class="nv">$decode_id</span><span class="p">);</span> 
+<span class="nv">$decode_id</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"&amp;"</span><span class="p">,</span><span class="s2">"5"</span><span class="p">,</span><span class="nv">$decode_id</span><span class="p">);</span> 
+<span class="nv">$decode_id</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span><span class="s2">"6"</span><span class="p">,</span><span class="nv">$decode_id</span><span class="p">);</span> 
+<span class="nv">$decode_id</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"("</span><span class="p">,</span><span class="s2">"7"</span><span class="p">,</span><span class="nv">$decode_id</span><span class="p">);</span> 
+<span class="nv">$decode_id</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">")"</span><span class="p">,</span><span class="s2">"8"</span><span class="p">,</span><span class="nv">$decode_id</span><span class="p">);</span> 
+
+<span class="nv">$decode_pw</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"!"</span><span class="p">,</span><span class="s2">"1"</span><span class="p">,</span><span class="nv">$decode_pw</span><span class="p">);</span> 
+<span class="nv">$decode_pw</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"@"</span><span class="p">,</span><span class="s2">"2"</span><span class="p">,</span><span class="nv">$decode_pw</span><span class="p">);</span> 
+<span class="nv">$decode_pw</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"$"</span><span class="p">,</span><span class="s2">"3"</span><span class="p">,</span><span class="nv">$decode_pw</span><span class="p">);</span> 
+<span class="nv">$decode_pw</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"^"</span><span class="p">,</span><span class="s2">"4"</span><span class="p">,</span><span class="nv">$decode_pw</span><span class="p">);</span> 
+<span class="nv">$decode_pw</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"&amp;"</span><span class="p">,</span><span class="s2">"5"</span><span class="p">,</span><span class="nv">$decode_pw</span><span class="p">);</span> 
+<span class="nv">$decode_pw</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"*"</span><span class="p">,</span><span class="s2">"6"</span><span class="p">,</span><span class="nv">$decode_pw</span><span class="p">);</span> 
+<span class="nv">$decode_pw</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">"("</span><span class="p">,</span><span class="s2">"7"</span><span class="p">,</span><span class="nv">$decode_pw</span><span class="p">);</span> 
+<span class="nv">$decode_pw</span><span class="o">=</span><span class="nb">str_replace</span><span class="p">(</span><span class="s2">")"</span><span class="p">,</span><span class="s2">"8"</span><span class="p">,</span><span class="nv">$decode_pw</span><span class="p">);</span> 
+
+
+<span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nv">$i</span><span class="o">&lt;</span><span class="mi">20</span><span class="p">;</span><span class="nv">$i</span><span class="o">++</span><span class="p">)</span> 
+<span class="p">{</span> 
+    <span class="nv">$decode_id</span><span class="o">=</span><span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$decode_id</span><span class="p">);</span> 
+    <span class="nv">$decode_pw</span><span class="o">=</span><span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$decode_pw</span><span class="p">);</span> 
+<span class="p">}</span> 
+
+<span class="k">echo</span><span class="p">(</span><span class="s2">"&lt;font style=background:silver;color:black&gt;&amp;nbsp;&amp;nbsp;HINT : base64&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;hr&gt;&lt;a href=index.phps style=color:yellow;&gt;index.phps&lt;/a&gt;&lt;br&gt;&lt;br&gt;"</span><span class="p">);</span> 
+<span class="k">echo</span><span class="p">(</span><span class="s2">"ID : </span><span class="nv">$decode_id</span><span class="s2">&lt;br&gt;PW : </span><span class="nv">$decode_pw</span><span class="s2">&lt;hr&gt;"</span><span class="p">);</span> 
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$decode_id</span><span class="o">==</span><span class="s2">"admin"</span> <span class="o">&amp;&amp;</span> <span class="nv">$decode_pw</span><span class="o">==</span><span class="s2">"admin"</span><span class="p">)</span> 
+<span class="p">{</span> 
+    <span class="o">@</span><span class="nx">solve</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">100</span><span class="p">);</span> 
+<span class="p">}</span> 
+
+
+<span class="cp">?&gt;</span> 
+
+<span class="nt">&lt;/body&gt;</span> 
+<span class="nt">&lt;/html&gt;</span> 
+</code></pre></div></div>
+
+<p>특수 &lt;-&gt; 문자숫자 간에 치환을 하며, base64 로 20번 디코딩했을때 id와 pw가 <code class="highlighter-rouge">admin</code> 이면 풀릴것 같다.</p>
+
+<p>위 과정과 반대로 <code class="highlighter-rouge">admin</code> 을 base64로 20번 인코딩 후 숫자를 특수문자로 바꾸어 주면 될 것 같으니 해보자.</p>
+
+<p>id, pw는 <code class="highlighter-rouge">cookie</code> 를 통해 전달하는데 파이썬으로 다음과 같이 풀이하였다.</p>
+
+<noscript><pre>import base64
+import base64
+import requests
+import urllib.parse
+
+# 인코딩
+def en_b64_20(d_data):
+  rep = &quot;! @ $ ^ &amp; * ( )&quot;.split(&#39; &#39;)
+  for i in range(0,20):
+    d_data = base64.b64encode(d_data)
+  d_data = d_data.decode()
+  for num,ch in enumerate(rep):
+    d_data = d_data.replace(str(num+1),ch)
+  return d_data
+
+id_pw = &quot;admin&quot;.encode()
+e_id_pw = urllib.parse.quote_plus(en_b64_20(id_pw))
+
+url = &#39;http://webhacking.kr/challenge/web/web-06/index.php&#39;
+
+session_id = input(&#39;PHPSESSID plese : &#39;) 
+
+cookies = {&#39;PHPSESSID&#39;:session_id,&#39;user&#39;:e_id_pw,&#39;password&#39;:e_id_pw}
+
+res = requests.get(url,cookies=cookies)
+
+
+print(res.text)
+</pre></noscript>
+<script src="https://gist.github.com/imreplay/66739f744e244ff114b920488255740b.js"> </script>
+
+<p>파이썬 코드를 통해 웹 요청을 보내는 방법이라서 <code class="highlighter-rouge">PHPSESSID</code> 를 입력받아 진행하였다.</p>
+
+<p>문제를 풀이하면 결과 페이지가 html로 출력되는데 잘 읽어보면 풀렸다고 나온다!</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#web" class="page__taxonomy-item" rel="tag">web</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#webhackinag-kr" class="page__taxonomy-item" rel="tag">webhackinag.kr</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#wargame" class="page__taxonomy-item" rel="tag">Wargame</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2018-07-08">July 08, 2018</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BWebhacking.kr%5D+6%EB%B2%88%28100%29+%EB%AC%B8%EC%A0%9C+%ED%92%80%EC%9D%B4%20https%3A%2F%2Fblog.imreplay.xyz%2Fwargame%2FWebhacking-kr-06%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.imreplay.xyz%2Fwargame%2FWebhacking-kr-06%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fblog.imreplay.xyz%2Fwargame%2FWebhacking-kr-06%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fblog.imreplay.xyz%2Fwargame%2FWebhacking-kr-06%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/blogging/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95/" class="pagination--pager" title="블로그 개발 환경 구축 정리
+">이전</a>
+    
+    
+      <a href="/wargame/Webhacking-kr-14/" class="pagination--pager" title="[Webhacking.kr] 14번(100) 문제 풀이
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/wargame/Webhacking-kr-14/" rel="permalink">[Webhacking.kr] 14번(100) 문제 풀이
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  최대 1 분 소요
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">문제를 보면 입력박스 한개, 체크버튼 한개가 보인다.
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blogging/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95/" rel="permalink">블로그 개발 환경 구축 정리
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 분 소요
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">블로그 환경, 개발환경 정리
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blogging/Elements/" rel="permalink">블로그에서 사용하는 문법 정리
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 분 소요
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">다양한 마크다운 문법과 테마에서 지원하는 기능들을 간단하게 미리보기
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/wargame/ELF-x86-Stack-buffer-overflow-basic-1/" rel="permalink">[Root-Me] ELF x86 - Stack buffer overflow basic 1
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  최대 1 분 소요
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+    <div class="search-hits"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+    
+    
+      <li><a href="https://www.facebook.com/imreplay08"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+    
+    
+      <li><a href="https://github.com/imreplay"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Imreplay. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '237ZENFYNY',
+  apiKey: '5cfd50ded1da95d695708070be40e3b9',
+  indexName: 'blog',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-120523980-2']);
+  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+    
+
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://blog.imreplay.xyz/wargame/Webhacking-kr-06/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/wargame/Webhacking-kr-06"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://imreplay-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+  </body>
+</html>
