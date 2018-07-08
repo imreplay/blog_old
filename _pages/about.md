@@ -22,12 +22,7 @@ toc: true
 
 ---
 
-## Imreplay
-> 임재연
-
- - 1996.10.31
- - 목포대학교 정보보호학과 휴학
- - 대한민국 공군 정보보호병 (2017.01 - 2019.01)
+{% gist imreplay/a612c451ee371f3748ccbdfda8df2576 %}
  
 
 ## Education
