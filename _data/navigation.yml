@@ -5,21 +5,6 @@ main:
   - title: "Category"
     url: "/categories/"
 
-# 메인 페이지 표시 사이드 바
-sidebar:
-  - title: "Wargame"
-    children:
-      - title: "Web"
-        children:
-        - title: "webhacking.kr"
-          url: "/tags/#webhackinag-kr"
-
-      - title: "System"
-        children:
-        - title: "pwnable.kr"
-          url: "/tags/#pwnable-kr"
-        - title: "root-me"
-          url: "/tags/#root-me"
 
 # 블로그 만들기 포스트 사이드바
 sidebar-blogging:
