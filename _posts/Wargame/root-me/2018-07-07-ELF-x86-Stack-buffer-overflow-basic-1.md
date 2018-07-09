@@ -1,5 +1,5 @@
 ---
-title: "[Root-Me] ELF x86 - Stack buffer overflow basic 1"
+title: "[Root-Me] ELF x86-Stack buffer overflow basic1"
 excerpt: ""
 categories: 
   - Wargame
