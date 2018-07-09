@@ -106,8 +106,8 @@ author:
   bio              : "천천히 굴러가는 개인 공부 블로그"
   location         : "Republic of Korea"
   email            : "imreplay@imreplay.xyz"
-  uri              :
-  home             : # null (default), "absolute or relative url to link to author home"
+  uri              : 
+  home             : "https://blog.imreplay.xyz" # null (default), "absolute or relative url to link to author home"
   bitbucket        :
   codepen          :
   dribbble         :
@@ -275,6 +275,23 @@ defaults:
       related: true
       sidebar:
         nav: sidebar-blogging
+        
+  # _posts/Wargame
+  - scope:
+      path: "_posts/Wargame"
+      type: posts
+    values:
+      layout: single
+      classes: wide
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      search: true
+      related: true
+      sidebar:
+        title: "Wargame 카테고리"
+        nav: sidebar-wargame
 
 
   # _posts
