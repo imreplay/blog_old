@@ -1,4 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://blog.imreplay.xyz/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.imreplay.xyz/" rel="alternate" type="text/html" /><updated>2018-07-08T23:57:53+09:00</updated><id>https://blog.imreplay.xyz/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's personal website.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><entry><title type="html">[Webhacking.kr] 16번(100) 문제 풀이</title><link href="https://blog.imreplay.xyz/wargame/Webhacking-kr-16/" rel="alternate" type="text/html" title="[Webhacking.kr] 16번(100) 문제 풀이" /><published>2018-07-08T00:00:00+09:00</published><updated>2018-07-08T23:53:00+09:00</updated><id>https://blog.imreplay.xyz/wargame/Webhacking-kr-16</id><content type="html" xml:base="https://blog.imreplay.xyz/wargame/Webhacking-kr-16/">&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;…?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://blog.imreplay.xyz/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.imreplay.xyz/" rel="alternate" type="text/html" /><updated>2018-07-10T04:14:08+09:00</updated><id>https://blog.imreplay.xyz/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's personal website.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><entry><title type="html">[Pwnable.kr] Toddler’s Bottle - fd 풀이</title><link href="https://blog.imreplay.xyz/wargame/pwnablekr-fd/" rel="alternate" type="text/html" title="[Pwnable.kr] Toddler's Bottle - fd 풀이" /><published>2018-07-10T00:00:00+09:00</published><updated>2018-07-10T10:30:00+09:00</updated><id>https://blog.imreplay.xyz/wargame/pwnablekr-fd</id><content type="html" xml:base="https://blog.imreplay.xyz/wargame/pwnablekr-fd/">&lt;p&gt;문제&lt;/p&gt;
+
+&lt;h3 id=&quot;fdc&quot;&gt;fd.c&lt;/h3&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+#include &amp;lt;string.h&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;envp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]){&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pass argv[1] a number&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;atoi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1234&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strcmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;LETMEWIN&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)){&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;good job :)&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/bin/cat flag&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;learn about Linux file IO&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;먼저 문제 제목인 &lt;code class=&quot;highlighter-rouge&quot;&gt;fd&lt;/code&gt;의 의미에 대해 생각해보도록 하자.&lt;/p&gt;
+
+&lt;p&gt;아마 ‘파일 디스크럽터’에 대한 문제일 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;read&lt;/code&gt; 함수를 사용할 때&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;size_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위와 같은 형태로 사용한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fd&lt;/code&gt; 의 값은 아래 표와 같이 결정 되어진다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;fd&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;처리방법&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;표준 입력(stdin)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;표준 출력(stdout)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;표준 에러(stderr)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;문제에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;buf&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;LETMEWIN&quot;&lt;/code&gt;문자열을 비교하는 부분이 있으므로 &lt;code class=&quot;highlighter-rouge&quot;&gt;fd&lt;/code&gt; 값을 0으로 만들어 표준입력으로 값을 입력시켜주어야 한다.&lt;/p&gt;
+
+&lt;p&gt;매개변수로 &lt;code class=&quot;highlighter-rouge&quot;&gt;0x1234 == 4660&lt;/code&gt; 를 넘겨주고 문자열 &lt;code class=&quot;highlighter-rouge&quot;&gt;LETMEWIN&lt;/code&gt; 을 입력해주면 flag 가 나올 것이다!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fd@ubuntu:~$ ./fd 4660
+LETMEWIN
+good job :)
+{여기에 Flag가 출력됩니다.}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;python과 pwntools 모듈을 사용하여 풀이 또한 가능하다.&lt;/p&gt;
+
+&lt;h3 id=&quot;fd_payloadpy&quot;&gt;fd_payload.py&lt;/h3&gt;
+&lt;noscript&gt;&lt;pre&gt;from pwn import *
+
+host = &amp;quot;pwnable.kr&amp;quot;
+user = &amp;quot;fd&amp;quot;
+password = &amp;quot;guest&amp;quot;
+port = 2222
+
+s = ssh(host=host, user=user, password=password, port=port)
+
+fd_run = s.run(&amp;#39;./fd &amp;#39;+str(0x1234))
+fd_run.sendline(&amp;#39;LETMEWIN&amp;#39;)
+
+print fd_run.recvall()
+
+s.close()&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/imreplay/87cd0362c609c27c48873d88591474f0.js&quot;&gt; &lt;/script&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><category term="system" /><category term="Pwnable.kr" /><summary type="html">pwntools를 사용한 fd 풀이</summary></entry><entry><title type="html">[Webhacking.kr] 16번(100) 문제 풀이</title><link href="https://blog.imreplay.xyz/wargame/Webhacking-kr-16/" rel="alternate" type="text/html" title="[Webhacking.kr] 16번(100) 문제 풀이" /><published>2018-07-08T00:00:00+09:00</published><updated>2018-07-08T23:53:00+09:00</updated><id>https://blog.imreplay.xyz/wargame/Webhacking-kr-16</id><content type="html" xml:base="https://blog.imreplay.xyz/wargame/Webhacking-kr-16/">&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;…?&lt;/p&gt;
 
 &lt;p&gt;소스를 봐야할 것 같다. 이번엔 스크립트부분만 살펴보자&lt;/p&gt;
 
@@ -673,7 +763,7 @@ You can also add the .notice class to a div element.
       &lt;p&gt;각주 내용 2 &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><category term="jekyll" /><category term="markdown" /><category term="kramdown" /><summary type="html">다양한 마크다운 문법과 테마에서 지원하는 기능들을 간단하게 미리보기</summary></entry><entry><title type="html">[Root-Me] ELF x86 - Stack buffer overflow basic 1</title><link href="https://blog.imreplay.xyz/wargame/ELF-x86-Stack-buffer-overflow-basic-1/" rel="alternate" type="text/html" title="[Root-Me] ELF x86 - Stack buffer overflow basic 1" /><published>2018-07-07T00:00:00+09:00</published><updated>2018-07-08T22:35:00+09:00</updated><id>https://blog.imreplay.xyz/wargame/ELF-x86-Stack-buffer-overflow-basic-1</id><content type="html" xml:base="https://blog.imreplay.xyz/wargame/ELF-x86-Stack-buffer-overflow-basic-1/">&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><category term="jekyll" /><category term="markdown" /><category term="kramdown" /><summary type="html">다양한 마크다운 문법과 테마에서 지원하는 기능들을 간단하게 미리보기</summary></entry><entry><title type="html">[Root-Me] ELF x86-Stack buffer overflow basic1</title><link href="https://blog.imreplay.xyz/wargame/ELF-x86-Stack-buffer-overflow-basic-1/" rel="alternate" type="text/html" title="[Root-Me] ELF x86-Stack buffer overflow basic1" /><published>2018-07-07T00:00:00+09:00</published><updated>2018-07-08T22:35:00+09:00</updated><id>https://blog.imreplay.xyz/wargame/ELF-x86-Stack-buffer-overflow-basic-1</id><content type="html" xml:base="https://blog.imreplay.xyz/wargame/ELF-x86-Stack-buffer-overflow-basic-1/">&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
 &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdlib.h&amp;gt;
 #include &amp;lt;stdio.h&amp;gt;
 &lt;/span&gt; 
@@ -1454,332 +1544,4 @@ toc: true
 
 &lt;p&gt;다음 포스팅은 travis-ci를 통해 push를 하면 자동으로 Build되어 gh-pages 브랜치로 결과 파일을 push 해주는 방법에 대하여 포스팅 하도록 하겠습니다.&lt;/p&gt;
 
-&lt;p&gt;혹시 안되거나 에러나는 부분들, 설명이 부족한 부분은 댓글로 남겨주세요!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><category term="jekyll" /><summary type="html">저장소를 fork하여 github pages 또는 travis-ci설정에 맞게 기본적인 환경설정을 하는 방법에 대하여</summary></entry><entry><title type="html">_config.yml 설정하기</title><link href="https://blog.imreplay.xyz/blogging/config-yml/" rel="alternate" type="text/html" title="_config.yml 설정하기" /><published>2018-07-01T00:00:00+09:00</published><updated>2018-07-01T13:05:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/config-yml</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/config-yml/">&lt;p&gt;minimal-mistakes 테마의 기본 _config.yml을 수정한 내용입니다&lt;/p&gt;
-
-&lt;p&gt;개인적인 의견으로 작성 시 기본 설정 파일을 가지고 내용을 추가해 나가는 것이 편합니다!&lt;/p&gt;
-
-&lt;h3 id=&quot;_configyml&quot;&gt;_config.yml&lt;/h3&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Welcome to Jekyll!&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# This config file is meant for settings that affect your entire site, values&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# which you are expected to set up once and rarely need to edit after that.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# For technical reasons, this file is *NOT* reloaded automatically when you use&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# `jekyll serve`. If you change this file, please restart the server process.&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Theme Settings&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Review documentation to determine if you should use `theme` or `remote_theme`&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# 테마 설정에 대한 부분입니다. 기본 설정을 유지하였습니다.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;theme                  &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;minimal-mistakes-jekyll&quot;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#remote_theme           : &quot;mmistakes/minimal-mistakes&quot;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# 스킨을 설정하는 부분입니다. &lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;minimal_mistakes_skin    &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;dark&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;air&quot;, &quot;aqua&quot;, &quot;contrast&quot;, &quot;dark&quot;, &quot;dirt&quot;, &quot;neon&quot;, &quot;mint&quot;, &quot;plum&quot;, &quot;sunrise&quot;&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# Site Settings&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;locale                   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ko-KR&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 사이트의 언어 설정을 할 수있습니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 표시되는 언어의 내용은 _data/ui-text.yml 에서 수정이 가능합니다.&lt;/span&gt;
-
-&lt;span class=&quot;na&quot;&gt;title                    &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Imreplay&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;blog&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 블로그 제목&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;title_separator          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;-&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 글 제목 - 블로그 제목  과 같이 사이트를 표시해줍니다.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;name                     &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Imreplay&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 사이트 소유자의 이름을 사용합니다.(Used to assign a site author.)&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;description              &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Imreplay's&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;personal&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;website.&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 사이트에 대한 간단한 설명입니다.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;url                      &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://blog.imreplay.xyz&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# the base hostname &amp;amp; protocol for your site e.g. &quot;https://mmistakes.github.io&quot;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 사이트의 주소를 입력합니다.&lt;/span&gt;
-
-&lt;span class=&quot;na&quot;&gt;baseurl                  &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# the subpath of your site, e.g. &quot;/blog&quot;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 사이트의 baseurl을 설정해 줍니다.&lt;/span&gt;
-
-&lt;span class=&quot;na&quot;&gt;repository               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;imreplay/blog&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# GitHub username/repo-name e.g. &quot;mmistakes/minimal-mistakes&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;teaser                   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# path of fallback teaser image, e.g. &quot;/assets/images/500x300.png&quot;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# breadcrumbs            : false # true, false (default)&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;words_per_minute         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;200&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#read time을 계산하기 위한 분당 읽는 글자수 입니다. &lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;comments&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 댓글 설정에 대한부분입니다. 기본적으로 false 로 되어있습니다.&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;provider               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;disqus&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# false (default), &quot;disqus&quot;, &quot;discourse&quot;, &quot;facebook&quot;, &quot;google-plus&quot;, &quot;staticman&quot;, &quot;staticman_v2&quot; &quot;custom&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;disqus&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;#개인적으로 disqus 댓글 모듈을 사용하였습니다.&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;shortname            &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;imreplay-blog&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;discourse&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;server               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;facebook&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# https://developers.facebook.com/docs/plugins/comments&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;appid                &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;num_posts            &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 5 (default)&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;colorscheme          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;light&quot; (default), &quot;dark&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;staticman&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;allowedFields          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# ['name', 'email', 'url', 'message']&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;branch                 &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;master&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;commitMessage          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;New comment.&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;filename               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# comment-{@timestamp}&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;format                 &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;yml&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;moderation             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# true&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;path                   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;/_data/comments/{options.slug}&quot; (default)&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;requiredFields         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# ['name', 'email', 'message']&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;transforms&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;email                &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;md5&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;generatedFields&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;type               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;date&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;format           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;iso8601&quot; (default), &quot;timestamp-seconds&quot;, &quot;timestamp-milliseconds&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;reCaptcha&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;siteKey                &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;secret                 &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;atom_feed&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;path                   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# blank (default) uses feed.xml&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;#사이트내 검색 설정에 대한 부분입니다.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;search                   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# true, false (default)&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;search_full_content      &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# true, false (default)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 저의 경우 algolia 를 사용하고 있으며 추가설정이 필요합니다.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;search_provider          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;algolia&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# lunr (default), algolia, google&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;algolia&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;application_id         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;237ZENFYNY&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# YOUR_APPLICATION_ID&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;index_name             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;blog&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# YOUR_INDEX_NAME&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;search_only_api_key    &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;5cfd50ded1da95d695708070be40e3b9&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# YOUR_SEARCH_ONLY_API_KEY&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;powered_by             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# true (default), false&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;google&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;search_engine_id       &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# YOUR_SEARCH_ENGINE_ID&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;instant_search         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# false (default), true&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# SEO Related 웹마스터 도구 사용을 도와주는 부분입니다.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;google_site_verification &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;bing_site_verification   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;yandex_site_verification &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;naver_site_verification  &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Social Sharing&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;twitter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;username               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;facebook&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;username               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
-  &lt;span class=&quot;na&quot;&gt;app_id                 &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;publisher              &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;og_image                 &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Open Graph/Twitter default site image&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# For specifying social profiles&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# - https://developers.google.com/structured-data/customize/social-profiles&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;social&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;type                   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Person or Organization (defaults to Person)&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;name                   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# If the user or organization name differs from the site's name&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;links&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# An array of links to social media profiles&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;#구글 애널리틱스에 대한 설정입니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Analytics&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;analytics&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;provider               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;google-gtag&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# false (default), &quot;google&quot;, &quot;google-universal&quot;, &quot;custom&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;google&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;tracking_id          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;UA-120523980-2&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;anonymize_ip         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# true, false (default)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# 사이트 소유자에 대한 정보를 작성합니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Site Author&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;name             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Imreplay&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;avatar           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# path of avatar image, e.g. &quot;/assets/images/bio-photo.jpg&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;bio              &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;천천히&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;굴러가는&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;개인&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;공부&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;블로그&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;location         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Republic&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Korea&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;email            &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;imreplay@imreplay.xyz&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;uri              &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://blog.imreplay.xyz&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;home             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# null (default), &quot;absolute or relative url to link to author home&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;bitbucket        &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;codepen          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;dribbble         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;flickr           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;facebook         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;imreplay08&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;foursquare       &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;github           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;imreplay&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;gitlab           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;google_plus      &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;keybase          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;instagram        &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;lastfm           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;linkedin         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;john-doe-12345678&quot; (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;pinterest        &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;soundcloud       &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;stackoverflow    &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;123456/username&quot; (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;steam            &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;steamId&quot; (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;tumblr           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;twitter          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;vine             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;weibo            &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;xing             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;youtube          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;https://youtube.com/c/MichaelRoseDesign&quot;&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# Reading Files&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.htaccess&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;_pages&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;exclude&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;*.sublime-project&quot;&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;*.sublime-workspace&quot;&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;vendor&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.asset-cache&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.bundle&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.jekyll-assets-cache&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.sass-cache&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/js/plugins&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/js/_main.js&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/js/vendor&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Capfile&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;CHANGELOG&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;config&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Gemfile&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Gruntfile.js&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;gulpfile.js&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;LICENSE&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;log&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;node_modules&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;package.json&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Rakefile&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;README&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tmp&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;keep_files&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.git&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.svn&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;utf-8&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;markdown_ext&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;markdown,mkdown,mkdn,mkd,md&quot;&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# Conversion&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;markdown&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;kramdown&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;highlighter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;rouge&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;lsi&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;excerpt_separator&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;incremental&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# Markdown Processing&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;kramdown&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;GFM&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;hard_wrap&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;auto_ids&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;footnote_nr&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;1&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;entity_output&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;as_char&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;toc_levels&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;1..6&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;smart_quotes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;lsquo,rsquo,ldquo,rdquo&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;enable_coderay&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# Sass/SCSS&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;sass&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;sass_dir&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;_sass&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;compressed&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# Outputting&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/:categories/:title/&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;paginate&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# amount of posts to show&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;paginate_path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/page:num/&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;timezone&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Asia/Seoul&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# https://en.wikipedia.org/wiki/List_of_tz_database_time_zones&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# 플러그인을 정의하는 부분입니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Plugins (previously gems:)&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;plugins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-algolia&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-paginate&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-sitemap&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-gist&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-feed&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jemoji&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# mimic GitHub Pages with --safe&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;whitelist&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-paginate&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-sitemap&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-gist&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-feed&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jemoji&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# Archives&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#  Type&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#  - GitHub Pages compatible archive pages built with Liquid ~&amp;gt; type: liquid (default)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#  - Jekyll Archives plugin archive pages ~&amp;gt; type: jekyll-archives&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#  Path (examples)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#  - Archive page should exist at path when using Liquid method or you can&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#    expect broken links (especially with breadcrumbs enabled)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#  - &amp;lt;base_path&amp;gt;/tags/my-awesome-tag/index.html ~&amp;gt; path: /tags/&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#  - &amp;lt;base_path/categories/my-awesome-category/index.html ~&amp;gt; path: /categories/&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#  - &amp;lt;base_path/my-awesome-category/index.html ~&amp;gt; path: /&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;category_archive&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;liquid&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/categories/&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;tag_archive&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;liquid&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/tags/&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# https://github.com/jekyll/jekyll-archives&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# jekyll-archives:&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#   enabled:&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#     - categories&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#     - tags&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#   layouts:&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#     category: archive-taxonomy&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#     tag: archive-taxonomy&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#   permalinks:&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#     category: /categories/:name/&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#     tag: /tags/:name/&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# HTML Compression&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# - http://jch.penibelst.de/&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;compress_html&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;clippings&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;all&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;ignore&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;envs&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;development&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# Front Matter 설정입니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 페이지 본문에 적용되는 기본 설정들을 정의합니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# path 값으로 경로를 설정해 줍니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Defaults&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;defaults&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# _posts&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;posts&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;single&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;author_profile&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;read_time&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;comments&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;share&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;related&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;# 테마에 포함되어 있던 Docs 폴더의 _config.yml을 참고하여 _pages 폴더를 만들고 그 폴더에 대한 출력 방법을 정의 했습니다.&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# _pages&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;_pages&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;pages&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;single&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;author_profile&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Travis-ci 를 사용하기 위해 추가한 부분입니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Jasper2 테마의 Travis-ci 설정부분을 사용합니다. &lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#build option&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Settings for builing master branch with travis-ci&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# with jekyll-travis&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Settings for deploy rake task&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Username and repo of Github repo, e.g.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# https://github.com/USERNAME/REPO.git&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# username defaults to ENV['GIT_NAME'] used by Travis&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# repo defaults to USERNAME.github.io&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Branch defaults to &quot;source&quot; for USERNAME.github.io&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# or &quot;master&quot; otherwise&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;safe&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;False&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;lsi&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;False&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;imreplay&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Github Username&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;repo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;blog&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Github repo name&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 작업 브랜치를 설정&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;relative_source&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;../blog/&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 저는 repo 이름으로 설정했습니다.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;destination&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;../posts&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 빌드시 작업파일이 저장될 경로&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;production_url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;https://blog.imreplay.xyz&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 사이트 URL&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;source_url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;https://github.com/imreplay/blog/&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Github 저장소 URL&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><category term="jekyll" /><summary type="html">minimal-mistakes 테마에서의 _config.yml 설정에 대하여</summary></entry></feed>
+&lt;p&gt;혹시 안되거나 에러나는 부분들, 설명이 부족한 부분은 댓글로 남겨주세요!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><category term="jekyll" /><summary type="html">저장소를 fork하여 github pages 또는 travis-ci설정에 맞게 기본적인 환경설정을 하는 방법에 대하여</summary></entry></feed>
