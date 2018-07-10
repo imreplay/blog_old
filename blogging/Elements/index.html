@@ -378,6 +378,9 @@
 </nav>
     
   
+    
+  
+    
   </div>
 
 
@@ -790,7 +793,7 @@ You can also add the .notice class to a div element.
       
   <nav class="pagination">
     
-      <a href="/wargame/ELF-x86-Stack-buffer-overflow-basic-1/" class="pagination--pager" title="[Root-Me] ELF x86-Stack buffer overflow basic1
+      <a href="/blogging/%EA%B2%80%EC%83%89-%EB%8F%84%EA%B5%AC%EC%9D%B8-Algolia%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90/" class="pagination--pager" title="Travis-ci를 이용해 Github.io 블로그에 검색도구인 Algolia를 적용시켜보자.
 ">이전</a>
     
     
@@ -1072,6 +1075,26 @@ search.start();
   
 
 
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<script>
+  new Vue({
+    el : '#category_tag_menu',
+    data : {
+      flag_c : false,
+      flag_t : false
+    },
+    methods : {
+      togglec: function(){
+        this.flag_c = !this.flag_c;
+      },
+      togglet: function(){
+        this.flag_t = !this.flag_t;
+      }
+    }
+  });
+
+</script>
 
   </body>
 </html>

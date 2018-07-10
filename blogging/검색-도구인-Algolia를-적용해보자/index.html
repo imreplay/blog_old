@@ -378,6 +378,9 @@
 </nav>
     
   
+    
+  
+    
   </div>
 
 
@@ -638,7 +641,7 @@ Githib pages 를 사용한 환경은 <a href="https://community.algolia.com/jeky
 ">이전</a>
     
     
-      <a href="/wargame/ELF-x86-Stack-buffer-overflow-basic-1/" class="pagination--pager" title="[Root-Me] ELF x86-Stack buffer overflow basic1
+      <a href="/blogging/Elements/" class="pagination--pager" title="블로그에서 사용하는 문법 정리
 ">다음</a>
     
   </nav>
@@ -916,6 +919,26 @@ search.start();
   
 
 
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<script>
+  new Vue({
+    el : '#category_tag_menu',
+    data : {
+      flag_c : false,
+      flag_t : false
+    },
+    methods : {
+      togglec: function(){
+        this.flag_c = !this.flag_c;
+      },
+      togglet: function(){
+        this.flag_t = !this.flag_t;
+      }
+    }
+  });
+
+</script>
 
   </body>
 </html>

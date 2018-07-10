@@ -282,6 +282,53 @@
 </div>
 
   
+    
+  
+    <nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+        <span class="nav__sub-title" v-on:click='togglec()'>Categories</span>
+        <ul v-show="flag_c">
+        
+           <li><a href="/categories/blogging" class="">Blogging (6)</a></li>
+        
+           <li><a href="/categories/wargame" class="">Wargame (4)</a></li>
+        
+        </ul>
+        
+        <span class="nav__sub-title" v-on:click='togglet()'>tags</span>
+        <ul v-show="flag_t">
+        
+           <li><a href="/tags/#jekyll" class="">Jekyll (4)</a></li>
+        
+           <li><a href="/tags/#travis-ci" class="">Travis-ci (1)</a></li>
+        
+           <li><a href="/tags/#disqus" class="">Disqus (1)</a></li>
+        
+           <li><a href="/tags/#markdown" class="">Markdown (1)</a></li>
+        
+           <li><a href="/tags/#kramdown" class="">Kramdown (1)</a></li>
+        
+           <li><a href="/tags/#web" class="">Web (3)</a></li>
+        
+           <li><a href="/tags/#webhackinag-kr" class="">Webhackinag.kr (3)</a></li>
+        
+           <li><a href="/tags/#system" class="">System (1)</a></li>
+        
+           <li><a href="/tags/#pwnable-kr" class="">Pwnable.kr (1)</a></li>
+        
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
   </div>
 
 
@@ -322,13 +369,7 @@
     
       
     
-      
-    
   
-    
-      
-    
-      
     
       
     
@@ -358,20 +399,14 @@
     
       
     
+      
+    
   
     
       
     
       
     
-      
-    
-      
-        <li>
-          <a href="#system">
-            <strong>system</strong> <span class="taxonomy__count">2</span>
-          </a>
-        </li>
       
     
       
@@ -407,16 +442,6 @@
       
     
       
-    
-      
-        <li>
-          <a href="#root-me">
-            <strong>root-me</strong> <span class="taxonomy__count">1</span>
-          </a>
-        </li>
-      
-    
-      
         <li>
           <a href="#markdown">
             <strong>markdown</strong> <span class="taxonomy__count">1</span>
@@ -434,6 +459,14 @@
     
       
     
+      
+    
+      
+        <li>
+          <a href="#system">
+            <strong>system</strong> <span class="taxonomy__count">1</span>
+          </a>
+        </li>
       
     
       
@@ -583,13 +616,7 @@
   
     
   
-    
-  
 
-  
-    
-  
-    
   
     
   
@@ -791,76 +818,14 @@
   
     
   
+    
+  
 
   
     
   
     
   
-    
-  
-    
-      <section id="system" class="taxonomy__section">
-        <h2 class="archive__subtitle">system</h2>
-        <div class="entries-list">
-          
-            
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/wargame/pwnablekr-fd/" rel="permalink">[Pwnable.kr] Toddler’s Bottle - fd 풀이
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  예상 소요시간 :  1 min
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">pwntools를 사용한 fd 풀이
-</p>
-  </article>
-</div>
-          
-            
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/wargame/ELF-x86-Stack-buffer-overflow-basic-1/" rel="permalink">[Root-Me] ELF x86-Stack buffer overflow basic1
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  예상 소요시간 :  1 min
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">
-</p>
-  </article>
-</div>
-          
-        </div>
-        <a href="#page-title" class="back-to-top">Back to Top &uarr;</a>
-      </section>
     
   
     
@@ -954,45 +919,6 @@
     
   
     
-  
-    
-      <section id="root-me" class="taxonomy__section">
-        <h2 class="archive__subtitle">root-me</h2>
-        <div class="entries-list">
-          
-            
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/wargame/ELF-x86-Stack-buffer-overflow-basic-1/" rel="permalink">[Root-Me] ELF x86-Stack buffer overflow basic1
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  예상 소요시간 :  1 min
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">
-</p>
-  </article>
-</div>
-          
-        </div>
-        <a href="#page-title" class="back-to-top">Back to Top &uarr;</a>
-      </section>
-    
-  
-    
       <section id="markdown" class="taxonomy__section">
         <h2 class="archive__subtitle">markdown</h2>
         <div class="entries-list">
@@ -1068,6 +994,43 @@
   
     
   
+    
+  
+    
+      <section id="system" class="taxonomy__section">
+        <h2 class="archive__subtitle">system</h2>
+        <div class="entries-list">
+          
+            
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/wargame/pwnablekr-fd/" rel="permalink">[Pwnable.kr] Toddler’s Bottle - fd 풀이
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  예상 소요시간 :  1 min
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">pwntools를 사용한 fd 풀이
+</p>
+  </article>
+</div>
+          
+        </div>
+        <a href="#page-title" class="back-to-top">Back to Top &uarr;</a>
+      </section>
     
   
     
@@ -1229,6 +1192,26 @@ search.start();
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<script>
+  new Vue({
+    el : '#category_tag_menu',
+    data : {
+      flag_c : false,
+      flag_t : false
+    },
+    methods : {
+      togglec: function(){
+        this.flag_c = !this.flag_c;
+      },
+      togglet: function(){
+        this.flag_t = !this.flag_t;
+      }
+    }
+  });
+
+</script>
 
   </body>
 </html>

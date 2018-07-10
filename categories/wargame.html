@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Imreplay blog - 페이지 2</title>
+<!-- begin _includes/seo.html --><title>Post about Wargame - Imreplay blog</title>
 <meta name="description" content="Imreplay’s personal website.">
 
 
@@ -17,8 +17,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Imreplay blog">
-<meta property="og:title" content="Imreplay blog">
-<meta property="og:url" content="https://blog.imreplay.xyz/page2/">
+<meta property="og:title" content="Post about Wargame">
+<meta property="og:url" content="https://blog.imreplay.xyz/categories/wargame">
 
 
 
@@ -36,10 +36,8 @@
   
 
 
-<link rel="canonical" href="https://blog.imreplay.xyz/page2/">
+<link rel="canonical" href="https://blog.imreplay.xyz/categories/wargame">
 
-
-  <link rel="prev" href="https://blog.imreplay.xyz/">
 
 
 
@@ -116,7 +114,7 @@
 
   </head>
 
-  <body class="layout--home">
+  <body class="layout--archive wide">
 
     <!--[if lt IE 9]>
 <div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
@@ -284,258 +282,67 @@
 </div>
 
   
+    
+  
+    <nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+        <span class="nav__sub-title" v-on:click='togglec()'>Categories</span>
+        <ul v-show="flag_c">
+        
+           <li><a href="/categories/blogging" class="">Blogging (6)</a></li>
+        
+           <li><a href="/categories/wargame" class="">Wargame (4)</a></li>
+        
+        </ul>
+        
+        <span class="nav__sub-title" v-on:click='togglet()'>tags</span>
+        <ul v-show="flag_t">
+        
+           <li><a href="/tags/#jekyll" class="">Jekyll (4)</a></li>
+        
+           <li><a href="/tags/#travis-ci" class="">Travis-ci (1)</a></li>
+        
+           <li><a href="/tags/#disqus" class="">Disqus (1)</a></li>
+        
+           <li><a href="/tags/#markdown" class="">Markdown (1)</a></li>
+        
+           <li><a href="/tags/#kramdown" class="">Kramdown (1)</a></li>
+        
+           <li><a href="/tags/#web" class="">Web (3)</a></li>
+        
+           <li><a href="/tags/#webhackinag-kr" class="">Webhackinag.kr (3)</a></li>
+        
+           <li><a href="/tags/#system" class="">System (1)</a></li>
+        
+           <li><a href="/tags/#pwnable-kr" class="">Pwnable.kr (1)</a></li>
+        
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
   </div>
 
 
   <div class="archive">
     
-      <h1 id="page-title" class="page__title"></h1>
+      <h1 id="page-title" class="page__title">Post about Wargame</h1>
     
     
-
-
-
-
-
-<div id="category">
-<h2 v-show="flag" v-on:click='toggle()'>
-Categories ▲
-</h2>
-
-<h2 v-show="!flag" v-on:click='toggle()'>
-Categories ▼
-</h2>
-  
-<ul v-show="flag" class="taxonomy__index">
-  
-    
-      
-        <li>
-          <a href="/categories/#blogging">
-            <strong>blogging</strong> <span class="taxonomy__count">6</span>
-          </a>
-        </li>
-      
-    
-      
-    
-  
-    
-      
-    
-      
-        <li>
-          <a href="/categories/#wargame">
-            <strong>Wargame</strong> <span class="taxonomy__count">5</span>
-          </a>
-        </li>
-      
-    
-  
-    
-      
-    
-      
-    
-  
-    
-      
-    
-      
-    
-  
-    
-      
-    
-      
-    
-  
-    
-      
-    
-      
-    
-  
-</ul>
-</div>
-
-
-
-<div id="tag">
-<h2 v-show="flag" v-on:click='toggle()'>
-  Tags ▲
-</h2>
-<h2 v-show="!flag" v-on:click='toggle()'>
-  Tags ▼
-</h2>
-
-<ul v-show="flag" class="taxonomy__index">
-  
-    
-      
-        <li>
-          <a href="/tags/#jekyll">
-            <strong>jekyll</strong> <span class="taxonomy__count">4</span>
-          </a>
-        </li>
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        <li>
-          <a href="/tags/#web">
-            <strong>web</strong> <span class="taxonomy__count">3</span>
-          </a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/tags/#webhackinag-kr">
-            <strong>webhackinag.kr</strong> <span class="taxonomy__count">3</span>
-          </a>
-        </li>
-      
-    
-      
-    
-  
-    
-      
-    
-      
-    
-      
-    
-      
-        <li>
-          <a href="/tags/#system">
-            <strong>system</strong> <span class="taxonomy__count">2</span>
-          </a>
-        </li>
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
-    
-      
-    
-      
-        <li>
-          <a href="/tags/#travis-ci">
-            <strong>travis-ci</strong> <span class="taxonomy__count">1</span>
-          </a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/tags/#disqus">
-            <strong>disqus</strong> <span class="taxonomy__count">1</span>
-          </a>
-        </li>
-      
-    
-      
-    
-      
-        <li>
-          <a href="/tags/#root-me">
-            <strong>root-me</strong> <span class="taxonomy__count">1</span>
-          </a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/tags/#markdown">
-            <strong>markdown</strong> <span class="taxonomy__count">1</span>
-          </a>
-        </li>
-      
-    
-      
-        <li>
-          <a href="/tags/#kramdown">
-            <strong>kramdown</strong> <span class="taxonomy__count">1</span>
-          </a>
-        </li>
-      
-    
-      
-    
-      
-    
-      
-        <li>
-          <a href="/tags/#pwnable-kr">
-            <strong>Pwnable.kr</strong> <span class="taxonomy__count">1</span>
-          </a>
-        </li>
-      
-    
-  
-</ul>
-  
-</div>
-
-<h3 class="archive__subtitle">최근 포스트</h3>
-
-
-  
-
-
-
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope="" itemtype="http://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blogging/config-yml/" rel="permalink">_config.yml 설정하기
+        <a href="/wargame/pwnablekr-fd/" rel="permalink">[Pwnable.kr] Toddler’s Bottle - fd 풀이
 </a>
       
     </h2>
@@ -545,81 +352,85 @@ Categories ▼
 
 
 
-  5 min
+  예상 소요시간 :  1 min
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">minimal-mistakes 테마에서의 _config.yml 설정에 대하여
+    <p class="archive__item-excerpt" itemprop="description">pwntools를 사용한 fd 풀이
 </p>
   </article>
 </div>
 
-
-
-<nav class="pagination">
-  
-  <ul>
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="http://schema.org/CreativeWork">
     
-    
+    <h2 class="archive__item-title" itemprop="headline">
       
-        <li><a href="/">이전</a></li>
+        <a href="/wargame/Webhacking-kr-16/" rel="permalink">[Webhacking.kr] 16번(100) 문제 풀이
+</a>
       
+    </h2>
     
-
-    
-    
-      <li><a href="/">1</a></li>
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-      <li><a href="#" class="disabled current">2</a></li>
-    
-
-    
-    
-      <li><a href="#" class="disabled"><span aria-hidden="true">다음</span></a></li>
-    
-  </ul>
-</nav>
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
-<script>
-  new Vue({
-    el : '#category',
-    data : {
-      flag : false
-    },
-    methods : {
-      toggle: function(){
-        this.flag = !this.flag
-      }
-    }
-  });
-  new Vue({
-    el : '#tag',
-    data : {
-      flag : false
-    },
-    methods : {
-      toggle: function(){
-        this.flag = !this.flag
-      }
-    }
-  });
-</script>
+
+  예상 소요시간 :  1 min
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">*…?
+
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/wargame/Webhacking-kr-14/" rel="permalink">[Webhacking.kr] 14번(100) 문제 풀이
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  예상 소요시간 :  1 min
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">문제를 보면 입력박스 한개, 체크버튼 한개가 보인다.
+
+</p>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/wargame/Webhacking-kr-06/" rel="permalink">[Webhacking.kr] 6번(100) 문제 풀이
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 min
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">천천히 쉬운문제부터 시작하기로 생각하고 안풀었던 문제부터 풀기 시작했다.
+
+</p>
+  </article>
+</div>
 
   </div>
 </div>
@@ -741,6 +552,26 @@ search.start();
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<script>
+  new Vue({
+    el : '#category_tag_menu',
+    data : {
+      flag_c : false,
+      flag_t : false
+    },
+    methods : {
+      togglec: function(){
+        this.flag_c = !this.flag_c;
+      },
+      togglet: function(){
+        this.flag_t = !this.flag_t;
+      }
+    }
+  });
+
+</script>
 
   </body>
 </html>

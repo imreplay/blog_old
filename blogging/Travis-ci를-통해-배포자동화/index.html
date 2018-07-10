@@ -378,6 +378,9 @@
 </nav>
     
   
+    
+  
+    
   </div>
 
 
@@ -1098,6 +1101,26 @@ search.start();
   
 
 
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<script>
+  new Vue({
+    el : '#category_tag_menu',
+    data : {
+      flag_c : false,
+      flag_t : false
+    },
+    methods : {
+      togglec: function(){
+        this.flag_c = !this.flag_c;
+      },
+      togglet: function(){
+        this.flag_t = !this.flag_t;
+      }
+    }
+  });
+
+</script>
 
   </body>
 </html>
