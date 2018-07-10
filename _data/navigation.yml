@@ -6,6 +6,7 @@ main:
     url: "/categories/"
 
 
+
 # 블로그 만들기 포스트 사이드바
 sidebar-blogging:
   - title: "블로그를 만들자!"
@@ -37,5 +38,3 @@ sidebar-wargame:
     children:
     - title: "pwnable.kr"
       url: "/tags/#pwnable-kr"
-    - title: "root-me"
-      url: "/tags/#root-me"
