@@ -101,7 +101,7 @@ Gemfile에 대해서는 모르는 부분이 많아 샘플 Gemfile을 참고하�
 
 아래는 예제 파일입니다.
 
-minimal mistake 에서 샘플로 제공하는 `Gemfile`
+minimal mistake 에서 샘플로 제공하는 `Gemfile` (추천)
 
 ```ruby
 source "https://rubygems.org"
