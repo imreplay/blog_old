@@ -18,7 +18,7 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Imreplay blog">
 <meta property="og:title" content="Posts by Tag">
-<meta property="og:url" content="https://blog.imreplay.xyz/tags/">
+<meta property="og:url" content="https://imreplay.com/tags/">
 
 
 
@@ -36,7 +36,7 @@
   
 
 
-<link rel="canonical" href="https://blog.imreplay.xyz/tags/">
+<link rel="canonical" href="https://imreplay.com/tags/">
 
 
 
@@ -49,7 +49,7 @@
       "@context": "http://schema.org",
       "@type": "Person",
       "name": "Imreplay",
-      "url": "https://blog.imreplay.xyz",
+      "url": "https://imreplay.com",
       "sameAs": null
     }
   </script>
@@ -129,12 +129,12 @@
           
             
             <li class="masthead__menu-item">
-              <a href="https://blog.imreplay.xyz/about/" >About</a>
+              <a href="https://imreplay.com/about/" >About</a>
             </li>
           
             
             <li class="masthead__menu-item">
-              <a href="https://blog.imreplay.xyz/categories/" >Category</a>
+              <a href="https://imreplay.com/categories/" >Category</a>
             </li>
           
         </ul>
@@ -174,7 +174,7 @@
 
       
         
-        <a href="https://blog.imreplay.xyz">
+        <a href="https://imreplay.com">
           <img src="/assets/img/profile.jpg" alt="Imreplay" itemprop="image">
         </a>
       
@@ -183,7 +183,7 @@
 
   <div class="author__content">
     
-      <a href="https://blog.imreplay.xyz"><h3 class="author__name" itemprop="name">Imreplay</h3></a>
+      <a href="https://imreplay.com"><h3 class="author__name" itemprop="name">Imreplay</h3></a>
     
     
       <p class="author__bio" itemprop="description">
@@ -205,8 +205,8 @@
 
       
         <li>
-          <a href="mailto:imreplay@imreplay.xyz">
-            <meta itemprop="email" content="imreplay@imreplay.xyz" />
+          <a href="mailto:imreplay@imreplay.com">
+            <meta itemprop="email" content="imreplay@imreplay.com" />
             <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> 이메일
           </a>
         </li>
@@ -296,6 +296,8 @@
         
            <li><a href="/categories/wargame" class="">Wargame (4)</a></li>
         
+           <li><a href="/categories/study" class="">Study (1)</a></li>
+        
         </ul>
         
         <span class="nav__sub-title" v-on:click='togglet()'>tags</span>
@@ -318,6 +320,8 @@
            <li><a href="/tags/#system" class="">System (1)</a></li>
         
            <li><a href="/tags/#pwnable-kr" class="">Pwnable.kr (1)</a></li>
+        
+           <li><a href="/tags/#정보보안산업기사" class="">정보보안산업기사 (1)</a></li>
         
         </ul>
         
@@ -369,6 +373,8 @@
     
       
     
+      
+    
   
     
       
@@ -401,7 +407,11 @@
     
       
     
+      
+    
   
+    
+      
     
       
     
@@ -473,6 +483,14 @@
         <li>
           <a href="#pwnable-kr">
             <strong>Pwnable.kr</strong> <span class="taxonomy__count">1</span>
+          </a>
+        </li>
+      
+    
+      
+        <li>
+          <a href="#정보보안산업기사">
+            <strong>정보보안산업기사</strong> <span class="taxonomy__count">1</span>
           </a>
         </li>
       
@@ -598,6 +616,8 @@
         </div>
         <a href="#page-title" class="back-to-top">Back to Top &uarr;</a>
       </section>
+    
+  
     
   
     
@@ -820,7 +840,11 @@
   
     
   
+    
+  
 
+  
+    
   
     
   
@@ -1070,6 +1094,53 @@
       </section>
     
   
+    
+      <section id="정보보안산업기사" class="taxonomy__section">
+        <h2 class="archive__subtitle">정보보안산업기사</h2>
+        <div class="entries-list">
+          
+            
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711/" rel="permalink">정보보호 개요 요약
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 min
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+  
+    
+      
+        
+          공부내용 정리 (정보보호 개요)
+        
+      
+    
+  
+
+</p>
+  </article>
+</div>
+          
+        </div>
+        <a href="#page-title" class="back-to-top">Back to Top &uarr;</a>
+      </section>
+    
+  
 
 
   </div>
@@ -1198,7 +1269,7 @@ search.start();
   new Vue({
     el : '#category_tag_menu',
     data : {
-      flag_c : false,
+      flag_c : true,
       flag_t : false
     },
     methods : {

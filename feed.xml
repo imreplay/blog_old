@@ -1,4 +1,165 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://blog.imreplay.xyz/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blog.imreplay.xyz/" rel="alternate" type="text/html" /><updated>2018-07-11T16:24:33+09:00</updated><id>https://blog.imreplay.xyz/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's study blog.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><entry><title type="html">[Pwnable.kr] Toddler’s Bottle - fd 풀이</title><link href="https://blog.imreplay.xyz/wargame/pwnablekr-fd/" rel="alternate" type="text/html" title="[Pwnable.kr] Toddler's Bottle - fd 풀이" /><published>2018-07-10T00:00:00+09:00</published><updated>2018-07-10T10:30:00+09:00</updated><id>https://blog.imreplay.xyz/wargame/pwnablekr-fd</id><content type="html" xml:base="https://blog.imreplay.xyz/wargame/pwnablekr-fd/">&lt;p&gt;문제&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://imreplay.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imreplay.com/" rel="alternate" type="text/html" /><updated>2018-07-12T20:24:12+09:00</updated><id>https://imreplay.com/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's study blog.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><entry><title type="html">정보보호 개요 요약</title><link href="https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711/" rel="alternate" type="text/html" title="정보보호 개요 요약" /><published>2018-07-11T00:00:00+09:00</published><updated>2018-07-11T22:58:00+09:00</updated><id>https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711</id><content type="html" xml:base="https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711/">&lt;h2 id=&quot;정보보호-목표&quot;&gt;정보보호 목표&lt;/h2&gt;
+
+&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;3대 목표는 CIA(기밀성, 무결성, 가용성)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;목표&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;내용&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;기밀성&lt;/strong&gt;(Confidentiality)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;인가된 사람,프로세스, 시스템&lt;/code&gt;이 알 필요성(Need to know)에 근거하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;시스템에 접근&lt;/code&gt;할 수 있다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;무결성&lt;/strong&gt;(Integrity)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;정보가 &lt;code class=&quot;highlighter-rouge&quot;&gt;위조/변조/삭제 되지 않도록 보호&lt;/code&gt;되어야 한다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;가용성&lt;/strong&gt;(Avilavility)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;정당한 사용자&lt;/code&gt;가 시스템의 자원을 &lt;code class=&quot;highlighter-rouge&quot;&gt;필요할 때 사용&lt;/code&gt;할 수 있어야 한다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;인증&lt;/strong&gt;(Authentication)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;정보에 접근할 수 있는 객체의 자격을 검증하는데 사용된다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;책임추적성&lt;/strong&gt;(Accountability)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;보안 목적에는 개체의 행동을 유일하게 추적해서 찾아낼 수 있어야 한다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;부인방지&lt;/strong&gt;(Non-repudiation)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;행위나 이벤트의 발생을 증명하여 부인할 수 없도록 하는 것.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;정보보호-관리와-대책&quot;&gt;정보보호 관리와 대책&lt;/h2&gt;
+
+&lt;p&gt;정보보호 대책은 크게 3가지로 나뉘어 진다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;대책&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;기술적 보호대책&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;정보 시스템, 통신망, 데이터를 보호하기 위한 기본적인 대책. 접근통제, 암호기술, 보안성이 강화된 소프트웨어 등&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;물리적 보호대책&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;자연재해로 부터 시설을 보호하기 위한 자연재해 대책, 외부 적으로부터 보호하기위한 시건장치등이 있다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;관리적 보호대책&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;제도나 법, 교육 등을 확립하고, 보안교육 수립,운영하며 위험 분석및 보안감사를 시행하여 정보시스템의 안정성과 신뢰성을 확보.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;보안-목표와-관련된-공격-분류&quot;&gt;보안 목표와 관련된 공격 분류&lt;/h2&gt;
+
+&lt;p&gt;보안의 세가지 목표는 보안공격에 의해 공격받을 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;보안-목표기밀성무결성가용성와-관련된-공격분류&quot;&gt;보안 목표(기밀성,무결성,가용성)와 관련된 공격분류&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;기밀성&lt;/code&gt;을 위협하는 공격
+    &lt;ul&gt;
+      &lt;li&gt;스누핑(Snooping) : 데이터에 대한 접근 또는 탈취&lt;/li&gt;
+      &lt;li&gt;트래픽 분석(Traffic analysis) : 트래픽 분석을 통해 정보 획득&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;무결성&lt;/code&gt;을 위협하는 공격
+    &lt;ul&gt;
+      &lt;li&gt;수정(Modification) : 메시지 일부를 불법 수정 또는 전송을 지연시켜 인가되지 않은 효과를 노리는 공격&lt;/li&gt;
+      &lt;li&gt;가장(Masquerading) : 한 개체가 다른 개체의 행새를 하는 것&lt;/li&gt;
+      &lt;li&gt;재연(Replaying) : 획득한 데이터 단위를 보관하고 있다가 시간이 흐른 후 재전송&lt;/li&gt;
+      &lt;li&gt;거부/부인(Repudiation) : 송신자는 보낸것을, 또는 수신자가 받은 것을 부인&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;가용성&lt;/code&gt;을 위협하는 공격
+    &lt;ul&gt;
+      &lt;li&gt;서비스거부공격(&lt;abbr title=&quot;Denial of Service&quot;&gt;Dos&lt;/abbr&gt;) : 시스템의 서비스를 느리게 하거나 접근하지 못하게 하는 방법&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;소극적-공격과-적극적-공격&quot;&gt;소극적 공격과 적극적 공격&lt;/h3&gt;
+
+&lt;p&gt;보안 공격을 X.800 과 RFC2828dp 따라 두가지로 분류하면 다음과 같다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;소극적&lt;/code&gt; 공격
+    &lt;ul&gt;
+      &lt;li&gt;특징 : &lt;code class=&quot;highlighter-rouge&quot;&gt;정보획득, 사용&lt;/code&gt;하려는 목표를 가지며 시스템 자원에는 영향을 끼치지 않는다.&lt;/li&gt;
+      &lt;li&gt;위협하는 보안목표 : 기밀성&lt;/li&gt;
+      &lt;li&gt;공격 종류 : 스누핑, 트래픽 분석 등&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;적극적&lt;/code&gt; 공격
+    &lt;ul&gt;
+      &lt;li&gt;특징 : &lt;code class=&quot;highlighter-rouge&quot;&gt;정보의 변조, 시스템의 파괴등&lt;/code&gt;을 목표로 한다.&lt;/li&gt;
+      &lt;li&gt;위협하는 보안목표 : 무결성, 가용성&lt;/li&gt;
+      &lt;li&gt;공격종류 : 수정, 가장, 재연, 거부, 서비스 거부공격 등&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;보안-위협분류&quot;&gt;보안 위협분류&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;자연에 의한 위협
+    &lt;ul&gt;
+      &lt;li&gt;화재 홍수 지진등..&lt;/li&gt;
+      &lt;li&gt;온도계, 무정전시스템, 화재 경보기등을 설치하여 피해를 최소화&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;인간에 의한 위협
+    &lt;ul&gt;
+      &lt;li&gt;비 의도적 위협
+        &lt;ul&gt;
+          &lt;li&gt;가장 큰 위협으로 실수, 태만이 원인&lt;/li&gt;
+          &lt;li&gt;패스워드 공유, 백업의 부재 등&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;의도적 위협
+        &lt;ul&gt;
+          &lt;li&gt;바이러스, 해커, 사이버 테러리스트등으로 부터 발생&lt;/li&gt;
+          &lt;li&gt;도청 신분위장에 의한 불법 접근, 정당한 정보데 대한 부인, 악의적 시스템 장애 유발 등&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;시점별-통제&quot;&gt;시점별 통제&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;예방통제 : &lt;code class=&quot;highlighter-rouge&quot;&gt;사전&lt;/code&gt;에 위협과 취약점을 통제&lt;/li&gt;
+  &lt;li&gt;탐지통제 : 위협을 &lt;code class=&quot;highlighter-rouge&quot;&gt;탐지&lt;/code&gt;하는 통제&lt;/li&gt;
+  &lt;li&gt;교정통제 : &lt;code class=&quot;highlighter-rouge&quot;&gt;탐지된 위협&lt;/code&gt;이나 취약점에 &lt;code class=&quot;highlighter-rouge&quot;&gt;대처&lt;/code&gt;하거나 위협을 줄이거나 취약점을 감소시키는 통제&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;기본-보안용어-정리&quot;&gt;기본 보안용어 정리&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;공격자 : 시스템을 &lt;code class=&quot;highlighter-rouge&quot;&gt;공격, 위협&lt;/code&gt;하는 존재&lt;/li&gt;
+  &lt;li&gt;공격 : 시스템의 &lt;code class=&quot;highlighter-rouge&quot;&gt;보안 서비스를 피해 보안정책을 위반&lt;/code&gt;하려는 의도된 시도&lt;/li&gt;
+  &lt;li&gt;대응 : &lt;code class=&quot;highlighter-rouge&quot;&gt;피해의 최소화&lt;/code&gt; 및 적절한 대응을 위해 &lt;code class=&quot;highlighter-rouge&quot;&gt;탐지, 보고&lt;/code&gt; 하여 위험, 노출, 공격을 &lt;code class=&quot;highlighter-rouge&quot;&gt;제거하거나 방지&lt;/code&gt;하는 행위, 장비, 기법&lt;/li&gt;
+  &lt;li&gt;위험 : 특정 위협이 가져올 피해가 확률적으로 표현되는 &lt;code class=&quot;highlighter-rouge&quot;&gt;예상 손실&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;보안정책 : 시스템이나 기관이 민감하고 중요한 시스템 자원들에 &lt;code class=&quot;highlighter-rouge&quot;&gt;보안 서비스를 제공하기 위해 명시한 규정과 업무&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;자산 : 정보시스템의 데이터, 서비스, 처리 기능, 대역폭, 장비등 &lt;code class=&quot;highlighter-rouge&quot;&gt;시스템 장비 설비&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;위협 : 보안을 침해하고 손해를 가져올 수 있는 &lt;code class=&quot;highlighter-rouge&quot;&gt;상황, 행위, 이벤트가 존재&lt;/code&gt;할 때의 잠재적 &lt;code class=&quot;highlighter-rouge&quot;&gt;보안 위반&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;취약성 : 시스템 보안 정책을 위반할 수 있는 시스템 설계, 구현 혹은 &lt;code class=&quot;highlighter-rouge&quot;&gt;운영, 관리상의 오류,약점&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="정보보안산업기사" /><summary type="html">2018. 07. 11. 공부내용 정리 (정보보호 개요)</summary></entry><entry><title type="html">[Pwnable.kr] Toddler’s Bottle - fd 풀이</title><link href="https://imreplay.com/wargame/pwnablekr-fd/" rel="alternate" type="text/html" title="[Pwnable.kr] Toddler's Bottle - fd 풀이" /><published>2018-07-10T00:00:00+09:00</published><updated>2018-07-10T10:30:00+09:00</updated><id>https://imreplay.com/wargame/pwnablekr-fd</id><content type="html" xml:base="https://imreplay.com/wargame/pwnablekr-fd/">&lt;p&gt;문제&lt;/p&gt;
 
 &lt;h3 id=&quot;fdc&quot;&gt;fd.c&lt;/h3&gt;
 
@@ -88,7 +249,7 @@ fd_run.sendline(&amp;#39;LETMEWIN&amp;#39;)
 print fd_run.recvall()
 
 s.close()&lt;/pre&gt;&lt;/noscript&gt;
-&lt;script src=&quot;https://gist.github.com/imreplay/87cd0362c609c27c48873d88591474f0.js&quot;&gt; &lt;/script&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><category term="system" /><category term="Pwnable.kr" /><summary type="html">pwntools를 사용한 fd 풀이</summary></entry><entry><title type="html">[Webhacking.kr] 16번(100) 문제 풀이</title><link href="https://blog.imreplay.xyz/wargame/Webhacking-kr-16/" rel="alternate" type="text/html" title="[Webhacking.kr] 16번(100) 문제 풀이" /><published>2018-07-08T00:00:00+09:00</published><updated>2018-07-08T23:53:00+09:00</updated><id>https://blog.imreplay.xyz/wargame/Webhacking-kr-16</id><content type="html" xml:base="https://blog.imreplay.xyz/wargame/Webhacking-kr-16/">&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;…?&lt;/p&gt;
+&lt;script src=&quot;https://gist.github.com/imreplay/87cd0362c609c27c48873d88591474f0.js&quot;&gt; &lt;/script&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="system" /><category term="Pwnable.kr" /><summary type="html">pwntools를 사용한 fd 풀이</summary></entry><entry><title type="html">[Webhacking.kr] 16번(100) 문제 풀이</title><link href="https://imreplay.com/wargame/Webhacking-kr-16/" rel="alternate" type="text/html" title="[Webhacking.kr] 16번(100) 문제 풀이" /><published>2018-07-08T00:00:00+09:00</published><updated>2018-07-08T23:53:00+09:00</updated><id>https://imreplay.com/wargame/Webhacking-kr-16</id><content type="html" xml:base="https://imreplay.com/wargame/Webhacking-kr-16/">&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;…?&lt;/p&gt;
 
 &lt;p&gt;소스를 봐야할 것 같다. 이번엔 스크립트부분만 살펴보자&lt;/p&gt;
 
@@ -120,7 +281,7 @@ s.close()&lt;/pre&gt;&lt;/noscript&gt;
 
 &lt;p&gt;콘솔에 &lt;code class=&quot;highlighter-rouge&quot;&gt;String.fromCharCode(124)&lt;/code&gt; 를 입력해보면 &lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt; 문자열이 출력된다.&lt;/p&gt;
 
-&lt;p&gt;문제 화면에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt; 를 입력하면 끝!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><category term="web" /><category term="webhackinag.kr" /><summary type="html">*…?</summary></entry><entry><title type="html">[Webhacking.kr] 14번(100) 문제 풀이</title><link href="https://blog.imreplay.xyz/wargame/Webhacking-kr-14/" rel="alternate" type="text/html" title="[Webhacking.kr] 14번(100) 문제 풀이" /><published>2018-07-08T00:00:00+09:00</published><updated>2018-07-08T22:53:00+09:00</updated><id>https://blog.imreplay.xyz/wargame/Webhacking-kr-14</id><content type="html" xml:base="https://blog.imreplay.xyz/wargame/Webhacking-kr-14/">&lt;p&gt;문제를 보면 입력박스 한개, 체크버튼 한개가 보인다.&lt;/p&gt;
+&lt;p&gt;문제 화면에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt; 를 입력하면 끝!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="web" /><category term="webhackinag.kr" /><summary type="html">*…?</summary></entry><entry><title type="html">[Webhacking.kr] 14번(100) 문제 풀이</title><link href="https://imreplay.com/wargame/Webhacking-kr-14/" rel="alternate" type="text/html" title="[Webhacking.kr] 14번(100) 문제 풀이" /><published>2018-07-08T00:00:00+09:00</published><updated>2018-07-08T22:53:00+09:00</updated><id>https://imreplay.com/wargame/Webhacking-kr-14</id><content type="html" xml:base="https://imreplay.com/wargame/Webhacking-kr-14/">&lt;p&gt;문제를 보면 입력박스 한개, 체크버튼 한개가 보인다.&lt;/p&gt;
 
 &lt;p&gt;소스코드를 확인해 보자.&lt;/p&gt;
 
@@ -194,7 +355,7 @@ s.close()&lt;/pre&gt;&lt;/noscript&gt;
 
 &lt;p&gt;생각해보니 &lt;code class=&quot;highlighter-rouge&quot;&gt;ul * ul&lt;/code&gt; 이다.&lt;/p&gt;
 
-&lt;p&gt;510의 제곱 값을 &lt;code class=&quot;highlighter-rouge&quot;&gt;Auth&lt;/code&gt; 부분에 입력 후 문제 풀이 끝&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><category term="web" /><category term="webhackinag.kr" /><summary type="html">문제를 보면 입력박스 한개, 체크버튼 한개가 보인다.</summary></entry><entry><title type="html">[Webhacking.kr] 6번(100) 문제 풀이</title><link href="https://blog.imreplay.xyz/wargame/Webhacking-kr-06/" rel="alternate" type="text/html" title="[Webhacking.kr] 6번(100) 문제 풀이" /><published>2018-07-08T00:00:00+09:00</published><updated>2018-07-08T22:53:00+09:00</updated><id>https://blog.imreplay.xyz/wargame/Webhacking-kr-06</id><content type="html" xml:base="https://blog.imreplay.xyz/wargame/Webhacking-kr-06/">&lt;p&gt;천천히 쉬운문제부터 시작하기로 생각하고 안풀었던 문제부터 풀기 시작했다.&lt;/p&gt;
+&lt;p&gt;510의 제곱 값을 &lt;code class=&quot;highlighter-rouge&quot;&gt;Auth&lt;/code&gt; 부분에 입력 후 문제 풀이 끝&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="web" /><category term="webhackinag.kr" /><summary type="html">문제를 보면 입력박스 한개, 체크버튼 한개가 보인다.</summary></entry><entry><title type="html">[Webhacking.kr] 6번(100) 문제 풀이</title><link href="https://imreplay.com/wargame/Webhacking-kr-06/" rel="alternate" type="text/html" title="[Webhacking.kr] 6번(100) 문제 풀이" /><published>2018-07-08T00:00:00+09:00</published><updated>2018-07-08T22:53:00+09:00</updated><id>https://imreplay.com/wargame/Webhacking-kr-06</id><content type="html" xml:base="https://imreplay.com/wargame/Webhacking-kr-06/">&lt;p&gt;천천히 쉬운문제부터 시작하기로 생각하고 안풀었던 문제부터 풀기 시작했다.&lt;/p&gt;
 
 &lt;p&gt;처음 문제 페이지에 접속했을때 다음과 같은 화면을 볼 수 있다.&lt;/p&gt;
 
@@ -333,7 +494,7 @@ print(res.text)
 
 &lt;p&gt;파이썬 코드를 통해 웹 요청을 보내는 방법이라서 &lt;code class=&quot;highlighter-rouge&quot;&gt;PHPSESSID&lt;/code&gt; 를 입력받아 진행하였다.&lt;/p&gt;
 
-&lt;p&gt;문제를 풀이하면 결과 페이지가 html로 출력되는데 잘 읽어보면 풀렸다고 나온다!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><category term="web" /><category term="webhackinag.kr" /><summary type="html">천천히 쉬운문제부터 시작하기로 생각하고 안풀었던 문제부터 풀기 시작했다.</summary></entry><entry><title type="html">블로그 개발 환경 구축 정리</title><link href="https://blog.imreplay.xyz/blogging/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95/" rel="alternate" type="text/html" title="블로그 개발 환경 구축 정리" /><published>2018-07-07T00:00:00+09:00</published><updated>2018-07-07T00:03:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95/">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;문제를 풀이하면 결과 페이지가 html로 출력되는데 잘 읽어보면 풀렸다고 나온다!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="web" /><category term="webhackinag.kr" /><summary type="html">천천히 쉬운문제부터 시작하기로 생각하고 안풀었던 문제부터 풀기 시작했다.</summary></entry><entry><title type="html">블로그 개발 환경 구축 정리</title><link href="https://imreplay.com/blogging/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95/" rel="alternate" type="text/html" title="블로그 개발 환경 구축 정리" /><published>2018-07-07T00:00:00+09:00</published><updated>2018-07-07T00:03:00+09:00</updated><id>https://imreplay.com/blogging/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95</id><content type="html" xml:base="https://imreplay.com/blogging/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95/">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
 
 &lt;p&gt;이번 포스팅에서는 블로그를 운영하는 환경에 대해 포스팅 해보려고 합니다.&lt;/p&gt;
 
@@ -458,7 +619,7 @@ bundle exec jekyll serve --host 0.0.0.0 --port 80 --draft
       &lt;p&gt;&lt;a href=&quot;https://gist.github.com/&quot;&gt;gist.github.com&lt;/a&gt;, 간단한 코드 조각들을 공유할 수 있는 플랫폼 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><category term="jekyll" /><summary type="html">블로그 환경, 개발환경 정리</summary></entry><entry><title type="html">블로그에서 사용하는 문법 정리</title><link href="https://blog.imreplay.xyz/blogging/Elements/" rel="alternate" type="text/html" title="블로그에서 사용하는 문법 정리" /><published>2018-07-07T00:00:00+09:00</published><updated>2018-07-07T21:07:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/Elements</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/Elements/">&lt;aside class=&quot;sidebar__right&quot;&gt;
+&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="jekyll" /><summary type="html">블로그 환경, 개발환경 정리</summary></entry><entry><title type="html">블로그에서 사용하는 문법 정리</title><link href="https://imreplay.com/blogging/Elements/" rel="alternate" type="text/html" title="블로그에서 사용하는 문법 정리" /><published>2018-07-07T00:00:00+09:00</published><updated>2018-07-07T21:07:00+09:00</updated><id>https://imreplay.com/blogging/Elements</id><content type="html" xml:base="https://imreplay.com/blogging/Elements/">&lt;aside class=&quot;sidebar__right&quot;&gt;
 &lt;nav class=&quot;toc&quot;&gt;
     &lt;header&gt;&lt;h4 class=&quot;nav__title&quot;&gt;&lt;i class=&quot;fas fa-file-alt&quot;&gt;&lt;/i&gt; On This Page&lt;/h4&gt;&lt;/header&gt;
 &lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
@@ -763,7 +924,7 @@ You can also add the .notice class to a div element.
       &lt;p&gt;각주 내용 2 &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><category term="jekyll" /><category term="markdown" /><category term="kramdown" /><summary type="html">다양한 마크다운 문법과 테마에서 지원하는 기능들을 간단하게 미리보기</summary></entry><entry><title type="html">Travis-ci를 이용해 Github.io 블로그에 검색도구인 Algolia를 적용시켜보자.</title><link href="https://blog.imreplay.xyz/blogging/%EA%B2%80%EC%83%89-%EB%8F%84%EA%B5%AC%EC%9D%B8-Algolia%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90/" rel="alternate" type="text/html" title="Travis-ci를 이용해 Github.io 블로그에 검색도구인 Algolia를 적용시켜보자." /><published>2018-07-03T00:00:00+09:00</published><updated>2018-07-03T16:07:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/%EA%B2%80%EC%83%89%20%EB%8F%84%EA%B5%AC%EC%9D%B8%20Algolia%EB%A5%BC%20%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/%EA%B2%80%EC%83%89-%EB%8F%84%EA%B5%AC%EC%9D%B8-Algolia%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90/">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="jekyll" /><category term="markdown" /><category term="kramdown" /><summary type="html">다양한 마크다운 문법과 테마에서 지원하는 기능들을 간단하게 미리보기</summary></entry><entry><title type="html">Travis-ci를 이용해 Github.io 블로그에 검색도구인 Algolia를 적용시켜보자.</title><link href="https://imreplay.com/blogging/%EA%B2%80%EC%83%89-%EB%8F%84%EA%B5%AC%EC%9D%B8-Algolia%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90/" rel="alternate" type="text/html" title="Travis-ci를 이용해 Github.io 블로그에 검색도구인 Algolia를 적용시켜보자." /><published>2018-07-03T00:00:00+09:00</published><updated>2018-07-03T16:07:00+09:00</updated><id>https://imreplay.com/blogging/%EA%B2%80%EC%83%89%20%EB%8F%84%EA%B5%AC%EC%9D%B8%20Algolia%EB%A5%BC%20%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90</id><content type="html" xml:base="https://imreplay.com/blogging/%EA%B2%80%EC%83%89-%EB%8F%84%EA%B5%AC%EC%9D%B8-Algolia%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90/">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
 
 &lt;p&gt;이번 포스팅에서는 검색도구인 algolia를 jekyll에서 적용시키는 방법에 대해 포스팅하겠습니다.&lt;/p&gt;
 
@@ -904,7 +1065,7 @@ Githib pages 를 사용한 환경은 &lt;a href=&quot;https://community.algolia.
 &lt;p&gt;저장 후 커밋 해주면 검색기능을 사용할 수 있습니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;outtro&quot;&gt;Outtro&lt;/h2&gt;
-&lt;p&gt;포스팅을 작성하면서 &lt;code class=&quot;highlighter-rouge&quot;&gt;ESSENTIAL&lt;/code&gt; 플랜에 &lt;code class=&quot;highlighter-rouge&quot;&gt;FREE FOR OPEN SOURCE&lt;/code&gt; 문구가 달려있는걸 발견했네요 얼른 읽어보러 가야겠습니다!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><category term="disqus" /><summary type="html">검색 도구인 algolia를 github.io에 적용시키기</summary></entry><entry><title type="html">Travis-ci를 이용해 배포 자동화 시키기</title><link href="https://blog.imreplay.xyz/blogging/Travis-ci%EB%A5%BC-%ED%86%B5%ED%95%B4-%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94/" rel="alternate" type="text/html" title="Travis-ci를 이용해 배포 자동화 시키기" /><published>2018-07-02T00:00:00+09:00</published><updated>2018-07-02T12:33:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/Travis-ci%EB%A5%BC%20%ED%86%B5%ED%95%B4%20%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/Travis-ci%EB%A5%BC-%ED%86%B5%ED%95%B4-%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94/">&lt;p&gt;저번 포스팅에서는 minimal-mistake 테마를 이용해서 기본적인 설정을 했습니다.&lt;/p&gt;
+&lt;p&gt;포스팅을 작성하면서 &lt;code class=&quot;highlighter-rouge&quot;&gt;ESSENTIAL&lt;/code&gt; 플랜에 &lt;code class=&quot;highlighter-rouge&quot;&gt;FREE FOR OPEN SOURCE&lt;/code&gt; 문구가 달려있는걸 발견했네요 얼른 읽어보러 가야겠습니다!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="disqus" /><summary type="html">검색 도구인 algolia를 github.io에 적용시키기</summary></entry><entry><title type="html">Travis-ci를 이용해 배포 자동화 시키기</title><link href="https://imreplay.com/blogging/Travis-ci%EB%A5%BC-%ED%86%B5%ED%95%B4-%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94/" rel="alternate" type="text/html" title="Travis-ci를 이용해 배포 자동화 시키기" /><published>2018-07-02T00:00:00+09:00</published><updated>2018-07-02T12:33:00+09:00</updated><id>https://imreplay.com/blogging/Travis-ci%EB%A5%BC%20%ED%86%B5%ED%95%B4%20%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94</id><content type="html" xml:base="https://imreplay.com/blogging/Travis-ci%EB%A5%BC-%ED%86%B5%ED%95%B4-%EB%B0%B0%ED%8F%AC%EC%9E%90%EB%8F%99%ED%99%94/">&lt;p&gt;저번 포스팅에서는 minimal-mistake 테마를 이용해서 기본적인 설정을 했습니다.&lt;/p&gt;
 
 &lt;p&gt;이번 포스팅에서는 minimal-mistake 테마에서 Travis-ci라는 서비스를 이용하여 Github에 push하면 자동으로 build 및 gh-pages 브랜치에 push 하는 방법에 대하여 포스팅 하고자 합니다.&lt;/p&gt;
 
@@ -1226,7 +1387,7 @@ Githib pages 를 사용한 환경은 &lt;a href=&quot;https://community.algolia.
 &lt;h2 id=&quot;마치며&quot;&gt;마치며&lt;/h2&gt;
 &lt;p&gt;새로운 저장소를 만들고 한번더 &lt;code class=&quot;highlighter-rouge&quot;&gt;theme&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;travis-ci&lt;/code&gt;를 연동시켜보니 어느정도 익숙해진 것 같습니다&lt;/p&gt;
 
-&lt;p&gt;이제 다음 포스팅에서는 검색 서비스인 &lt;code class=&quot;highlighter-rouge&quot;&gt;algolia&lt;/code&gt;, 댓글 기능을 제공하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;disqus&lt;/code&gt; 를 적용시켜보고 &lt;code class=&quot;highlighter-rouge&quot;&gt;blogging&lt;/code&gt; 포스팅을 마치겠습니다!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><category term="travis-ci" /><summary type="html">Travis-ci 라는 배포자동화 도구를 통해 github에 푸시 하면 자동으로 빌드 후 gh-pages에 푸시 해주는 서비스를 블로그와 연동시키는 방법</summary></entry><entry><title type="html">minimal mistakes 테마를 이용해 github.io 블로그 구축하기</title><link href="https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="minimal mistakes 테마를 이용해 github.io 블로그 구축하기" /><published>2018-07-01T00:00:00+09:00</published><updated>2018-07-01T13:00:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;이제 다음 포스팅에서는 검색 서비스인 &lt;code class=&quot;highlighter-rouge&quot;&gt;algolia&lt;/code&gt;, 댓글 기능을 제공하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;disqus&lt;/code&gt; 를 적용시켜보고 &lt;code class=&quot;highlighter-rouge&quot;&gt;blogging&lt;/code&gt; 포스팅을 마치겠습니다!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="travis-ci" /><summary type="html">Travis-ci 라는 배포자동화 도구를 통해 github에 푸시 하면 자동으로 빌드 후 gh-pages에 푸시 해주는 서비스를 블로그와 연동시키는 방법</summary></entry><entry><title type="html">minimal mistakes 테마를 이용해 github.io 블로그 구축하기</title><link href="https://imreplay.com/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="minimal mistakes 테마를 이용해 github.io 블로그 구축하기" /><published>2018-07-01T00:00:00+09:00</published><updated>2018-07-01T13:00:00+09:00</updated><id>https://imreplay.com/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0</id><content type="html" xml:base="https://imreplay.com/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
 
 &lt;p&gt;처음 만들어보는 페이지이다 보니 부족한 부분이 많습니다.&lt;br /&gt;
 언제든지 댓글 남겨주시면 수정하도록 하겠습니다!&lt;/p&gt;
@@ -1310,7 +1471,7 @@ https://github.com/imreplay/minimal-mistakes#github-pages-method 를 참고하�
 
 &lt;p&gt;아래는 예제 파일입니다.&lt;/p&gt;
 
-&lt;p&gt;minimal mistake 에서 샘플로 제공하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;minimal mistake 에서 샘플로 제공하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; (추천)&lt;/p&gt;
 
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://rubygems.org&quot;&lt;/span&gt;
 
@@ -1497,332 +1658,4 @@ toc: true
 
 &lt;p&gt;다음 포스팅은 travis-ci를 통해 push를 하면 자동으로 Build되어 gh-pages 브랜치로 결과 파일을 push 해주는 방법에 대하여 포스팅 하도록 하겠습니다.&lt;/p&gt;
 
-&lt;p&gt;혹시 안되거나 에러나는 부분들, 설명이 부족한 부분은 댓글로 남겨주세요!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><category term="jekyll" /><summary type="html">저장소를 fork하여 github pages 또는 travis-ci설정에 맞게 기본적인 환경설정을 하는 방법에 대하여</summary></entry><entry><title type="html">_config.yml 설정하기</title><link href="https://blog.imreplay.xyz/blogging/config-yml/" rel="alternate" type="text/html" title="_config.yml 설정하기" /><published>2018-07-01T00:00:00+09:00</published><updated>2018-07-01T13:05:00+09:00</updated><id>https://blog.imreplay.xyz/blogging/config-yml</id><content type="html" xml:base="https://blog.imreplay.xyz/blogging/config-yml/">&lt;p&gt;minimal-mistakes 테마의 기본 _config.yml을 수정한 내용입니다&lt;/p&gt;
-
-&lt;p&gt;개인적인 의견으로 작성 시 기본 설정 파일을 가지고 내용을 추가해 나가는 것이 편합니다!&lt;/p&gt;
-
-&lt;h3 id=&quot;_configyml&quot;&gt;_config.yml&lt;/h3&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Welcome to Jekyll!&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# This config file is meant for settings that affect your entire site, values&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# which you are expected to set up once and rarely need to edit after that.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# For technical reasons, this file is *NOT* reloaded automatically when you use&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# `jekyll serve`. If you change this file, please restart the server process.&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Theme Settings&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Review documentation to determine if you should use `theme` or `remote_theme`&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# 테마 설정에 대한 부분입니다. 기본 설정을 유지하였습니다.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;theme                  &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;minimal-mistakes-jekyll&quot;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#remote_theme           : &quot;mmistakes/minimal-mistakes&quot;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# 스킨을 설정하는 부분입니다. &lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;minimal_mistakes_skin    &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;dark&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;air&quot;, &quot;aqua&quot;, &quot;contrast&quot;, &quot;dark&quot;, &quot;dirt&quot;, &quot;neon&quot;, &quot;mint&quot;, &quot;plum&quot;, &quot;sunrise&quot;&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# Site Settings&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;locale                   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ko-KR&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 사이트의 언어 설정을 할 수있습니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 표시되는 언어의 내용은 _data/ui-text.yml 에서 수정이 가능합니다.&lt;/span&gt;
-
-&lt;span class=&quot;na&quot;&gt;title                    &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Imreplay&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;blog&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 블로그 제목&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;title_separator          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;-&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 글 제목 - 블로그 제목  과 같이 사이트를 표시해줍니다.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;name                     &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Imreplay&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 사이트 소유자의 이름을 사용합니다.(Used to assign a site author.)&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;description              &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Imreplay's&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;personal&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;website.&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 사이트에 대한 간단한 설명입니다.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;url                      &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://blog.imreplay.xyz&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# the base hostname &amp;amp; protocol for your site e.g. &quot;https://mmistakes.github.io&quot;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 사이트의 주소를 입력합니다.&lt;/span&gt;
-
-&lt;span class=&quot;na&quot;&gt;baseurl                  &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# the subpath of your site, e.g. &quot;/blog&quot;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 사이트의 baseurl을 설정해 줍니다.&lt;/span&gt;
-
-&lt;span class=&quot;na&quot;&gt;repository               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;imreplay/blog&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# GitHub username/repo-name e.g. &quot;mmistakes/minimal-mistakes&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;teaser                   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# path of fallback teaser image, e.g. &quot;/assets/images/500x300.png&quot;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# breadcrumbs            : false # true, false (default)&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;words_per_minute         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;200&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#read time을 계산하기 위한 분당 읽는 글자수 입니다. &lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;comments&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 댓글 설정에 대한부분입니다. 기본적으로 false 로 되어있습니다.&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;provider               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;disqus&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# false (default), &quot;disqus&quot;, &quot;discourse&quot;, &quot;facebook&quot;, &quot;google-plus&quot;, &quot;staticman&quot;, &quot;staticman_v2&quot; &quot;custom&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;disqus&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;#개인적으로 disqus 댓글 모듈을 사용하였습니다.&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;shortname            &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;imreplay-blog&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;discourse&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;server               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;facebook&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# https://developers.facebook.com/docs/plugins/comments&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;appid                &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;num_posts            &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 5 (default)&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;colorscheme          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;light&quot; (default), &quot;dark&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;staticman&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;allowedFields          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# ['name', 'email', 'url', 'message']&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;branch                 &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;master&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;commitMessage          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;New comment.&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;filename               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# comment-{@timestamp}&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;format                 &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;yml&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;moderation             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# true&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;path                   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;/_data/comments/{options.slug}&quot; (default)&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;requiredFields         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# ['name', 'email', 'message']&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;transforms&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;email                &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;md5&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;generatedFields&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;type               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;date&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;format           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;iso8601&quot; (default), &quot;timestamp-seconds&quot;, &quot;timestamp-milliseconds&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;reCaptcha&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;siteKey                &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;secret                 &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;atom_feed&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;path                   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# blank (default) uses feed.xml&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;#사이트내 검색 설정에 대한 부분입니다.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;search                   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# true, false (default)&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;search_full_content      &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# true, false (default)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 저의 경우 algolia 를 사용하고 있으며 추가설정이 필요합니다.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;search_provider          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;algolia&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# lunr (default), algolia, google&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;algolia&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;application_id         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;237ZENFYNY&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# YOUR_APPLICATION_ID&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;index_name             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;blog&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# YOUR_INDEX_NAME&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;search_only_api_key    &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;5cfd50ded1da95d695708070be40e3b9&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# YOUR_SEARCH_ONLY_API_KEY&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;powered_by             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# true (default), false&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;google&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;search_engine_id       &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# YOUR_SEARCH_ENGINE_ID&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;instant_search         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# false (default), true&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# SEO Related 웹마스터 도구 사용을 도와주는 부분입니다.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;google_site_verification &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;bing_site_verification   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;yandex_site_verification &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;naver_site_verification  &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Social Sharing&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;twitter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;username               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;facebook&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;username               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
-  &lt;span class=&quot;na&quot;&gt;app_id                 &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;publisher              &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;og_image                 &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Open Graph/Twitter default site image&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# For specifying social profiles&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# - https://developers.google.com/structured-data/customize/social-profiles&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;social&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;type                   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Person or Organization (defaults to Person)&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;name                   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# If the user or organization name differs from the site's name&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;links&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# An array of links to social media profiles&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;#구글 애널리틱스에 대한 설정입니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Analytics&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;analytics&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;provider               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;google-gtag&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# false (default), &quot;google&quot;, &quot;google-universal&quot;, &quot;custom&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;google&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;tracking_id          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;UA-120523980-2&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;anonymize_ip         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# true, false (default)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# 사이트 소유자에 대한 정보를 작성합니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Site Author&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;name             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Imreplay&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;avatar           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# path of avatar image, e.g. &quot;/assets/images/bio-photo.jpg&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;bio              &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;천천히&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;굴러가는&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;개인&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;공부&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;블로그&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;location         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Republic&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Korea&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;email            &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;imreplay@imreplay.xyz&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;uri              &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://blog.imreplay.xyz&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;home             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# null (default), &quot;absolute or relative url to link to author home&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;bitbucket        &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;codepen          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;dribbble         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;flickr           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;facebook         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;imreplay08&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;foursquare       &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;github           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;imreplay&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;gitlab           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;google_plus      &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;keybase          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;instagram        &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;lastfm           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;linkedin         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;john-doe-12345678&quot; (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;pinterest        &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;soundcloud       &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;stackoverflow    &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;123456/username&quot; (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;steam            &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;steamId&quot; (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;tumblr           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;twitter          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;vine             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;weibo            &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;xing             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;youtube          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;https://youtube.com/c/MichaelRoseDesign&quot;&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# Reading Files&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.htaccess&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;_pages&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;exclude&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;*.sublime-project&quot;&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;*.sublime-workspace&quot;&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;vendor&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.asset-cache&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.bundle&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.jekyll-assets-cache&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.sass-cache&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/js/plugins&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/js/_main.js&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;assets/js/vendor&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Capfile&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;CHANGELOG&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;config&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Gemfile&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Gruntfile.js&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;gulpfile.js&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;LICENSE&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;log&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;node_modules&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;package.json&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Rakefile&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;README&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tmp&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;keep_files&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.git&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.svn&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;utf-8&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;markdown_ext&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;markdown,mkdown,mkdn,mkd,md&quot;&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# Conversion&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;markdown&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;kramdown&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;highlighter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;rouge&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;lsi&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;excerpt_separator&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;incremental&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# Markdown Processing&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;kramdown&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;GFM&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;hard_wrap&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;auto_ids&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;footnote_nr&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;1&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;entity_output&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;as_char&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;toc_levels&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;1..6&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;smart_quotes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;lsquo,rsquo,ldquo,rdquo&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;enable_coderay&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# Sass/SCSS&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;sass&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;sass_dir&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;_sass&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;compressed&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# Outputting&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/:categories/:title/&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;paginate&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# amount of posts to show&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;paginate_path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/page:num/&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;timezone&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Asia/Seoul&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# https://en.wikipedia.org/wiki/List_of_tz_database_time_zones&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# 플러그인을 정의하는 부분입니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Plugins (previously gems:)&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;plugins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-algolia&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-paginate&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-sitemap&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-gist&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-feed&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jemoji&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# mimic GitHub Pages with --safe&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;whitelist&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-paginate&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-sitemap&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-gist&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-feed&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jemoji&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# Archives&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#  Type&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#  - GitHub Pages compatible archive pages built with Liquid ~&amp;gt; type: liquid (default)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#  - Jekyll Archives plugin archive pages ~&amp;gt; type: jekyll-archives&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#  Path (examples)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#  - Archive page should exist at path when using Liquid method or you can&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#    expect broken links (especially with breadcrumbs enabled)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#  - &amp;lt;base_path&amp;gt;/tags/my-awesome-tag/index.html ~&amp;gt; path: /tags/&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#  - &amp;lt;base_path/categories/my-awesome-category/index.html ~&amp;gt; path: /categories/&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#  - &amp;lt;base_path/my-awesome-category/index.html ~&amp;gt; path: /&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;category_archive&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;liquid&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/categories/&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;tag_archive&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;liquid&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/tags/&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# https://github.com/jekyll/jekyll-archives&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# jekyll-archives:&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#   enabled:&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#     - categories&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#     - tags&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#   layouts:&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#     category: archive-taxonomy&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#     tag: archive-taxonomy&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#   permalinks:&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#     category: /categories/:name/&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#     tag: /tags/:name/&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# HTML Compression&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# - http://jch.penibelst.de/&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;compress_html&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;clippings&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;all&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;ignore&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;envs&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;development&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;# Front Matter 설정입니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# 페이지 본문에 적용되는 기본 설정들을 정의합니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# path 값으로 경로를 설정해 줍니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Defaults&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;defaults&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# _posts&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;posts&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;single&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;author_profile&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;read_time&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;comments&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;share&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;related&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;# 테마에 포함되어 있던 Docs 폴더의 _config.yml을 참고하여 _pages 폴더를 만들고 그 폴더에 대한 출력 방법을 정의 했습니다.&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# _pages&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;_pages&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;pages&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;single&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;author_profile&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Travis-ci 를 사용하기 위해 추가한 부분입니다.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Jasper2 테마의 Travis-ci 설정부분을 사용합니다. &lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#build option&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Settings for builing master branch with travis-ci&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# with jekyll-travis&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Settings for deploy rake task&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Username and repo of Github repo, e.g.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# https://github.com/USERNAME/REPO.git&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# username defaults to ENV['GIT_NAME'] used by Travis&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# repo defaults to USERNAME.github.io&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Branch defaults to &quot;source&quot; for USERNAME.github.io&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# or &quot;master&quot; otherwise&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;safe&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;False&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;lsi&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;False&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;imreplay&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Github Username&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;repo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;blog&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Github repo name&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 작업 브랜치를 설정&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;relative_source&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;../blog/&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 저는 repo 이름으로 설정했습니다.&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;destination&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;../posts&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 빌드시 작업파일이 저장될 경로&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;production_url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;https://blog.imreplay.xyz&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 사이트 URL&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;source_url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;https://github.com/imreplay/blog/&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Github 저장소 URL&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.xyz</email></author><category term="jekyll" /><summary type="html">minimal-mistakes 테마에서의 _config.yml 설정에 대하여</summary></entry></feed>
+&lt;p&gt;혹시 안되거나 에러나는 부분들, 설명이 부족한 부분은 댓글로 남겨주세요!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="jekyll" /><summary type="html">저장소를 fork하여 github pages 또는 travis-ci설정에 맞게 기본적인 환경설정을 하는 방법에 대하여</summary></entry></feed>

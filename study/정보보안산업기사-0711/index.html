@@ -9,40 +9,40 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Webhacking.kr] 14번(100) 문제 풀이 - Imreplay blog</title>
-<meta name="description" content="문제를 보면 입력박스 한개, 체크버튼 한개가 보인다.">
+<!-- begin _includes/seo.html --><title>정보보호 개요 요약 - Imreplay blog</title>
+<meta name="description" content="                              공부내용 정리 (정보보호 개요)                    ">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Imreplay blog">
-<meta property="og:title" content="[Webhacking.kr] 14번(100) 문제 풀이">
-<meta property="og:url" content="https://imreplay.com/wargame/Webhacking-kr-14/">
+<meta property="og:title" content="정보보호 개요 요약">
+<meta property="og:url" content="https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711/">
 
 
-  <meta property="og:description" content="문제를 보면 입력박스 한개, 체크버튼 한개가 보인다.">
-
-
-
+  <meta property="og:description" content="                              공부내용 정리 (정보보호 개요)                    ">
 
 
 
 
-  <meta property="article:published_time" content="2018-07-08T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2018-07-08T22:53:00+09:00">
+  <meta property="article:published_time" content="2018-07-11T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2018-07-11T22:58:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="https://imreplay.com/wargame/Webhacking-kr-14/">
+
+<link rel="canonical" href="https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711/">
 
 
 
@@ -289,83 +289,21 @@
 
   
     
-      
-      
-      
-    
-      
-      
-      
-    
-    
-      
-
-<nav class="nav__list">
-  <h3 class="nav__title" style="padding-left: 0;">Wargame 카테고리</h3>
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
-  <label for="ac-toc">Toggle</label>
-  <ul class="nav__items">
-    
-      <li>
-        
-          <span class="nav__sub-title">Web</span>
-        
-
-        
-        <ul>
-          
-            
-            
-
-            
-            
-
-            <li><a href="/tags/#webhackinag-kr" class="">webhacking.kr</a></li>
-          
-        </ul>
-        
-      </li>
-    
-      <li>
-        
-          <span class="nav__sub-title">System</span>
-        
-
-        
-        <ul>
-          
-            
-            
-
-            
-            
-
-            <li><a href="/tags/#pwnable-kr" class="">pwnable.kr</a></li>
-          
-        </ul>
-        
-      </li>
-    
-  </ul>
-</nav>
-    
-  
-    
   
     
   </div>
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[Webhacking.kr] 14번(100) 문제 풀이">
-    <meta itemprop="description" content="문제를 보면 입력박스 한개, 체크버튼 한개가 보인다.">
-    <meta itemprop="datePublished" content="July 08, 2018">
-    <meta itemprop="dateModified" content="July 08, 2018">
+    <meta itemprop="headline" content="정보보호 개요 요약">
+    <meta itemprop="description" content="                              공부내용 정리 (정보보호 개요)                    ">
+    <meta itemprop="datePublished" content="July 11, 2018">
+    <meta itemprop="dateModified" content="July 11, 2018">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[Webhacking.kr] 14번(100) 문제 풀이
+          <h1 id="page-title" class="page__title" itemprop="headline">정보보호 개요 요약
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -373,7 +311,7 @@
 
 
 
-  예상 소요시간 :  1 min
+  2 min
 </p>
           
         </header>
@@ -381,82 +319,168 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>문제를 보면 입력박스 한개, 체크버튼 한개가 보인다.</p>
+        <h2 id="정보보호-목표">정보보호 목표</h2>
 
-<p>소스코드를 확인해 보자.</p>
+<p class="notice--warning"><strong>3대 목표는 CIA(기밀성, 무결성, 가용성)</strong></p>
 
-<p>그렇게 길지 않아서 전문을 첨부하였다.</p>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>목표</strong></th>
+      <th style="text-align: center"><strong>내용</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>기밀성</strong>(Confidentiality)</td>
+      <td style="text-align: center"><code class="highlighter-rouge">인가된 사람,프로세스, 시스템</code>이 알 필요성(Need to know)에 근거하여 <code class="highlighter-rouge">시스템에 접근</code>할 수 있다</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>무결성</strong>(Integrity)</td>
+      <td style="text-align: center">정보가 <code class="highlighter-rouge">위조/변조/삭제 되지 않도록 보호</code>되어야 한다</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>가용성</strong>(Avilavility)</td>
+      <td style="text-align: center"><code class="highlighter-rouge">정당한 사용자</code>가 시스템의 자원을 <code class="highlighter-rouge">필요할 때 사용</code>할 수 있어야 한다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>인증</strong>(Authentication)</td>
+      <td style="text-align: center">정보에 접근할 수 있는 객체의 자격을 검증하는데 사용된다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>책임추적성</strong>(Accountability)</td>
+      <td style="text-align: center">보안 목적에는 개체의 행동을 유일하게 추적해서 찾아낼 수 있어야 한다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>부인방지</strong>(Non-repudiation)</td>
+      <td style="text-align: center">행위나 이벤트의 발생을 증명하여 부인할 수 없도록 하는 것.</td>
+    </tr>
+  </tbody>
+</table>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-<span class="nt">&lt;title&gt;</span>Challenge 14<span class="nt">&lt;/title&gt;</span>
-<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
-<span class="nt">body</span> <span class="p">{</span> <span class="nl">background</span><span class="p">:</span><span class="no">black</span><span class="p">;</span> <span class="nl">color</span><span class="p">:</span><span class="no">white</span><span class="p">;</span> <span class="nl">font-size</span><span class="p">:</span><span class="m">10pt</span><span class="p">;</span> <span class="p">}</span>
-<span class="nt">&lt;/style&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-<span class="nt">&lt;br&gt;&lt;br&gt;</span>
-<span class="nt">&lt;form</span> <span class="na">name=</span><span class="s">pw</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">text</span> <span class="na">name=</span><span class="s">input_pwd</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">button</span> <span class="na">value=</span><span class="s">"check"</span> <span class="na">onclick=</span><span class="s">ck()</span><span class="nt">&gt;&lt;/form&gt;</span>
-<span class="nt">&lt;script&gt;</span>
-<span class="kd">function</span> <span class="nx">ck</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="kd">var</span> <span class="nx">ul</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">URL</span><span class="p">;</span>
-<span class="nx">ul</span><span class="o">=</span><span class="nx">ul</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">".kr"</span><span class="p">);</span>
-<span class="nx">ul</span><span class="o">=</span><span class="nx">ul</span><span class="o">*</span><span class="mi">30</span><span class="p">;</span>
-<span class="k">if</span><span class="p">(</span><span class="nx">ul</span><span class="o">==</span><span class="nx">pw</span><span class="p">.</span><span class="nx">input_pwd</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">"Password is "</span><span class="o">+</span><span class="nx">ul</span><span class="o">*</span><span class="nx">pw</span><span class="p">.</span><span class="nx">input_pwd</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span> <span class="p">}</span>
-<span class="k">else</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">"Wrong"</span><span class="p">);</span> <span class="p">}</span>
-<span class="p">}</span>
+<h2 id="정보보호-관리와-대책">정보보호 관리와 대책</h2>
 
-<span class="nt">&lt;/script&gt;</span>
+<p>정보보호 대책은 크게 3가지로 나뉘어 진다.</p>
 
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>대책</strong></th>
+      <th style="text-align: center"><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>기술적 보호대책</strong></td>
+      <td style="text-align: center">정보 시스템, 통신망, 데이터를 보호하기 위한 기본적인 대책. 접근통제, 암호기술, 보안성이 강화된 소프트웨어 등</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>물리적 보호대책</strong></td>
+      <td style="text-align: center">자연재해로 부터 시설을 보호하기 위한 자연재해 대책, 외부 적으로부터 보호하기위한 시건장치등이 있다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>관리적 보호대책</strong></td>
+      <td style="text-align: center">제도나 법, 교육 등을 확립하고, 보안교육 수립,운영하며 위험 분석및 보안감사를 시행하여 정보시스템의 안정성과 신뢰성을 확보.</td>
+    </tr>
+  </tbody>
+</table>
 
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>
+<h2 id="보안-목표와-관련된-공격-분류">보안 목표와 관련된 공격 분류</h2>
 
-<p>여기서 주의깊게 봐야할 곳은 이부분이다.</p>
+<p>보안의 세가지 목표는 보안공격에 의해 공격받을 수 있다.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
-<span class="kd">function</span> <span class="nx">ck</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="kd">var</span> <span class="nx">ul</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">URL</span><span class="p">;</span>
-<span class="nx">ul</span><span class="o">=</span><span class="nx">ul</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">".kr"</span><span class="p">);</span>
-<span class="nx">ul</span><span class="o">=</span><span class="nx">ul</span><span class="o">*</span><span class="mi">30</span><span class="p">;</span>
-<span class="k">if</span><span class="p">(</span><span class="nx">ul</span><span class="o">==</span><span class="nx">pw</span><span class="p">.</span><span class="nx">input_pwd</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">"Password is "</span><span class="o">+</span><span class="nx">ul</span><span class="o">*</span><span class="nx">pw</span><span class="p">.</span><span class="nx">input_pwd</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span> <span class="p">}</span>
-<span class="k">else</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">"Wrong"</span><span class="p">);</span> <span class="p">}</span>
-<span class="p">}</span>
+<h3 id="보안-목표기밀성무결성가용성와-관련된-공격분류">보안 목표(기밀성,무결성,가용성)와 관련된 공격분류</h3>
 
-<span class="nt">&lt;/script&gt;</span>
-</code></pre></div></div>
+<ul>
+  <li><code class="highlighter-rouge">기밀성</code>을 위협하는 공격
+    <ul>
+      <li>스누핑(Snooping) : 데이터에 대한 접근 또는 탈취</li>
+      <li>트래픽 분석(Traffic analysis) : 트래픽 분석을 통해 정보 획득</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">무결성</code>을 위협하는 공격
+    <ul>
+      <li>수정(Modification) : 메시지 일부를 불법 수정 또는 전송을 지연시켜 인가되지 않은 효과를 노리는 공격</li>
+      <li>가장(Masquerading) : 한 개체가 다른 개체의 행새를 하는 것</li>
+      <li>재연(Replaying) : 획득한 데이터 단위를 보관하고 있다가 시간이 흐른 후 재전송</li>
+      <li>거부/부인(Repudiation) : 송신자는 보낸것을, 또는 수신자가 받은 것을 부인</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">가용성</code>을 위협하는 공격
+    <ul>
+      <li>서비스거부공격(<abbr title="Denial of Service">Dos</abbr>) : 시스템의 서비스를 느리게 하거나 접근하지 못하게 하는 방법</li>
+    </ul>
+  </li>
+</ul>
 
-<p><code class="highlighter-rouge">ul</code>에 <code class="highlighter-rouge">document.URL</code>을 저장한다.</p>
+<h3 id="소극적-공격과-적극적-공격">소극적 공격과 적극적 공격</h3>
 
-<p>그 후 <code class="highlighter-rouge">ul</code>에서 <code class="highlighter-rouge">".kr"</code>의 위치를 찾아 인덱스를 저장한다.</p>
+<p>보안 공격을 X.800 과 RFC2828dp 따라 두가지로 분류하면 다음과 같다.</p>
 
-<p>다음으로 그 값에 30을 곱하고, 제출한 값과 일치하면 성공!</p>
+<ol>
+  <li><code class="highlighter-rouge">소극적</code> 공격
+    <ul>
+      <li>특징 : <code class="highlighter-rouge">정보획득, 사용</code>하려는 목표를 가지며 시스템 자원에는 영향을 끼치지 않는다.</li>
+      <li>위협하는 보안목표 : 기밀성</li>
+      <li>공격 종류 : 스누핑, 트래픽 분석 등</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">적극적</code> 공격
+    <ul>
+      <li>특징 : <code class="highlighter-rouge">정보의 변조, 시스템의 파괴등</code>을 목표로 한다.</li>
+      <li>위협하는 보안목표 : 무결성, 가용성</li>
+      <li>공격종류 : 수정, 가장, 재연, 거부, 서비스 거부공격 등</li>
+    </ul>
+  </li>
+</ol>
 
-<p>alert으로 <code class="highlighter-rouge">ul</code>과 입력한 값을 곱한것이 패스워드 일 것이다.</p>
+<h2 id="보안-위협분류">보안 위협분류</h2>
 
-<p>직접 계산하긴 귀찮으니 저 코드를 콘솔에 실행시켜보자.</p>
+<ul>
+  <li>자연에 의한 위협
+    <ul>
+      <li>화재 홍수 지진등..</li>
+      <li>온도계, 무정전시스템, 화재 경보기등을 설치하여 피해를 최소화</li>
+    </ul>
+  </li>
+  <li>인간에 의한 위협
+    <ul>
+      <li>비 의도적 위협
+        <ul>
+          <li>가장 큰 위협으로 실수, 태만이 원인</li>
+          <li>패스워드 공유, 백업의 부재 등</li>
+        </ul>
+      </li>
+      <li>의도적 위협
+        <ul>
+          <li>바이러스, 해커, 사이버 테러리스트등으로 부터 발생</li>
+          <li>도청 신분위장에 의한 불법 접근, 정당한 정보데 대한 부인, 악의적 시스템 장애 유발 등</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">ul</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">URL</span><span class="p">;</span>
-<span class="nx">ul</span><span class="o">=</span><span class="nx">ul</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">".kr"</span><span class="p">);</span>
-<span class="nx">ul</span><span class="o">=</span><span class="nx">ul</span><span class="o">*</span><span class="mi">30</span><span class="p">;</span>
+<h2 id="시점별-통제">시점별 통제</h2>
 
-<span class="err">#</span> <span class="err">출력부분</span> <span class="err">추가</span>
+<ul>
+  <li>예방통제 : <code class="highlighter-rouge">사전</code>에 위협과 취약점을 통제</li>
+  <li>탐지통제 : 위협을 <code class="highlighter-rouge">탐지</code>하는 통제</li>
+  <li>교정통제 : <code class="highlighter-rouge">탐지된 위협</code>이나 취약점에 <code class="highlighter-rouge">대처</code>하거나 위협을 줄이거나 취약점을 감소시키는 통제</li>
+</ul>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ul</span><span class="p">);</span>
-</code></pre></div></div>
-<p>마지막에 <code class="highlighter-rouge">console.log(ul)</code> 을 추가해서 비교 전 <code class="highlighter-rouge">ul</code>의 값을 확인하였다.</p>
+<h2 id="기본-보안용어-정리">기본 보안용어 정리</h2>
 
-<p>결과값을 보니 <code class="highlighter-rouge">510</code> 이다.</p>
-
-<p><code class="highlighter-rouge">if(ul==pw.input_pwd.value) { alert("Password is "+ul*pw.input_pwd.value); }</code> 부분에서 <code class="highlighter-rouge">ul</code> 과 패스워드로 입력한 값이 같을 때 <code class="highlighter-rouge">ul</code>을 입력값과 곱한다고 했는데</p>
-
-<p>생각해보니 <code class="highlighter-rouge">ul * ul</code> 이다.</p>
-
-<p>510의 제곱 값을 <code class="highlighter-rouge">Auth</code> 부분에 입력 후 문제 풀이 끝</p>
-
+<ul>
+  <li>공격자 : 시스템을 <code class="highlighter-rouge">공격, 위협</code>하는 존재</li>
+  <li>공격 : 시스템의 <code class="highlighter-rouge">보안 서비스를 피해 보안정책을 위반</code>하려는 의도된 시도</li>
+  <li>대응 : <code class="highlighter-rouge">피해의 최소화</code> 및 적절한 대응을 위해 <code class="highlighter-rouge">탐지, 보고</code> 하여 위험, 노출, 공격을 <code class="highlighter-rouge">제거하거나 방지</code>하는 행위, 장비, 기법</li>
+  <li>위험 : 특정 위협이 가져올 피해가 확률적으로 표현되는 <code class="highlighter-rouge">예상 손실</code></li>
+  <li>보안정책 : 시스템이나 기관이 민감하고 중요한 시스템 자원들에 <code class="highlighter-rouge">보안 서비스를 제공하기 위해 명시한 규정과 업무</code></li>
+  <li>자산 : 정보시스템의 데이터, 서비스, 처리 기능, 대역폭, 장비등 <code class="highlighter-rouge">시스템 장비 설비</code></li>
+  <li>위협 : 보안을 침해하고 손해를 가져올 수 있는 <code class="highlighter-rouge">상황, 행위, 이벤트가 존재</code>할 때의 잠재적 <code class="highlighter-rouge">보안 위반</code></li>
+  <li>취약성 : 시스템 보안 정책을 위반할 수 있는 시스템 설계, 구현 혹은 <code class="highlighter-rouge">운영, 관리상의 오류,약점</code></li>
+</ul>
 
         
       </section>
@@ -477,11 +501,7 @@
     
       
       
-      <a href="/tags/#web" class="page__taxonomy-item" rel="tag">web</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/#webhackinag-kr" class="page__taxonomy-item" rel="tag">webhackinag.kr</a>
+      <a href="/tags/#%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC" class="page__taxonomy-item" rel="tag">정보보안산업기사</a>
     
     </span>
   </p>
@@ -502,14 +522,14 @@
     
       
       
-      <a href="/categories/#wargame" class="page__taxonomy-item" rel="tag">Wargame</a>
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">Study</a>
     
     </span>
   </p>
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2018-07-08">July 08, 2018</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2018-07-11">July 11, 2018</time></p>
         
       </footer>
 
@@ -518,25 +538,24 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BWebhacking.kr%5D+14%EB%B2%88%28100%29+%EB%AC%B8%EC%A0%9C+%ED%92%80%EC%9D%B4%20https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-14%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8+%EA%B0%9C%EC%9A%94+%EC%9A%94%EC%95%BD%20https%3A%2F%2Fimreplay.com%2Fstudy%2F%25EC%25A0%2595%25EB%25B3%25B4%25EB%25B3%25B4%25EC%2595%2588%25EC%2582%25B0%25EC%2597%2585%25EA%25B8%25B0%25EC%2582%25AC-0711%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-14%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimreplay.com%2Fstudy%2F%25EC%25A0%2595%25EB%25B3%25B4%25EB%25B3%25B4%25EC%2595%2588%25EC%2582%25B0%25EC%2597%2585%25EA%25B8%25B0%25EC%2582%25AC-0711%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://plus.google.com/share?url=https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-14%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fimreplay.com%2Fstudy%2F%25EC%25A0%2595%25EB%25B3%25B4%25EB%25B3%25B4%25EC%2595%2588%25EC%2582%25B0%25EC%2597%2585%25EA%25B8%25B0%25EC%2582%25AC-0711%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-14%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fimreplay.com%2Fstudy%2F%25EC%25A0%2595%25EB%25B3%25B4%25EB%25B3%25B4%25EC%2595%2588%25EC%2582%25B0%25EC%2597%2585%25EA%25B8%25B0%25EC%2582%25AC-0711%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/wargame/Webhacking-kr-06/" class="pagination--pager" title="[Webhacking.kr] 6번(100) 문제 풀이
+      <a href="/wargame/pwnablekr-fd/" class="pagination--pager" title="[Pwnable.kr] Toddler’s Bottle - fd 풀이
 ">이전</a>
     
     
-      <a href="/wargame/Webhacking-kr-16/" class="pagination--pager" title="[Webhacking.kr] 16번(100) 문제 풀이
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -558,43 +577,6 @@
     <div class="page__related">
       <h4 class="page__related-title">관련 글 더보기</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711/" rel="permalink">정보보호 개요 요약
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  2 min
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">
-  
-    
-      
-        
-          공부내용 정리 (정보보호 개요)
-        
-      
-    
-  
-
-</p>
-  </article>
-</div>
         
           
 
@@ -646,6 +628,34 @@
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">*…?
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/wargame/Webhacking-kr-14/" rel="permalink">[Webhacking.kr] 14번(100) 문제 풀이
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  예상 소요시간 :  1 min
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">문제를 보면 입력박스 한개, 체크버튼 한개가 보인다.
 
 </p>
   </article>
@@ -806,8 +816,8 @@ search.start();
 
   <script>
     var disqus_config = function () {
-      this.page.url = "https://imreplay.com/wargame/Webhacking-kr-14/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/wargame/Webhacking-kr-14"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/study/정보보안산업기사-0711"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');

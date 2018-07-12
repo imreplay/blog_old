@@ -18,7 +18,7 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Imreplay blog">
 <meta property="og:title" content="Imreplay blog">
-<meta property="og:url" content="https://blog.imreplay.xyz/">
+<meta property="og:url" content="https://imreplay.com/">
 
 
 
@@ -36,9 +36,11 @@
   
 
 
-<link rel="canonical" href="https://blog.imreplay.xyz/">
+<link rel="canonical" href="https://imreplay.com/">
 
 
+
+  <link rel="next" href="https://imreplay.com/page2/">
 
 
 
@@ -49,7 +51,7 @@
       "@context": "http://schema.org",
       "@type": "Person",
       "name": "Imreplay",
-      "url": "https://blog.imreplay.xyz",
+      "url": "https://imreplay.com",
       "sameAs": null
     }
   </script>
@@ -129,12 +131,12 @@
           
             
             <li class="masthead__menu-item">
-              <a href="https://blog.imreplay.xyz/about/" >About</a>
+              <a href="https://imreplay.com/about/" >About</a>
             </li>
           
             
             <li class="masthead__menu-item">
-              <a href="https://blog.imreplay.xyz/categories/" >Category</a>
+              <a href="https://imreplay.com/categories/" >Category</a>
             </li>
           
         </ul>
@@ -174,7 +176,7 @@
 
       
         
-        <a href="https://blog.imreplay.xyz">
+        <a href="https://imreplay.com">
           <img src="/assets/img/profile.jpg" alt="Imreplay" itemprop="image">
         </a>
       
@@ -183,7 +185,7 @@
 
   <div class="author__content">
     
-      <a href="https://blog.imreplay.xyz"><h3 class="author__name" itemprop="name">Imreplay</h3></a>
+      <a href="https://imreplay.com"><h3 class="author__name" itemprop="name">Imreplay</h3></a>
     
     
       <p class="author__bio" itemprop="description">
@@ -205,8 +207,8 @@
 
       
         <li>
-          <a href="mailto:imreplay@imreplay.xyz">
-            <meta itemprop="email" content="imreplay@imreplay.xyz" />
+          <a href="mailto:imreplay@imreplay.com">
+            <meta itemprop="email" content="imreplay@imreplay.com" />
             <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> 이메일
           </a>
         </li>
@@ -296,6 +298,8 @@
         
            <li><a href="/categories/wargame" class="">Wargame (4)</a></li>
         
+           <li><a href="/categories/study" class="">Study (1)</a></li>
+        
         </ul>
         
         <span class="nav__sub-title" v-on:click='togglet()'>tags</span>
@@ -319,6 +323,8 @@
         
            <li><a href="/tags/#pwnable-kr" class="">Pwnable.kr (1)</a></li>
         
+           <li><a href="/tags/#정보보안산업기사" class="">정보보안산업기사 (1)</a></li>
+        
         </ul>
         
       </li>
@@ -338,6 +344,43 @@
     
     <h3 class="archive__subtitle">최근 포스트</h3>
 
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711/" rel="permalink">정보보호 개요 요약
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 min
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+  
+    
+      
+        
+          공부내용 정리 (정보보호 개요)
+        
+      
+    
+  
+
+</p>
+  </article>
+</div>
 
   
 
@@ -585,34 +628,43 @@
   </article>
 </div>
 
+
+
+<nav class="pagination">
   
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <ul>
     
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/blogging/config-yml/" rel="permalink">_config.yml 설정하기
-</a>
-      
-    </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  5 min
-</p>
+    <li><a href="#" class="disabled"><span aria-hidden="true">이전</span></a></li>
     
-    <p class="archive__item-excerpt" itemprop="description">minimal-mistakes 테마에서의 _config.yml 설정에 대하여
-</p>
-  </article>
-</div>
 
+    
+    
+      <li><a href="#" class="disabled current">1</a></li>
+    
 
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+
+    
+      <li><a href="/page2/">2</a></li>
+    
+
+    
+    
+      <li><a href="/page2/">다음</a></li>
+    
+  </ul>
+</nav>
 
 
 
@@ -745,7 +797,7 @@ search.start();
   new Vue({
     el : '#category_tag_menu',
     data : {
-      flag_c : false,
+      flag_c : true,
       flag_t : false
     },
     methods : {
