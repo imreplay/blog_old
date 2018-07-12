@@ -1,1 +1,1 @@
-Sitemap: https://imreplay.com/sitemap.xml
+Sitemap: https://blog.imreplay.xyz/sitemap.xml
