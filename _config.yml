@@ -20,7 +20,7 @@ title                    : "Imreplay blog"
 title_separator          : "-"
 name                     : "Imreplay"
 description              : "Imreplay's study blog."
-url                      : "https://imreplay.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://blog.imreplay.xyz" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "imreplay/blog" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -105,9 +105,9 @@ author:
   avatar           : "/assets/img/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "천천히 굴러가는 개인 공부 블로그"
   location         : "Republic of Korea"
-  email            : "imreplay@imreplay.com"
+  email            : "imreplay@imreplay.xyz"
   uri              : 
-  home             : "https://imreplay.com" # null (default), "absolute or relative url to link to author home"
+  home             : "https://blog.imreplay.xyz" # null (default), "absolute or relative url to link to author home"
   bitbucket        :
   codepen          :
   dribbble         :
@@ -335,5 +335,5 @@ repo: blog
 branch: master
 relative_source: ../blog/
 destination: ../posts
-production_url:  https://imreplay.com
+production_url:  https://blog.imreplay.xyz
 source_url:  https://github.com/imreplay/blog/
