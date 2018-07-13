@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://imreplay.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imreplay.com/" rel="alternate" type="text/html" /><updated>2018-07-13T16:25:46+09:00</updated><id>https://imreplay.com/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's study blog.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><entry><title type="html">[정보보안산업기사] 정보보호 개요 요약</title><link href="https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711/" rel="alternate" type="text/html" title="[정보보안산업기사] 정보보호 개요 요약" /><published>2018-07-11T00:00:00+09:00</published><updated>2018-07-11T22:58:00+09:00</updated><id>https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711</id><content type="html" xml:base="https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711/">&lt;h2 id=&quot;정보보호-목표&quot;&gt;정보보호 목표&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://imreplay.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imreplay.com/" rel="alternate" type="text/html" /><updated>2018-07-14T01:34:47+09:00</updated><id>https://imreplay.com/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's study blog.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><entry><title type="html">[정보보안산업기사] 정보보호 개요 정리</title><link href="https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EA%B0%9C%EC%9A%94-0711/" rel="alternate" type="text/html" title="[정보보안산업기사] 정보보호 개요 정리" /><published>2018-07-11T00:00:00+09:00</published><updated>2018-07-11T22:58:00+09:00</updated><id>https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EA%B0%9C%EC%9A%94-0711</id><content type="html" xml:base="https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EA%B0%9C%EC%9A%94-0711/">&lt;h2 id=&quot;정보보호-목표&quot;&gt;정보보호 목표&lt;/h2&gt;
 
 &lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;3대 목표는 CIA(기밀성, 무결성, 가용성)&lt;/strong&gt;&lt;/p&gt;
 
@@ -12,15 +12,15 @@
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;기밀성&lt;/strong&gt;(Confidentiality)&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;인가된 사람,프로세스, 시스템&lt;/code&gt;이 알 필요성(Need to know)에 근거하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;시스템에 접근&lt;/code&gt;할 수 있다&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;인가된 사람,프로세스, 시스템&lt;/strong&gt;이 알 필요성(Need to know)에 근거하여 &lt;strong&gt;시스템에 접근&lt;/strong&gt;할 수 있다&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;무결성&lt;/strong&gt;(Integrity)&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;정보가 &lt;code class=&quot;highlighter-rouge&quot;&gt;위조/변조/삭제 되지 않도록 보호&lt;/code&gt;되어야 한다&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;정보가 &lt;strong&gt;위조/변조/삭제 되지 않도록 보호&lt;/strong&gt;되어야 한다&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;가용성&lt;/strong&gt;(Avilavility)&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;정당한 사용자&lt;/code&gt;가 시스템의 자원을 &lt;code class=&quot;highlighter-rouge&quot;&gt;필요할 때 사용&lt;/code&gt;할 수 있어야 한다.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;정당한 사용자&lt;/strong&gt;가 시스템의 자원을 &lt;strong&gt;필요할 때 사용&lt;/strong&gt;할 수 있어야 한다.&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;인증&lt;/strong&gt;(Authentication)&lt;/td&gt;
@@ -71,13 +71,13 @@
 &lt;h3 id=&quot;보안-목표기밀성무결성가용성와-관련된-공격분류&quot;&gt;보안 목표(기밀성,무결성,가용성)와 관련된 공격분류&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;기밀성&lt;/code&gt;을 위협하는 공격
+  &lt;li&gt;&lt;strong&gt;기밀성&lt;/strong&gt;을 위협하는 공격
     &lt;ul&gt;
       &lt;li&gt;스누핑(Snooping) : 데이터에 대한 접근 또는 탈취&lt;/li&gt;
       &lt;li&gt;트래픽 분석(Traffic analysis) : 트래픽 분석을 통해 정보 획득&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;무결성&lt;/code&gt;을 위협하는 공격
+  &lt;li&gt;&lt;strong&gt;무결성&lt;/strong&gt;을 위협하는 공격
     &lt;ul&gt;
       &lt;li&gt;수정(Modification) : 메시지 일부를 불법 수정 또는 전송을 지연시켜 인가되지 않은 효과를 노리는 공격&lt;/li&gt;
       &lt;li&gt;가장(Masquerading) : 한 개체가 다른 개체의 행새를 하는 것&lt;/li&gt;
@@ -85,7 +85,7 @@
       &lt;li&gt;거부/부인(Repudiation) : 송신자는 보낸것을, 또는 수신자가 받은 것을 부인&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;가용성&lt;/code&gt;을 위협하는 공격
+  &lt;li&gt;&lt;strong&gt;가용성&lt;/strong&gt;을 위협하는 공격
     &lt;ul&gt;
       &lt;li&gt;서비스거부공격(&lt;abbr title=&quot;Denial of Service&quot;&gt;Dos&lt;/abbr&gt;) : 시스템의 서비스를 느리게 하거나 접근하지 못하게 하는 방법&lt;/li&gt;
     &lt;/ul&gt;
@@ -97,16 +97,16 @@
 &lt;p&gt;보안 공격을 X.800 과 RFC2828dp 따라 두가지로 분류하면 다음과 같다.&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;소극적&lt;/code&gt; 공격
+  &lt;li&gt;&lt;strong&gt;소극적&lt;/strong&gt; 공격
     &lt;ul&gt;
-      &lt;li&gt;특징 : &lt;code class=&quot;highlighter-rouge&quot;&gt;정보획득, 사용&lt;/code&gt;하려는 목표를 가지며 시스템 자원에는 영향을 끼치지 않는다.&lt;/li&gt;
+      &lt;li&gt;특징 : &lt;strong&gt;정보획득, 사용&lt;/strong&gt;하려는 목표를 가지며 시스템 자원에는 영향을 끼치지 않는다.&lt;/li&gt;
       &lt;li&gt;위협하는 보안목표 : 기밀성&lt;/li&gt;
       &lt;li&gt;공격 종류 : 스누핑, 트래픽 분석 등&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;적극적&lt;/code&gt; 공격
+  &lt;li&gt;&lt;strong&gt;적극적&lt;/strong&gt; 공격
     &lt;ul&gt;
-      &lt;li&gt;특징 : &lt;code class=&quot;highlighter-rouge&quot;&gt;정보의 변조, 시스템의 파괴등&lt;/code&gt;을 목표로 한다.&lt;/li&gt;
+      &lt;li&gt;특징 : &lt;strong&gt;정보의 변조, 시스템의 파괴등&lt;/strong&gt;을 목표로 한다.&lt;/li&gt;
       &lt;li&gt;위협하는 보안목표 : 무결성, 가용성&lt;/li&gt;
       &lt;li&gt;공격종류 : 수정, 가장, 재연, 거부, 서비스 거부공격 등&lt;/li&gt;
     &lt;/ul&gt;
@@ -143,22 +143,22 @@
 &lt;h2 id=&quot;시점별-통제&quot;&gt;시점별 통제&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;예방통제 : &lt;code class=&quot;highlighter-rouge&quot;&gt;사전&lt;/code&gt;에 위협과 취약점을 통제&lt;/li&gt;
-  &lt;li&gt;탐지통제 : 위협을 &lt;code class=&quot;highlighter-rouge&quot;&gt;탐지&lt;/code&gt;하는 통제&lt;/li&gt;
-  &lt;li&gt;교정통제 : &lt;code class=&quot;highlighter-rouge&quot;&gt;탐지된 위협&lt;/code&gt;이나 취약점에 &lt;code class=&quot;highlighter-rouge&quot;&gt;대처&lt;/code&gt;하거나 위협을 줄이거나 취약점을 감소시키는 통제&lt;/li&gt;
+  &lt;li&gt;예방통제 : &lt;strong&gt;사전&lt;/strong&gt;에 위협과 취약점을 통제&lt;/li&gt;
+  &lt;li&gt;탐지통제 : 위협을 &lt;strong&gt;탐지&lt;/strong&gt;하는 통제&lt;/li&gt;
+  &lt;li&gt;교정통제 : &lt;strong&gt;탐지된 위협&lt;/strong&gt;이나 취약점에 &lt;strong&gt;대처&lt;/strong&gt;하거나 위협을 줄이거나 취약점을 감소시키는 통제&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;기본-보안용어-정리&quot;&gt;기본 보안용어 정리&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;공격자 : 시스템을 &lt;code class=&quot;highlighter-rouge&quot;&gt;공격, 위협&lt;/code&gt;하는 존재&lt;/li&gt;
-  &lt;li&gt;공격 : 시스템의 &lt;code class=&quot;highlighter-rouge&quot;&gt;보안 서비스를 피해 보안정책을 위반&lt;/code&gt;하려는 의도된 시도&lt;/li&gt;
-  &lt;li&gt;대응 : &lt;code class=&quot;highlighter-rouge&quot;&gt;피해의 최소화&lt;/code&gt; 및 적절한 대응을 위해 &lt;code class=&quot;highlighter-rouge&quot;&gt;탐지, 보고&lt;/code&gt; 하여 위험, 노출, 공격을 &lt;code class=&quot;highlighter-rouge&quot;&gt;제거하거나 방지&lt;/code&gt;하는 행위, 장비, 기법&lt;/li&gt;
-  &lt;li&gt;위험 : 특정 위협이 가져올 피해가 확률적으로 표현되는 &lt;code class=&quot;highlighter-rouge&quot;&gt;예상 손실&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;보안정책 : 시스템이나 기관이 민감하고 중요한 시스템 자원들에 &lt;code class=&quot;highlighter-rouge&quot;&gt;보안 서비스를 제공하기 위해 명시한 규정과 업무&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;자산 : 정보시스템의 데이터, 서비스, 처리 기능, 대역폭, 장비등 &lt;code class=&quot;highlighter-rouge&quot;&gt;시스템 장비 설비&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;위협 : 보안을 침해하고 손해를 가져올 수 있는 &lt;code class=&quot;highlighter-rouge&quot;&gt;상황, 행위, 이벤트가 존재&lt;/code&gt;할 때의 잠재적 &lt;code class=&quot;highlighter-rouge&quot;&gt;보안 위반&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;취약성 : 시스템 보안 정책을 위반할 수 있는 시스템 설계, 구현 혹은 &lt;code class=&quot;highlighter-rouge&quot;&gt;운영, 관리상의 오류,약점&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;공격자 : 시스템을 &lt;strong&gt;공격, 위협&lt;/strong&gt;하는 존재&lt;/li&gt;
+  &lt;li&gt;공격 : 시스템의 &lt;strong&gt;보안 서비스를 피해 보안정책을 위반&lt;/strong&gt;하려는 의도된 시도&lt;/li&gt;
+  &lt;li&gt;대응 : &lt;strong&gt;피해의 최소화&lt;/strong&gt; 및 적절한 대응을 위해 &lt;strong&gt;탐지, 보고&lt;/strong&gt; 하여 위험, 노출, 공격을 &lt;strong&gt;제거하거나 방지&lt;/strong&gt;하는 행위, 장비, 기법&lt;/li&gt;
+  &lt;li&gt;위험 : 특정 위협이 가져올 피해가 확률적으로 표현되는 &lt;strong&gt;예상 손실&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;보안정책 : 시스템이나 기관이 민감하고 중요한 시스템 자원들에 &lt;strong&gt;보안 서비스를 제공하기 위해 명시한 규정과 업무&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;자산 : 정보시스템의 데이터, 서비스, 처리 기능, 대역폭, 장비등 &lt;strong&gt;시스템 장비 설비&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;위협 : 보안을 침해하고 손해를 가져올 수 있는 &lt;strong&gt;상황, 행위, 이벤트가 존재&lt;/strong&gt;할 때의 잠재적 &lt;strong&gt;보안 위반&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;취약성 : 시스템 보안 정책을 위반할 수 있는 시스템 설계, 구현 혹은 &lt;strong&gt;운영, 관리상의 오류,약점&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="정보보안산업기사" /><summary type="html">2018. 07. 11. 공부내용 정리 (정보보호 개요)</summary></entry><entry><title type="html">[Pwnable.kr] Toddler’s Bottle - fd 풀이</title><link href="https://imreplay.com/wargame/pwnablekr-fd/" rel="alternate" type="text/html" title="[Pwnable.kr] Toddler's Bottle - fd 풀이" /><published>2018-07-10T00:00:00+09:00</published><updated>2018-07-10T10:30:00+09:00</updated><id>https://imreplay.com/wargame/pwnablekr-fd</id><content type="html" xml:base="https://imreplay.com/wargame/pwnablekr-fd/">&lt;p&gt;문제&lt;/p&gt;
 
 &lt;h3 id=&quot;fdc&quot;&gt;fd.c&lt;/h3&gt;
