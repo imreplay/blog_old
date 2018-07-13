@@ -4,8 +4,6 @@ main:
     url: "/about/"
   - title: "Category"
     url: "/categories/"
-  - title: "For cpc"
-    url: "/files/dns.bat"
 
 
 
