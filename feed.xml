@@ -1,14 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://imreplay.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imreplay.com/" rel="alternate" type="text/html" /><updated>2018-07-12T23:18:37+09:00</updated><id>https://imreplay.com/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's study blog.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><entry><title type="html">블로그 도메인 이전 예정</title><link href="https://imreplay.com/notice/blog-notice/" rel="alternate" type="text/html" title="블로그 도메인 이전 예정" /><published>2018-07-12T00:00:00+09:00</published><updated>2018-07-12T21:00:00+09:00</updated><id>https://imreplay.com/notice/blog-notice</id><content type="html" xml:base="https://imreplay.com/notice/blog-notice/">&lt;p&gt;현재 사용중인 https://blog.imreplay.xyz 도메인 에서&lt;/p&gt;
-
-&lt;p&gt;곧 https://imreplay.com 으로 도메인 변경 예정입니다!&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;도메인 설정이 생각만큼 쉽지않아서 약간 시간이 걸려요 ㅠㅠ &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><summary type="html">현재 사용중인 https://blog.imreplay.xyz 도메인 에서</summary></entry><entry><title type="html">정보보호 개요 요약</title><link href="https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711/" rel="alternate" type="text/html" title="정보보호 개요 요약" /><published>2018-07-11T00:00:00+09:00</published><updated>2018-07-11T22:58:00+09:00</updated><id>https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711</id><content type="html" xml:base="https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711/">&lt;h2 id=&quot;정보보호-목표&quot;&gt;정보보호 목표&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://imreplay.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imreplay.com/" rel="alternate" type="text/html" /><updated>2018-07-13T14:44:28+09:00</updated><id>https://imreplay.com/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's study blog.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><entry><title type="html">정보보호 개요 요약</title><link href="https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711/" rel="alternate" type="text/html" title="정보보호 개요 요약" /><published>2018-07-11T00:00:00+09:00</published><updated>2018-07-11T22:58:00+09:00</updated><id>https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711</id><content type="html" xml:base="https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-0711/">&lt;h2 id=&quot;정보보호-목표&quot;&gt;정보보호 목표&lt;/h2&gt;
 
 &lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;3대 목표는 CIA(기밀성, 무결성, 가용성)&lt;/strong&gt;&lt;/p&gt;
 
@@ -1397,4 +1387,275 @@ Githib pages 를 사용한 환경은 &lt;a href=&quot;https://community.algolia.
 &lt;h2 id=&quot;마치며&quot;&gt;마치며&lt;/h2&gt;
 &lt;p&gt;새로운 저장소를 만들고 한번더 &lt;code class=&quot;highlighter-rouge&quot;&gt;theme&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;travis-ci&lt;/code&gt;를 연동시켜보니 어느정도 익숙해진 것 같습니다&lt;/p&gt;
 
-&lt;p&gt;이제 다음 포스팅에서는 검색 서비스인 &lt;code class=&quot;highlighter-rouge&quot;&gt;algolia&lt;/code&gt;, 댓글 기능을 제공하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;disqus&lt;/code&gt; 를 적용시켜보고 &lt;code class=&quot;highlighter-rouge&quot;&gt;blogging&lt;/code&gt; 포스팅을 마치겠습니다!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="travis-ci" /><summary type="html">Travis-ci 라는 배포자동화 도구를 통해 github에 푸시 하면 자동으로 빌드 후 gh-pages에 푸시 해주는 서비스를 블로그와 연동시키는 방법</summary></entry></feed>
+&lt;p&gt;이제 다음 포스팅에서는 검색 서비스인 &lt;code class=&quot;highlighter-rouge&quot;&gt;algolia&lt;/code&gt;, 댓글 기능을 제공하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;disqus&lt;/code&gt; 를 적용시켜보고 &lt;code class=&quot;highlighter-rouge&quot;&gt;blogging&lt;/code&gt; 포스팅을 마치겠습니다!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="travis-ci" /><summary type="html">Travis-ci 라는 배포자동화 도구를 통해 github에 푸시 하면 자동으로 빌드 후 gh-pages에 푸시 해주는 서비스를 블로그와 연동시키는 방법</summary></entry><entry><title type="html">minimal mistakes 테마를 이용해 github.io 블로그 구축하기</title><link href="https://imreplay.com/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="minimal mistakes 테마를 이용해 github.io 블로그 구축하기" /><published>2018-07-01T00:00:00+09:00</published><updated>2018-07-01T13:00:00+09:00</updated><id>https://imreplay.com/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0</id><content type="html" xml:base="https://imreplay.com/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+
+&lt;p&gt;처음 만들어보는 페이지이다 보니 부족한 부분이 많습니다.&lt;br /&gt;
+언제든지 댓글 남겨주시면 수정하도록 하겠습니다!&lt;/p&gt;
+
+&lt;div class=&quot;notice&quot;&gt;
+&lt;p&gt;본 포스팅은 블로그 구축 후 작성하는 것으로,  minimal mistakes 테마를 Fork 하여 본인의 입맛에 맞게 수정하는 과정입니다.&lt;/p&gt;
+
+&lt;p&gt;또한 일부 내용은 &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/&quot;&gt;https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/&lt;/a&gt; 의 내용을 참고하였습니다.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;테마-fork-후-불필요한-내용-삭제&quot;&gt;테마 Fork 후 불필요한 내용 삭제&lt;/h2&gt;
+
+&lt;p&gt;저의 경우 &lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes&quot;&gt;minimal mistakes 테마&lt;/a&gt; 를 사용했습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/fork.jpg&quot; alt=&quot;fork&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 저장소에 접속 하여 우측 상단의 Fork 버튼을 눌러 자신의 저장소로 복제 해 줍시다.&lt;/p&gt;
+
+&lt;p&gt;그 후 테마에 포함되어있는 불필요한 파일들을 삭제 해 줍니다.&lt;/p&gt;
+
+&lt;p&gt;목록은 아래와 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.editorconfig&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.gitattributes&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.github&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/docs&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/test&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CHANGELOG.md&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;minimal-mistakes-jekyll.gemspec&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;README.md&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;screenshot-layouts.png&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;screenshot.png&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;notice&quot;&gt;샘플페이지에 대한 데이터는 &lt;code class=&quot;highlighter-rouge&quot;&gt;docs/&lt;/code&gt; 디렉터리에 저장되어 있으니 참고하실 분들은 삭제 하지 않으셔도 되지만 사이트에 샘플 포스트가 표시될 수 있습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;_configyml-변경&quot;&gt;_config.yml 변경&lt;/h2&gt;
+&lt;p&gt;저장소 최상위 디렉토리에 존재하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 파일을 사용자의 취향에 맞게 설정 해 줍니다.&lt;/p&gt;
+
+&lt;p&gt;현재 사이트의 설정은 &lt;a href=&quot;https://blog.imreplay.xyz/blogging/config-yml&quot;&gt;_config.yml 설정하기&lt;/a&gt; 에서 확인할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;_config.yml 에 대한 자세한 설명은 &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/configuration/&quot;&gt;configuration&lt;/a&gt; 에서 확인할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;notice--warning&quot;&gt;
+&lt;p&gt;github pages 를 이용하시는 분들은
+https://github.com/imreplay/minimal-mistakes#github-pages-method 를 참고하여&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gem &quot;github-pages&quot;, group: :jekyll_plugins&lt;/code&gt;
+ 추가 및&lt;br /&gt;
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;remote_theme: &quot;mmistakes/minimal-mistakes&quot;&lt;/code&gt;  설정, theme 부분 주석 처리 해주셔야 합니다!&lt;/p&gt;
+
+&lt;p&gt;Settings 에서 github pages 브랜치 설정을 &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; 로 설정해주시면&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;계정명.github.io/저장소명&lt;/code&gt; 으로 접근 가능합니다!&lt;/p&gt;
+
+&lt;p&gt;예를 들면 &lt;a href=&quot;https://imreplay.github.io/test/&quot;&gt;https://imreplay.github.io/test/&lt;/a&gt; 처럼요!&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;gemfile-설정&quot;&gt;Gemfile 설정&lt;/h2&gt;
+&lt;p&gt;최상위 디렉토리에 위치한 Gemfile을 수정해 줍니다.&lt;/p&gt;
+
+&lt;p&gt;Gemfile에 대해서는 모르는 부분이 많아 샘플 Gemfile을 참고하시는것을 추천드립니다.&lt;/p&gt;
+
+&lt;div class=&quot;notice--info&quot;&gt;
+&lt;p&gt;&lt;strong&gt;Gemfile?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;다양한 Gem을 등록하는 파일 입니다.&lt;/li&gt;
+  &lt;li&gt;Gem은 루비에서 지원하는 패키지 시스템으로 필요한 프로그램을 관리할 수 있도록 도와줍니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;아래는 예제 파일입니다.&lt;/p&gt;
+
+&lt;p&gt;minimal mistake 에서 샘플로 제공하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; (추천)&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://rubygems.org&quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;github-pages&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;group: :jekyll_plugins&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;tzinfo-data&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;wdm&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 0.1.0&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Gem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;win_platform?&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# If you have any plugins, put them here!&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:jekyll_plugins&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-paginate&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-sitemap&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-gist&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-feed&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jemoji&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-algolia&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;현재 사이트에 적용되어있는 &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://rubygems.org&quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;minimal-mistakes-jekyll&quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 3.6.2&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;github-pages&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 168&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rake&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 12.3.0&quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:jekyll_plugins&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-feed&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-seo-tag&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-sitemap&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-paginate&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-algolia&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;navigationyml-수정하기&quot;&gt;navigation.yml 수정하기&lt;/h2&gt;
+
+&lt;p&gt;최상위 디렉토리의 _data/navigation.yml 을 수정합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# main links&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;About&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 네비게이션 바에 표시 되는 이름&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/about/&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 클릭시 이동할 URL&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Category&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/categories/&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# - title: &quot;Sample Collections&quot;&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;#   url: /collection-archive/&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# - title: &quot;Sitemap&quot;&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;#   url: /sitemap&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;또한 이 파일을 통해 Sidebar를 커스터마이징 하는 기능또한 제공되고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;해당 기능에 대한 설명은 &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/layouts/#custom-sidebar-navigation-menu&quot;&gt;custom-sidebar-navigation-menu&lt;/a&gt; 에서 확인가능합니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;_pages-추가하기&quot;&gt;_pages 추가하기&lt;/h2&gt;
+&lt;p&gt;기본 설정들은 어느정도 끝났으니 몇가지 페이지를 만들어봅시다.&lt;/p&gt;
+
+&lt;p&gt;먼저 최상위 폴더에 _pages 라는 폴더를 만들어 준 후&lt;/p&gt;
+
+&lt;p&gt;minimal-mistake에서 &lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes/tree/master/docs/_pages&quot;&gt;샘플&lt;/a&gt;로 제공되는 페이지 중 필요한 걸 몇가지 가져옵니다.&lt;/p&gt;
+
+&lt;p&gt;이번 포스팅에서 추가할 페이지는&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;404 에러 페이지 (404.md)&lt;/li&gt;
+  &lt;li&gt;about 페이지 (about.md)&lt;/li&gt;
+  &lt;li&gt;카테고리 페이지 (category-archive.md)&lt;/li&gt;
+  &lt;li&gt;태그 페이지 (tag-archive.md)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;정도만 가져오도록 하겠습니다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/_pages
+ ㄴ404.md
+ ㄴabout.md
+ ㄴcategory-archive.md
+ ㄴtag-archive.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이런 구조가 되겠군요.&lt;/p&gt;
+
+&lt;p&gt;추가적으로 필요한 페이지가 있다면 가져오시면 되겠습니다.&lt;/p&gt;
+
+&lt;p class=&quot;notice&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;about.md&lt;/code&gt; 페이지를 제외한 나머지 페이지들은 크게 수정할 부분이 없으니 그대로 사용하고, about 페이지는 개인의 취향에 맞게 수정하여 사용하시면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;그 후  &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 파일에 _pages에 대한 내용을 추가해줍니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;_configyml&quot;&gt;_config.yml&lt;/h3&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;defaults&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# _posts&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;posts&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;single&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;author_profile&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;read_time&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;comments&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;share&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;related&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;#&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; 여기서부터 추가 됨&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# _pages 부분입니다.&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;_pages&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;pages&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;single&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;author_profile&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; 여기까지 추가 됨&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;포스팅-하기&quot;&gt;포스팅 하기&lt;/h2&gt;
+&lt;p&gt;_posts 디렉토리를 최상위 폴더에 생성한 후&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-제목.md&lt;/code&gt; 형식으로 포스팅을 생성합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2018-01-01-hello-world.md&lt;/code&gt; 와 같이 작성하시면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;그 후, 헤더를 작성하고 글을 포스팅하면 됩니다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+---
+title: &quot;minimal mistakes 테마를 이용해 github.io 블로그 구축하기&quot;
+categories: 
+  - blogging
+last_modified_at: 2018-07-01T13:00:00+09:00
+toc: true
+---
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위와같이 작성 할 수 있으며, 들어가는 항목은 title, categories, tags 등이 있습니다다.&lt;/p&gt;
+
+&lt;p&gt;https://mmistakes.github.io/minimal-mistakes/ 에서 여러가지 샘플들을 보며 참고하면 편할 듯 합니다.&lt;/p&gt;
+
+&lt;p&gt;아래는 몇가지 헤더부분에 들어가는 몇가지 예제입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 태그 사용&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tag1&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tag2&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#카테고리&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;category a&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;author_profile&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; / &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#작성자 프로필 출력여부&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;read_time&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# read_time을 출력할지 여부 1min read 같은것!&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;toc&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#Table Of Contents 목차 보여줌&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;toc_label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;My&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Table&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Contents&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# toc 이름 정의&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;toc_icon&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;cog&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#font Awesome아이콘으로 toc 아이콘 설정&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;toc_sticky&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 스크롤 내릴때 같이 내려가는 목차&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;gallery&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#이미지 갤러리&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/assets/images/unsplash-gallery-image-1.jpg&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image_path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/assets/images/unsplash-gallery-image-1-th.jpg&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;1&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;caption&quot;&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/assets/images/unsplash-gallery-image-2.jpg&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image_path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/assets/images/unsplash-gallery-image-2-th.jpg&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;2&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;caption&quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#다음과 같이 본문에서 사용한다.&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;include gallery caption=&quot;This is a sample gallery with **Markdown support**.&quot; %&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# 헤더에 유튜브 비디오 삽입&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;video&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;XsxDH4HcOWA&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;youtube&lt;/span&gt;
+
+
+&lt;span class=&quot;na&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;https://github.com&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Direct Link 만들기&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;결과 페이지는 &lt;a href=&quot;https://imreplay.github.io/test/&quot;&gt;https://imreplay.github.io/test/&lt;/a&gt; 처럼 나오네요!&lt;/p&gt;
+
+&lt;p&gt;다음 포스팅은 travis-ci를 통해 push를 하면 자동으로 Build되어 gh-pages 브랜치로 결과 파일을 push 해주는 방법에 대하여 포스팅 하도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;혹시 안되거나 에러나는 부분들, 설명이 부족한 부분은 댓글로 남겨주세요!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="jekyll" /><summary type="html">저장소를 fork하여 github pages 또는 travis-ci설정에 맞게 기본적인 환경설정을 하는 방법에 대하여</summary></entry></feed>
