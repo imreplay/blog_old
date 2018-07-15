@@ -1,4 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://imreplay.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imreplay.com/" rel="alternate" type="text/html" /><updated>2018-07-14T23:51:22+09:00</updated><id>https://imreplay.com/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's study blog.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><entry><title type="html">[Pwnable.kr] Toddler’s Bottle - collision 풀이</title><link href="https://imreplay.com/wargame/pwnablekr-col/" rel="alternate" type="text/html" title="[Pwnable.kr] Toddler's Bottle - collision 풀이" /><published>2018-07-14T00:00:00+09:00</published><updated>2018-07-14T09:20:00+09:00</updated><id>https://imreplay.com/wargame/pwnablekr-col</id><content type="html" xml:base="https://imreplay.com/wargame/pwnablekr-col/">&lt;p&gt;문제&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://imreplay.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imreplay.com/" rel="alternate" type="text/html" /><updated>2018-07-15T23:26:35+09:00</updated><id>https://imreplay.com/</id><title type="html">Imreplay blog</title><subtitle>Imreplay's study blog.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><entry><title type="html">[Pwnable.kr] Toddler’s Bottle - flag 풀이</title><link href="https://imreplay.com/wargame/pwnablekr-flag/" rel="alternate" type="text/html" title="[Pwnable.kr] Toddler's Bottle - flag 풀이" /><published>2018-07-15T00:00:00+09:00</published><updated>2018-07-15T22:45:00+09:00</updated><id>https://imreplay.com/wargame/pwnablekr-flag</id><content type="html" xml:base="https://imreplay.com/wargame/pwnablekr-flag/">&lt;p&gt;문제&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Papa brought me a packed present! let's open it.
+
+Download : http://pwnable.kr/bin/flag
+
+This is reversing task. all you need is binary
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;문제 파일은 http://pwnable.kr/bin/flag 에서 다운로드 받을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;어떤 파일인지 간단하게 확인해 보자.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ file flag
+flag: ELF 64-bit LSB  executable, x86-64, version 1 (GNU/Linux), statically linked, stripped
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;ELF파일 포맷을 가지고 있는 실행파일인 것 같다.&lt;/p&gt;
+
+&lt;p&gt;문제에서 packed 선물을 사주었다고 하는 것을 보니 패킹된 파일 인 듯 하다.&lt;/p&gt;
+
+&lt;p&gt;일단 gdb에서 확인해 보려했지만, 분석을 하지 못한다.&lt;/p&gt;
+
+&lt;p&gt;strings 명령어를 통해 내부 문자열을 확인해보았다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~~ 중략 ~~
+
+$Info: This file is packed with the UPX executable packer http://upx.sf.net $
+$Id: UPX 3.08 Copyright (C) 1996-2011 the UPX Team. All Rights Reserved. $
+
+~~ 중략 ~~
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;UPX 패킹이 되어있는 것 같다.&lt;/p&gt;
+
+&lt;p&gt;upx 도구를 다운 받아서 decompress를 해주었다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./upx -d ../flag -o ../d_flag
+                       Ultimate Packer for eXecutables
+                          Copyright (C) 1996 - 2017
+UPX 3.94        Markus Oberhumer, Laszlo Molnar &amp;amp; John Reiser   May 12th 2017
+
+        File size         Ratio      Format      Name
+   --------------------   ------   -----------   -----------
+    883745 &amp;lt;-    335288   37.94%   linux/amd64   d_flag
+
+Unpacked 1 file.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이제 gdb를 통해 다시 확인 해보자.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# gdb d_flag -q
+Reading symbols from d_flag...(no debugging symbols found)...done.
+gdb-peda$ pdisas main
+Dump of assembler code for function main:
+   0x0000000000401164 &amp;lt;+0&amp;gt;:     push   rbp
+   0x0000000000401165 &amp;lt;+1&amp;gt;:     mov    rbp,rsp
+   0x0000000000401168 &amp;lt;+4&amp;gt;:     sub    rsp,0x10
+   0x000000000040116c &amp;lt;+8&amp;gt;:     mov    edi,0x496658
+   0x0000000000401171 &amp;lt;+13&amp;gt;:    call   0x402080 &amp;lt;puts&amp;gt;
+   0x0000000000401176 &amp;lt;+18&amp;gt;:    mov    edi,0x64
+   0x000000000040117b &amp;lt;+23&amp;gt;:    call   0x4099d0 &amp;lt;malloc&amp;gt;
+   0x0000000000401180 &amp;lt;+28&amp;gt;:    mov    QWORD PTR [rbp-0x8],rax
+   0x0000000000401184 &amp;lt;+32&amp;gt;:    mov    rdx,QWORD PTR [rip+0x2c0ee5]        # 0x6c2070 &amp;lt;flag&amp;gt;
+   0x000000000040118b &amp;lt;+39&amp;gt;:    mov    rax,QWORD PTR [rbp-0x8]
+   0x000000000040118f &amp;lt;+43&amp;gt;:    mov    rsi,rdx
+   0x0000000000401192 &amp;lt;+46&amp;gt;:    mov    rdi,rax
+   0x0000000000401195 &amp;lt;+49&amp;gt;:    call   0x400320
+   0x000000000040119a &amp;lt;+54&amp;gt;:    mov    eax,0x0
+   0x000000000040119f &amp;lt;+59&amp;gt;:    leave
+   0x00000000004011a0 &amp;lt;+60&amp;gt;:    ret
+End of assembler dump.
+gdb-peda$ x/s *0x6c2070
+0x496628:       &quot;UPX...? sounds like a delivery service :)&quot;
+gdb-peda$
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;x/s 를 통해 flag라고 적혀있는 부분의 문자열을 읽어왔다.&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="system" /><category term="Pwnable.kr" /><summary type="html">pwnable.kr flag 풀이</summary></entry><entry><title type="html">[Pwnable.kr] Toddler’s Bottle - collision 풀이</title><link href="https://imreplay.com/wargame/pwnablekr-col/" rel="alternate" type="text/html" title="[Pwnable.kr] Toddler's Bottle - collision 풀이" /><published>2018-07-14T00:00:00+09:00</published><updated>2018-07-14T09:20:00+09:00</updated><id>https://imreplay.com/wargame/pwnablekr-col</id><content type="html" xml:base="https://imreplay.com/wargame/pwnablekr-col/">&lt;p&gt;문제&lt;/p&gt;
 
 &lt;h3 id=&quot;colc&quot;&gt;col.c&lt;/h3&gt;
 
@@ -987,309 +1063,4 @@ bundle exec jekyll serve --host 0.0.0.0 --port 80 --draft
       &lt;p&gt;&lt;a href=&quot;https://gist.github.com/&quot;&gt;gist.github.com&lt;/a&gt;, 간단한 코드 조각들을 공유할 수 있는 플랫폼 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="jekyll" /><summary type="html">블로그 환경, 개발환경 정리</summary></entry><entry><title type="html">블로그에서 사용하는 문법 정리</title><link href="https://imreplay.com/blogging/Elements/" rel="alternate" type="text/html" title="블로그에서 사용하는 문법 정리" /><published>2018-07-07T00:00:00+09:00</published><updated>2018-07-07T21:07:00+09:00</updated><id>https://imreplay.com/blogging/Elements</id><content type="html" xml:base="https://imreplay.com/blogging/Elements/">&lt;aside class=&quot;sidebar__right&quot;&gt;
-&lt;nav class=&quot;toc&quot;&gt;
-    &lt;header&gt;&lt;h4 class=&quot;nav__title&quot;&gt;&lt;i class=&quot;fas fa-file-alt&quot;&gt;&lt;/i&gt; On This Page&lt;/h4&gt;&lt;/header&gt;
-&lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#제목&quot; id=&quot;markdown-toc-제목&quot;&gt;제목&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#인용&quot; id=&quot;markdown-toc-인용&quot;&gt;인용&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#리스트&quot; id=&quot;markdown-toc-리스트&quot;&gt;리스트&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#코드-강조&quot; id=&quot;markdown-toc-코드-강조&quot;&gt;코드 강조&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#강조&quot; id=&quot;markdown-toc-강조&quot;&gt;강조&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#링크&quot; id=&quot;markdown-toc-링크&quot;&gt;링크&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#이미지&quot; id=&quot;markdown-toc-이미지&quot;&gt;이미지&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#표&quot; id=&quot;markdown-toc-표&quot;&gt;표&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#버튼&quot; id=&quot;markdown-toc-버튼&quot;&gt;버튼&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#notice&quot; id=&quot;markdown-toc-notice&quot;&gt;Notice&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#정의&quot; id=&quot;markdown-toc-정의&quot;&gt;정의&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#수평선&quot; id=&quot;markdown-toc-수평선&quot;&gt;수평선&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#축약어&quot; id=&quot;markdown-toc-축약어&quot;&gt;(축)약어&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#주석&quot; id=&quot;markdown-toc-주석&quot;&gt;주석&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#각주&quot; id=&quot;markdown-toc-각주&quot;&gt;각주&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-  &lt;/nav&gt;
-&lt;/aside&gt;
-
-&lt;p&gt;이번 포스팅은 나중에 글 쓸때 참고할 용도로 작성하는 포스팅입니다.&lt;/p&gt;
-
-&lt;p&gt;다양한 마크다운 문법과 테마에서 지원하는 기능들을 간단하게 미리볼 수 있습니다.&lt;/p&gt;
-
-&lt;p class=&quot;notice--info&quot;&gt;본 포스팅은 지속 업데이트 될 수 있습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;제목&quot;&gt;제목&lt;/h2&gt;
-
-&lt;h1 class=&quot;no_toc&quot; id=&quot;-h1&quot;&gt;# H1&lt;/h1&gt;
-&lt;h2 class=&quot;no_toc&quot; id=&quot;-h2&quot;&gt;## H2&lt;/h2&gt;
-
-&lt;h3 class=&quot;no_toc&quot; id=&quot;-h3&quot;&gt;### H3&lt;/h3&gt;
-&lt;h4 class=&quot;no_toc&quot; id=&quot;-h4&quot;&gt;#### H4&lt;/h4&gt;
-&lt;h5 class=&quot;no_toc&quot; id=&quot;-h5&quot;&gt;##### H5&lt;/h5&gt;
-&lt;h6 class=&quot;no_toc&quot; id=&quot;-h6&quot;&gt;###### H6&lt;/h6&gt;
-&lt;h2 id=&quot;인용&quot;&gt;인용&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;&lt;/p&gt;
-  &lt;blockquote&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&amp;gt;&lt;/code&gt;&lt;/p&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt;&lt;/p&gt;
-      &lt;blockquote&gt;
-        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt;&lt;/p&gt;
-      &lt;/blockquote&gt;
-    &lt;/blockquote&gt;
-  &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;…&lt;/p&gt;
-
-&lt;h2 id=&quot;리스트&quot;&gt;리스트&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;1번&lt;/li&gt;
-  &lt;li&gt;2번&lt;/li&gt;
-  &lt;li&gt;3번&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; 항목
-&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; 항목
-&lt;span class=&quot;p&quot;&gt;  *&lt;/span&gt; 요소
-&lt;span class=&quot;p&quot;&gt;  -&lt;/span&gt; 요소
-&lt;span class=&quot;p&quot;&gt;  +&lt;/span&gt; 요소
-&lt;span class=&quot;p&quot;&gt;    *&lt;/span&gt; 요소 안에 또 요소
-&lt;span class=&quot;p&quot;&gt;      *&lt;/span&gt; 안에 한개더
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;항목&lt;/li&gt;
-  &lt;li&gt;항목
-    &lt;ul&gt;
-      &lt;li&gt;요소&lt;/li&gt;
-      &lt;li&gt;요소&lt;/li&gt;
-      &lt;li&gt;요소
-        &lt;ul&gt;
-          &lt;li&gt;요소 안에 또 요소
-            &lt;ul&gt;
-              &lt;li&gt;안에 한개더&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;코드-강조&quot;&gt;코드 강조&lt;/h2&gt;
-
-&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;sb&quot;&gt;```python
-
-for i in data:
-  print(i)
-  
-def add(a,b):
-  return a+b
-  
-print('hello world!')
-
-```&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
-  
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello world!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;강조&quot;&gt;강조&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;**Bold**&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;__&lt;strong&gt;Bold2&lt;/strong&gt;__&lt;/p&gt;
-
-&lt;p&gt;~~&lt;del&gt;취소선&lt;/del&gt;~~&lt;/p&gt;
-
-&lt;p&gt;_&lt;em&gt;기울임&lt;/em&gt;_&lt;/p&gt;
-
-&lt;p&gt;*&lt;em&gt;기울임2&lt;/em&gt;*&lt;/p&gt;
-
-&lt;h2 id=&quot;링크&quot;&gt;링크&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;http://facebook.com/&amp;gt;&lt;/code&gt;
-&lt;a href=&quot;http://facebook.com/&quot;&gt;http://facebook.com/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[googlelink](https://google.com)&lt;/code&gt;
-&lt;a href=&quot;https://google.com&quot;&gt;googlelink&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;이미지&quot;&gt;이미지&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;![alt text](/assets/img/fromis.PNG)&lt;/code&gt;
-&lt;img src=&quot;/assets/img/fromis.PNG&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;표&quot;&gt;표&lt;/h2&gt;
-
-&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;| Header1 | Header2 | Header3 |
-|:--------|:-------:|--------:|
-| cell1   | cell2   | cell3   |
-| cell4   | cell5   | cell6   |
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Header1&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Header2&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;Header3&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell2&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell4&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell5&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell6&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;버튼&quot;&gt;버튼&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Default Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--primary&quot;&gt;Primary Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--success&quot;&gt;Success Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--warning&quot;&gt;Warning Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--danger&quot;&gt;Danger Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--info&quot;&gt;Info Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--inverse&quot;&gt;Inverse Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--light-outline&quot;&gt;Light Outline Button&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Default Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Primary Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--primary}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Success Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--success}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Warning Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--warning}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Danger Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--danger}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Info Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--info}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Inverse Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--inverse}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Light Outline Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--light-outline}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn--primary btn--x-large&quot;&gt;X-Large Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--primary btn--large&quot;&gt;Large Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--primary&quot;&gt;Default Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--primary btn--small&quot;&gt;Small Button&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;X-Large Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--primary .btn--x-large}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Large Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--primary .btn--large}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Default Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--primary }
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Small Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--primary .btn--small}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;notice&quot;&gt;Notice&lt;/h2&gt;
-
-&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gs&quot;&gt;**Watch out!**&lt;/span&gt; This paragraph of text has been &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;emphasized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; with the &lt;span class=&quot;sb&quot;&gt;`{: .notice}`&lt;/span&gt; class.
-{: .notice}
-
-&lt;span class=&quot;gs&quot;&gt;**Watch out!**&lt;/span&gt; This paragraph of text has been &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;emphasized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; with the &lt;span class=&quot;sb&quot;&gt;`{: .notice--primary}`&lt;/span&gt; class.
-{: .notice--primary}
-
-&lt;span class=&quot;gs&quot;&gt;**Watch out!**&lt;/span&gt; This paragraph of text has been &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;emphasized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; with the &lt;span class=&quot;sb&quot;&gt;`{: .notice--info}`&lt;/span&gt; class.
-{: .notice--info}
-
-&lt;span class=&quot;gs&quot;&gt;**Watch out!**&lt;/span&gt; This paragraph of text has been &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;emphasized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; with the &lt;span class=&quot;sb&quot;&gt;`{: .notice--warning}`&lt;/span&gt; class.
-{: .notice--warning}
-
-&lt;span class=&quot;gs&quot;&gt;**Watch out!**&lt;/span&gt; This paragraph of text has been &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;emphasized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; with the &lt;span class=&quot;sb&quot;&gt;`{: .notice--success}`&lt;/span&gt; class.
-{: .notice--success}
-
-&lt;span class=&quot;gs&quot;&gt;**Watch out!**&lt;/span&gt; This paragraph of text has been &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;emphasized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; with the &lt;span class=&quot;sb&quot;&gt;`{: .notice--danger}`&lt;/span&gt; class.
-{: .notice--danger}&lt;span class=&quot;sb&quot;&gt;
-
-
-&lt;/span&gt;{% capture notice-text %} 
-You can also add the .notice class to a div element.
-&lt;span class=&quot;p&quot;&gt;
-*&lt;/span&gt; Bullet point 1
-&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; Bullet point 2
-{% endcapture %}
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;notice--info&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;h4&amp;gt;&lt;/span&gt;Notice Headline:&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h4&amp;gt;&lt;/span&gt;
-  {{ notice-text | markdownify }} 
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p class=&quot;notice&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;{: .notice}&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;p class=&quot;notice--primary&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;{: .notice--primary}&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;p class=&quot;notice--info&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;{: .notice--info}&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;{: .notice--warning}&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;p class=&quot;notice--success&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;{: .notice--success}&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;{: .notice--danger}&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h4&gt;Notice Headline:&lt;/h4&gt;
-  
-&lt;p&gt;You can also add the &lt;code class=&quot;highlighter-rouge&quot;&gt;.notice&lt;/code&gt; class to a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; element.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Bullet point 1&lt;/li&gt;
-  &lt;li&gt;Bullet point 2&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;h2 id=&quot;정의&quot;&gt;정의&lt;/h2&gt;
-&lt;dl&gt;
-  &lt;dt&gt;사과 나무&lt;/dt&gt;
-  &lt;dd&gt;사과나무는 장미목 장미과 배나무아과 사과나무속에 딸린 종이다. 4월에서 5월 사이에 꽃을 피운다. 열매는 8~9월에 꽃받침이 자라면서 녹색 또는 붉은색으로 생긴다. 70~100여 년간 살고 경제적 가치가 있는 열매를 생산하는 시기는 40~50살 쯤이다. 그 열매는 사과라 하며, 세계적으로 가장 널리 재배되는 과일 품종 가운데 하나이다. 평과라고도 한다.&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;h2 id=&quot;수평선&quot;&gt;수평선&lt;/h2&gt;
-
-&lt;h2 class=&quot;no_toc&quot; id=&quot;---&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;---&lt;/code&gt;&lt;/h2&gt;
-
-&lt;h2 id=&quot;축약어&quot;&gt;(축)약어&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HTML은 하이퍼텍스트 마크업 언어(HyperText Markup Language, 문화어: 초본문표식달기언어, 하이퍼본문표식달기언어)라는 의미의 웹 페이지를 위한 지배적인 마크업 언어다.
-
-*[HTML]: HyperText Markup Language
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt;은 하이퍼텍스트 마크업 언어(HyperText Markup Language, 문화어: 초본문표식달기언어, 하이퍼본문표식달기언어)라는 의미의 웹 페이지를 위한 지배적인 마크업 언어다.&lt;/p&gt;
-
-&lt;h2 id=&quot;주석&quot;&gt;주석&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{::comment}
-이곳은 표시되지 않습니다.
-{:/comment}
-
-{::comment}이곳 또한 표시되지 않습니다.{:/}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;!-- 이곳은 표시되지 않습니다. --&gt;
-
-&lt;p&gt;&lt;!-- 이곳 또한 표시되지 않습니다. --&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;각주&quot;&gt;각주&lt;/h2&gt;
-&lt;p&gt;페이지 최하단에 표시되어집니다.&lt;/p&gt;
-
-&lt;p&gt;각주1 &lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, 각주2 &lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;각주 내용 1 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;각주 내용 2 &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="jekyll" /><category term="markdown" /><category term="kramdown" /><summary type="html">다양한 마크다운 문법과 테마에서 지원하는 기능들을 간단하게 미리보기</summary></entry></feed>
+&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="jekyll" /><summary type="html">블로그 환경, 개발환경 정리</summary></entry></feed>
