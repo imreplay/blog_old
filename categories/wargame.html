@@ -566,6 +566,26 @@ search.start();
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+<script type='text/javascript'>
+  //<![CDATA[
+
+    Kakao.init('98ca6e8590c079dd460779d5560a638c');
+    // 플러스친구 친구추가 버튼을 생성합니다.
+    function addPlusFriend() {
+      Kakao.PlusFriend.addFriend({
+        plusFriendId: '_xcLqmC' // 플러스친구 홈 URL에 명시된 id로 설정합니다.
+      });
+    }
+    function plusFriendChat() {
+      Kakao.PlusFriend.chat({
+        plusFriendId: '_xcLqmC' // 플러스친구 홈 URL에 명시된 id로 설정합니다.
+      });
+    }
+  //]]>
+  
+</script>
 
 <script>
   new Vue({
@@ -585,6 +605,7 @@ search.start();
   });
 
 </script>
+
 
   </body>
 </html>
