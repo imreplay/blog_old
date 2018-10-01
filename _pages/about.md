@@ -33,7 +33,9 @@ toc: true
  - 대학정보보호동아리연합회 KUCIS 호남권 운영진(2016)
 
 ## What I did
- - 카카오톡 API 이용 **[목포대학교 정보봇](http://pf.kakao.com/_RdDHM)** 제작[^bot]
+ - 카카오톡 API 이용 **[목포대학교 정보봇](http://pf.kakao.com/_RdDHM)** 제작[^bot] <a href="javascript:void plusFriendChat('_RdDHM')">
+  <img src="https://developers.kakao.com/assets/img/about/logos/plusfriend/consult_small_yellow_pc.png"/>
+</a>
  - **개인 메일서버** 및 연구실용 **GIT 서버** 구축[^lab]
  - github.io와 jekyll공부를 위해 [프로미스나인팬페이지](https://fromis9.kr) 구축[^fromis9]
 {% include gallery id="gallery" caption="My Projects" %}
