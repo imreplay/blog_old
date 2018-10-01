@@ -559,15 +559,17 @@ search.start();
 
 <script type='text/javascript'>
   //<![CDATA[
-    var my_id = '_XDeVj';
+    //my_id = '_XDeVj';
+    //info_id = '_RdDHM';
     Kakao.init('98ca6e8590c079dd460779d5560a638c');
     // 플러스친구 친구추가 버튼을 생성합니다.
-    function addPlusFriend() {
+    
+    function addPlusFriend(my_id) {
       Kakao.PlusFriend.addFriend({
         plusFriendId: my_id // 플러스친구 홈 URL에 명시된 id로 설정합니다.
       });
     }
-    function plusFriendChat() {
+    function plusFriendChat(my_id) {
       Kakao.PlusFriend.chat({
         plusFriendId: my_id // 플러스친구 홈 URL에 명시된 id로 설정합니다.
       });
