@@ -161,7 +161,6 @@ exclude:
   - Rakefile
   - README
   - tmp
-  - deploy.sh
 keep_files:
   - .git
   - .svn
