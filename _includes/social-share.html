@@ -24,7 +24,7 @@
       container: '#kakao-link-btn',
       objectType: 'feed',
       content: {
-        title: "{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }}",
+        title: "{{ page.title }}",
         imageUrl: '',
         link: {
           mobileWebUrl: '{{ page.url | absolute_url | url_encode }}',
