@@ -84,6 +84,9 @@
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
 </script>
 
+<!-- 카카오 API -->
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script> 
+
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
 
@@ -629,7 +632,7 @@ Githib pages 를 사용한 환경은 <a href="https://community.algolia.com/jeky
       container: '#kakao-link-btn',
       objectType: 'feed',
       content: {
-        title: "공유하기",
+        title: "Travis-ci를 이용해 Github.io 블로그에 검색도구인 Algolia를 적용시켜보자.",
         imageUrl: '',
         link: {
           mobileWebUrl: 'https%3A%2F%2Fimreplay.com%2Fblogging%2F%25EA%25B2%2580%25EC%2583%2589-%25EB%258F%2584%25EA%25B5%25AC%25EC%259D%25B8-Algolia%25EB%25A5%25BC-%25EC%25A0%2581%25EC%259A%25A9%25ED%2595%25B4%25EB%25B3%25B4%25EC%259E%2590%2F',
@@ -915,10 +918,8 @@ search.start();
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
-<!-- 카카오 API -->
-<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script> 
 
-  <!-- 친구추가 버튼 생성 -->
+<!-- 카카오 플러스친구 추가 버튼 생성 -->
 <script type='text/javascript'>
   //<![CDATA[
     //my_id = '_XDeVj';

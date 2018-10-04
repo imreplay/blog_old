@@ -84,6 +84,9 @@
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
 </script>
 
+<!-- 카카오 API -->
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script> 
+
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
 
@@ -762,7 +765,7 @@ toc: true
       container: '#kakao-link-btn',
       objectType: 'feed',
       content: {
-        title: "공유하기",
+        title: "minimal mistakes 테마를 이용해 github.io 블로그 구축하기",
         imageUrl: '',
         link: {
           mobileWebUrl: 'https%3A%2F%2Fimreplay.com%2Fblogging%2Fminimal-mistakes-%25ED%2585%258C%25EB%25A7%2588%25EB%25A5%25BC-%25EC%259D%25B4%25EC%259A%25A9%25ED%2595%25B4-githubio-%25EB%25B8%2594%25EB%25A1%259C%25EA%25B7%25B8-%25EA%25B5%25AC%25EC%25B6%2595%25ED%2595%2598%25EA%25B8%25B0%2F',
@@ -1048,10 +1051,8 @@ search.start();
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
-<!-- 카카오 API -->
-<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script> 
 
-  <!-- 친구추가 버튼 생성 -->
+<!-- 카카오 플러스친구 추가 버튼 생성 -->
 <script type='text/javascript'>
   //<![CDATA[
     //my_id = '_XDeVj';

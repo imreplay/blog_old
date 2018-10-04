@@ -84,6 +84,9 @@
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
 </script>
 
+<!-- 카카오 API -->
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script> 
+
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
 
@@ -811,7 +814,7 @@
       container: '#kakao-link-btn',
       objectType: 'feed',
       content: {
-        title: "공유하기",
+        title: "Travis-ci를 이용해 배포 자동화 시키기",
         imageUrl: '',
         link: {
           mobileWebUrl: 'https%3A%2F%2Fimreplay.com%2Fblogging%2FTravis-ci%25EB%25A5%25BC-%25ED%2586%25B5%25ED%2595%25B4-%25EB%25B0%25B0%25ED%258F%25AC%25EC%259E%2590%25EB%258F%2599%25ED%2599%2594%2F',
@@ -1097,10 +1100,8 @@ search.start();
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
-<!-- 카카오 API -->
-<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script> 
 
-  <!-- 친구추가 버튼 생성 -->
+<!-- 카카오 플러스친구 추가 버튼 생성 -->
 <script type='text/javascript'>
   //<![CDATA[
     //my_id = '_XDeVj';
