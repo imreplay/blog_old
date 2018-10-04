@@ -86,6 +86,9 @@
 
 <!-- 카카오 API -->
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script> 
+<script type='text/javascript'>
+  Kakao.init('98ca6e8590c079dd460779d5560a638c');
+</script>
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
@@ -760,7 +763,6 @@ toc: true
 
 <script type='text/javascript'>
   //<![CDATA[
-    Kakao.init('98ca6e8590c079dd460779d5560a638c');
     // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
     Kakao.Link.createDefaultButton({
       container: '#kakao-link-btn',
