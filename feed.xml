@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.3">Jekyll</generator><link href="https://imreplay.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imreplay.com/" rel="alternate" type="text/html" /><updated>2018-10-06T03:48:33+09:00</updated><id>https://imreplay.com/feed.xml</id><title type="html">Imreplay blog</title><subtitle>Imreplay's study blog.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><entry><title type="html">카카오 API 사용해보기</title><link href="https://imreplay.com/study/%EC%B9%B4%EC%B9%B4%EC%98%A4-API-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0/" rel="alternate" type="text/html" title="카카오 API 사용해보기" /><published>2018-10-04T00:00:00+09:00</published><updated>2018-10-04T23:38:00+09:00</updated><id>https://imreplay.com/study/%EC%B9%B4%EC%B9%B4%EC%98%A4-API-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0</id><content type="html" xml:base="https://imreplay.com/study/%EC%B9%B4%EC%B9%B4%EC%98%A4-API-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0/">&lt;p&gt;오래간만의 포스팅, 최근에 찾아보던 카카오 API를 블로그에도 한 번 적용시켜보기로 했다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.3">Jekyll</generator><link href="https://imreplay.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imreplay.com/" rel="alternate" type="text/html" /><updated>2018-10-06T03:55:31+09:00</updated><id>https://imreplay.com/feed.xml</id><title type="html">Imreplay blog</title><subtitle>Imreplay's study blog.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><entry><title type="html">카카오 API 사용해보기</title><link href="https://imreplay.com/study/%EC%B9%B4%EC%B9%B4%EC%98%A4-API-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0/" rel="alternate" type="text/html" title="카카오 API 사용해보기" /><published>2018-10-04T00:00:00+09:00</published><updated>2018-10-04T23:38:00+09:00</updated><id>https://imreplay.com/study/%EC%B9%B4%EC%B9%B4%EC%98%A4-API-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0</id><content type="html" xml:base="https://imreplay.com/study/%EC%B9%B4%EC%B9%B4%EC%98%A4-API-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0/">&lt;p&gt;오래간만의 포스팅, 최근에 찾아보던 카카오 API를 블로그에도 한 번 적용시켜보기로 했다.&lt;/p&gt;
 
 &lt;p&gt;적용시킨 항목은 두 가지.&lt;/p&gt;
 
@@ -33,7 +33,7 @@
 
 &lt;p&gt;카카오 API를 사용하기 위해서는 &lt;a href=&quot;https://developers.kakao.com/&quot;&gt;KakaoDevelopers&lt;/a&gt; 에 접속하여 관련 API를 찾아봐야 한다.&lt;/p&gt;
 
-&lt;p&gt;JacaScript 개발가이드 부분의 &lt;strong&gt;시작하기&lt;/strong&gt; 를 눌러 진행하였는데&lt;/p&gt;
+&lt;p&gt;JavaScript 개발가이드 부분의 &lt;strong&gt;시작하기&lt;/strong&gt; 를 눌러 진행하였는데&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;앱 만들기&lt;/li&gt;
@@ -108,7 +108,7 @@
 
 &lt;p&gt;위의 코드를 추가 해 주었다.&lt;/p&gt;
 
-&lt;p&gt;공유하기 기능에 글 제목(page.title)과 URL을 동적으로 넣어주기 위해, 다른 페이지에서 불필요하게 실행되지 않도록 하기 위헤 공유하기 부분에 스크립트를 넣게 되었다.&lt;/p&gt;
+&lt;p&gt;공유하기 기능에 글 제목(page.title)과 URL을 동적으로 넣어주기 위해, 다른 페이지에서 불필요하게 실행되지 않도록 하기 위해 공유하기 부분에 스크립트를 넣게 되었다.&lt;/p&gt;
 
 &lt;h3 id=&quot;플러스친구-추가-버튼&quot;&gt;플러스친구 추가 버튼&lt;/h3&gt;
 
