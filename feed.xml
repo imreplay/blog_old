@@ -1,4 +1,163 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.3">Jekyll</generator><link href="https://imreplay.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imreplay.com/" rel="alternate" type="text/html" /><updated>2018-10-06T03:44:57+09:00</updated><id>https://imreplay.com/feed.xml</id><title type="html">Imreplay blog</title><subtitle>Imreplay's study blog.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><entry><title type="html">[Pwnable.kr] Toddler’s Bottle - flag 풀이</title><link href="https://imreplay.com/wargame/pwnablekr-flag/" rel="alternate" type="text/html" title="[Pwnable.kr] Toddler's Bottle - flag 풀이" /><published>2018-07-15T00:00:00+09:00</published><updated>2018-07-15T22:45:00+09:00</updated><id>https://imreplay.com/wargame/pwnablekr-flag</id><content type="html" xml:base="https://imreplay.com/wargame/pwnablekr-flag/">&lt;p&gt;문제&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.3">Jekyll</generator><link href="https://imreplay.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imreplay.com/" rel="alternate" type="text/html" /><updated>2018-10-06T03:48:33+09:00</updated><id>https://imreplay.com/feed.xml</id><title type="html">Imreplay blog</title><subtitle>Imreplay's study blog.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><entry><title type="html">카카오 API 사용해보기</title><link href="https://imreplay.com/study/%EC%B9%B4%EC%B9%B4%EC%98%A4-API-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0/" rel="alternate" type="text/html" title="카카오 API 사용해보기" /><published>2018-10-04T00:00:00+09:00</published><updated>2018-10-04T23:38:00+09:00</updated><id>https://imreplay.com/study/%EC%B9%B4%EC%B9%B4%EC%98%A4-API-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0</id><content type="html" xml:base="https://imreplay.com/study/%EC%B9%B4%EC%B9%B4%EC%98%A4-API-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0/">&lt;p&gt;오래간만의 포스팅, 최근에 찾아보던 카카오 API를 블로그에도 한 번 적용시켜보기로 했다.&lt;/p&gt;
+
+&lt;p&gt;적용시킨 항목은 두 가지.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;플러스친구 친구추가 버튼&lt;/li&gt;
+  &lt;li&gt;카카오톡으로 공유하기(카카오링크)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;간단하게 사진으로 확인해보면,&lt;/p&gt;
+
+&lt;h4 id=&quot;친구추가-버튼&quot;&gt;친구추가 버튼&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/kakao-api/kakao-friend.jpg&quot; alt=&quot;friend&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;플러스친구 계정 친구추가 버튼&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;공유하기-버튼카카오-링크&quot;&gt;공유하기 버튼(카카오 링크)&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/kakao-api/kakao-share-1.jpg&quot; alt=&quot;share1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/kakao-api/kakao-share-2.jpg&quot; alt=&quot;share2&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;포스팅을 카카오톡으로 공유 할 수 있게 해주는 버튼&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;위와 같이 적용하였다..&lt;/p&gt;
+
+&lt;p&gt;플러스친구는 &lt;a href=&quot;https://center-pf.kakao.com&quot;&gt;플러스친구 관리자센터&lt;/a&gt; 을 통해서 생성 할 수 있으며,&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;현재는 &lt;strong&gt;kakaoforbusiness&lt;/strong&gt;라는 이름으로 변경되었다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;카카오 API를 사용하기 위해서는 &lt;a href=&quot;https://developers.kakao.com/&quot;&gt;KakaoDevelopers&lt;/a&gt; 에 접속하여 관련 API를 찾아봐야 한다.&lt;/p&gt;
+
+&lt;p&gt;JacaScript 개발가이드 부분의 &lt;strong&gt;시작하기&lt;/strong&gt; 를 눌러 진행하였는데&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;앱 만들기&lt;/li&gt;
+  &lt;li&gt;설정에서 플랫폼 추가하기&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;웹&lt;/strong&gt; 플랫폼을 선택하고 블로그 도메인 추가하기&lt;/li&gt;
+  &lt;li&gt;API 키 발급 받아 복사해 두기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;와 같은 과정으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;JavaScript API 키&lt;/code&gt; 를 발급받았다.&lt;/p&gt;
+
+&lt;p&gt;자세한 내용은 &lt;a href=&quot;https://developers.kakao.com/docs/js/getting-started&quot;&gt;시작하기 - JavaScript&lt;/a&gt; 참고&lt;/p&gt;
+
+&lt;p&gt;사실 자바스크립트를 사용하는데에 익숙하지 않아 계속 수정에 수정을 반복하다가 어쩌다 보니 구현이 되어서&lt;/p&gt;
+
+&lt;p&gt;이러쿵 저러쿵 해서 짜잔! 완성 했습니다! 라는 글은 쓸 수가 없었다…&lt;/p&gt;
+
+&lt;p&gt;다만 최종적으로 어느 부분에 어떤식으로 코드를 넣었는지에 대해서만 짤막하게 기록 후 마치도록 하겠다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;좀 더 좋은 방법이 있다면 언제든지 댓글 남겨주세요!! 짱짱 개발자분들 환영합니다!!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;공유하기&quot;&gt;공유하기&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/imreplay/blog/blob/master/_includes/head.html&quot;&gt;head.html&lt;/a&gt; 의 16번 라인부터 20번 라인까지&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 카카오 API --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://developers.kakao.com/sdk/js/kakao.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt; 
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'text/javascript'&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;Kakao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'98ca6e8590c079dd460779d5560a638c'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위의 코드를 추가하였다.&lt;/p&gt;
+
+&lt;p&gt;처음에는 사용 할 때 마다 &lt;code class=&quot;highlighter-rouge&quot;&gt;Kakao.init&lt;/code&gt; 을 해주어야 하는 줄 알고 사용하는 부분마다 넣어주었는데, 크롬 개발자 도구를 보다 보니 이미 init 되어 있다는 메시지를 보고 처음 한 번만 init하도록 수정하였다.&lt;/p&gt;
+
+&lt;p&gt;그 후 &lt;a href=&quot;https://github.com/imreplay/blog/blob/master/_includes/social-share.html&quot;&gt;social-share.html&lt;/a&gt; 의 14번 라인부터 45번 라인까지&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;kakao-link-btn&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;javascript:;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_small.png&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'text/javascript'&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CDATA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;Kakao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createDefaultButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;container&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'#kakao-link-btn'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;objectType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'feed'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;카카오 API 사용해보기&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;imageUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;mobileWebUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https%3A%2F%2Fimreplay.com%2Fstudy%2F%25EC%25B9%25B4%25EC%25B9%25B4%25EC%2598%25A4-API-%25EC%2582%25AC%25EC%259A%25A9%25ED%2595%25B4%25EB%25B3%25B4%25EA%25B8%25B0%2F'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;webUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https%3A%2F%2Fimreplay.com%2Fstudy%2F%25EC%25B9%25B4%25EC%25B9%25B4%25EC%2598%25A4-API-%25EC%2582%25AC%25EC%259A%25A9%25ED%2595%25B4%25EB%25B3%25B4%25EA%25B8%25B0%2F'&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;buttons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'웹으로 보기'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;mobileWebUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https%3A%2F%2Fimreplay.com%2Fstudy%2F%25EC%25B9%25B4%25EC%25B9%25B4%25EC%2598%25A4-API-%25EC%2582%25AC%25EC%259A%25A9%25ED%2595%25B4%25EB%25B3%25B4%25EA%25B8%25B0%2F'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;webUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https%3A%2F%2Fimreplay.com%2Fstudy%2F%25EC%25B9%25B4%25EC%25B9%25B4%25EC%2598%25A4-API-%25EC%2582%25AC%25EC%259A%25A9%25ED%2595%25B4%25EB%25B3%25B4%25EA%25B8%25B0%2F'&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//]]&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 코드를 추가 해 주었다.&lt;/p&gt;
+
+&lt;p&gt;공유하기 기능에 글 제목(page.title)과 URL을 동적으로 넣어주기 위해, 다른 페이지에서 불필요하게 실행되지 않도록 하기 위헤 공유하기 부분에 스크립트를 넣게 되었다.&lt;/p&gt;
+
+&lt;h3 id=&quot;플러스친구-추가-버튼&quot;&gt;플러스친구 추가 버튼&lt;/h3&gt;
+
+&lt;p&gt;플러스 친구 버튼은 페이지 모든곳에서 접근이 가능해야 하며 여러개의 계정을 가지고 있으므로 특정 인자값을 매개변수로 넘겨주어 각 프로필을 구분하여 만들 수 있도록 약간 수정하였다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/imreplay/blog/blob/master/_includes/scripts.html&quot;&gt;scripts.html&lt;/a&gt;의 37번 라인부터 57번 라인까지&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 카카오 플러스친구 추가 버튼 생성 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'text/javascript'&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CDATA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//my_id = '_XDeVj';&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//info_id = '_RdDHM';&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 플러스친구 친구추가 버튼을 생성합니다.&lt;/span&gt;
+    
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;addPlusFriend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;my_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;Kakao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PlusFriend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addFriend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;plusFriendId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;my_id&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 플러스친구 홈 URL에 명시된 id로 설정합니다.&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;plusFriendChat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;my_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;Kakao&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PlusFriend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;chat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;plusFriendId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;my_id&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 플러스친구 홈 URL에 명시된 id로 설정합니다.&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//]]&amp;gt;&lt;/span&gt;
+  
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 코드를 추가 하였다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;addPlusFriend(my_id)&lt;/code&gt;는 친구추가 버튼을 만들어주는 함수이며&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;plusFriendChat(my_id)&lt;/code&gt;는 1:1 대화 버튼을 만들어주는 기능이다.&lt;/p&gt;
+
+&lt;p&gt;해당 함수는 &lt;a href=&quot;https://github.com/imreplay/blog/blob/master/_includes/author-profile-custom-links.html&quot;&gt;author-profile-custom-links.html&lt;/a&gt;에서 사용되며&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;javascript:void addPlusFriend('_XDeVj')&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://developers.kakao.com/assets/img/about/logos/plusfriend/friendadd_small_black_rect.png&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위와 같이 작성하였다.&lt;/p&gt;
+
+&lt;p&gt;지금 포스팅을 작성하면서 보니 그닥 어려워 보이지는 않지만 처음 카카오 API를 사용해 본 이유에서인지 많이 헤메고 버벅거렸던 것 같다.&lt;/p&gt;
+
+&lt;p&gt;이상으로 오늘의 포스팅 끝!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="kakao" /><summary type="html">플러스친구 추가 링크, 카카오톡으로 공유하기 기능 추가</summary></entry><entry><title type="html">[Pwnable.kr] Toddler’s Bottle - flag 풀이</title><link href="https://imreplay.com/wargame/pwnablekr-flag/" rel="alternate" type="text/html" title="[Pwnable.kr] Toddler's Bottle - flag 풀이" /><published>2018-07-15T00:00:00+09:00</published><updated>2018-07-15T22:45:00+09:00</updated><id>https://imreplay.com/wargame/pwnablekr-flag</id><content type="html" xml:base="https://imreplay.com/wargame/pwnablekr-flag/">&lt;p&gt;문제&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Papa brought me a packed present! let's open it.
 
@@ -938,309 +1097,4 @@ print(res.text)
 
 &lt;p&gt;콘솔에 &lt;code class=&quot;highlighter-rouge&quot;&gt;String.fromCharCode(124)&lt;/code&gt; 를 입력해보면 &lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt; 문자열이 출력된다.&lt;/p&gt;
 
-&lt;p&gt;문제 화면에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt; 를 입력하면 끝!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="web" /><category term="webhackinag.kr" /><summary type="html">*…?</summary></entry><entry><title type="html">블로그에서 사용하는 문법 정리</title><link href="https://imreplay.com/blogging/Elements/" rel="alternate" type="text/html" title="블로그에서 사용하는 문법 정리" /><published>2018-07-07T00:00:00+09:00</published><updated>2018-07-07T21:07:00+09:00</updated><id>https://imreplay.com/blogging/Elements</id><content type="html" xml:base="https://imreplay.com/blogging/Elements/">&lt;aside class=&quot;sidebar__right&quot;&gt;
-&lt;nav class=&quot;toc&quot;&gt;
-    &lt;header&gt;&lt;h4 class=&quot;nav__title&quot;&gt;&lt;i class=&quot;fas fa-file-alt&quot;&gt;&lt;/i&gt; On This Page&lt;/h4&gt;&lt;/header&gt;
-&lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#제목&quot; id=&quot;markdown-toc-제목&quot;&gt;제목&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#인용&quot; id=&quot;markdown-toc-인용&quot;&gt;인용&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#리스트&quot; id=&quot;markdown-toc-리스트&quot;&gt;리스트&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#코드-강조&quot; id=&quot;markdown-toc-코드-강조&quot;&gt;코드 강조&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#강조&quot; id=&quot;markdown-toc-강조&quot;&gt;강조&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#링크&quot; id=&quot;markdown-toc-링크&quot;&gt;링크&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#이미지&quot; id=&quot;markdown-toc-이미지&quot;&gt;이미지&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#표&quot; id=&quot;markdown-toc-표&quot;&gt;표&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#버튼&quot; id=&quot;markdown-toc-버튼&quot;&gt;버튼&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#notice&quot; id=&quot;markdown-toc-notice&quot;&gt;Notice&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#정의&quot; id=&quot;markdown-toc-정의&quot;&gt;정의&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#수평선&quot; id=&quot;markdown-toc-수평선&quot;&gt;수평선&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#축약어&quot; id=&quot;markdown-toc-축약어&quot;&gt;(축)약어&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#주석&quot; id=&quot;markdown-toc-주석&quot;&gt;주석&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#각주&quot; id=&quot;markdown-toc-각주&quot;&gt;각주&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-  &lt;/nav&gt;
-&lt;/aside&gt;
-
-&lt;p&gt;이번 포스팅은 나중에 글 쓸때 참고할 용도로 작성하는 포스팅입니다.&lt;/p&gt;
-
-&lt;p&gt;다양한 마크다운 문법과 테마에서 지원하는 기능들을 간단하게 미리볼 수 있습니다.&lt;/p&gt;
-
-&lt;p class=&quot;notice--info&quot;&gt;본 포스팅은 지속 업데이트 될 수 있습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;제목&quot;&gt;제목&lt;/h2&gt;
-
-&lt;h1 class=&quot;no_toc&quot; id=&quot;-h1&quot;&gt;# H1&lt;/h1&gt;
-&lt;h2 class=&quot;no_toc&quot; id=&quot;-h2&quot;&gt;## H2&lt;/h2&gt;
-
-&lt;h3 class=&quot;no_toc&quot; id=&quot;-h3&quot;&gt;### H3&lt;/h3&gt;
-&lt;h4 class=&quot;no_toc&quot; id=&quot;-h4&quot;&gt;#### H4&lt;/h4&gt;
-&lt;h5 class=&quot;no_toc&quot; id=&quot;-h5&quot;&gt;##### H5&lt;/h5&gt;
-&lt;h6 class=&quot;no_toc&quot; id=&quot;-h6&quot;&gt;###### H6&lt;/h6&gt;
-&lt;h2 id=&quot;인용&quot;&gt;인용&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;&lt;/p&gt;
-  &lt;blockquote&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&amp;gt;&lt;/code&gt;&lt;/p&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt;&lt;/p&gt;
-      &lt;blockquote&gt;
-        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt;&lt;/p&gt;
-      &lt;/blockquote&gt;
-    &lt;/blockquote&gt;
-  &lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;…&lt;/p&gt;
-
-&lt;h2 id=&quot;리스트&quot;&gt;리스트&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;1번&lt;/li&gt;
-  &lt;li&gt;2번&lt;/li&gt;
-  &lt;li&gt;3번&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; 항목
-&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; 항목
-&lt;span class=&quot;p&quot;&gt;  *&lt;/span&gt; 요소
-&lt;span class=&quot;p&quot;&gt;  -&lt;/span&gt; 요소
-&lt;span class=&quot;p&quot;&gt;  +&lt;/span&gt; 요소
-&lt;span class=&quot;p&quot;&gt;    *&lt;/span&gt; 요소 안에 또 요소
-&lt;span class=&quot;p&quot;&gt;      *&lt;/span&gt; 안에 한개더
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;항목&lt;/li&gt;
-  &lt;li&gt;항목
-    &lt;ul&gt;
-      &lt;li&gt;요소&lt;/li&gt;
-      &lt;li&gt;요소&lt;/li&gt;
-      &lt;li&gt;요소
-        &lt;ul&gt;
-          &lt;li&gt;요소 안에 또 요소
-            &lt;ul&gt;
-              &lt;li&gt;안에 한개더&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;코드-강조&quot;&gt;코드 강조&lt;/h2&gt;
-
-&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;sb&quot;&gt;```python
-
-for i in data:
-  print(i)
-  
-def add(a,b):
-  return a+b
-  
-print('hello world!')
-
-```&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
-  
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello world!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;강조&quot;&gt;강조&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;**Bold**&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;__&lt;strong&gt;Bold2&lt;/strong&gt;__&lt;/p&gt;
-
-&lt;p&gt;~~&lt;del&gt;취소선&lt;/del&gt;~~&lt;/p&gt;
-
-&lt;p&gt;_&lt;em&gt;기울임&lt;/em&gt;_&lt;/p&gt;
-
-&lt;p&gt;*&lt;em&gt;기울임2&lt;/em&gt;*&lt;/p&gt;
-
-&lt;h2 id=&quot;링크&quot;&gt;링크&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;http://facebook.com/&amp;gt;&lt;/code&gt;
-&lt;a href=&quot;http://facebook.com/&quot;&gt;http://facebook.com/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[googlelink](https://google.com)&lt;/code&gt;
-&lt;a href=&quot;https://google.com&quot;&gt;googlelink&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;이미지&quot;&gt;이미지&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;![alt text](/assets/img/fromis.PNG)&lt;/code&gt;
-&lt;img src=&quot;/assets/img/fromis.PNG&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;표&quot;&gt;표&lt;/h2&gt;
-
-&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;| Header1 | Header2 | Header3 |
-|:--------|:-------:|--------:|
-| cell1   | cell2   | cell3   |
-| cell4   | cell5   | cell6   |
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Header1&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Header2&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;Header3&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell2&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell4&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell5&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell6&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;버튼&quot;&gt;버튼&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Default Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--primary&quot;&gt;Primary Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--success&quot;&gt;Success Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--warning&quot;&gt;Warning Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--danger&quot;&gt;Danger Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--info&quot;&gt;Info Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--inverse&quot;&gt;Inverse Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--light-outline&quot;&gt;Light Outline Button&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Default Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Primary Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--primary}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Success Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--success}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Warning Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--warning}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Danger Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--danger}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Info Button Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--info}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Inverse Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--inverse}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Light Outline Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--light-outline}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn--primary btn--x-large&quot;&gt;X-Large Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--primary btn--large&quot;&gt;Large Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--primary&quot;&gt;Default Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;btn btn--primary btn--small&quot;&gt;Small Button&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;X-Large Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--primary .btn--x-large}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Large Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--primary .btn--large}
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Default Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--primary }
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Small Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;{: .btn .btn--primary .btn--small}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;notice&quot;&gt;Notice&lt;/h2&gt;
-
-&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gs&quot;&gt;**Watch out!**&lt;/span&gt; This paragraph of text has been &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;emphasized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; with the &lt;span class=&quot;sb&quot;&gt;`{: .notice}`&lt;/span&gt; class.
-{: .notice}
-
-&lt;span class=&quot;gs&quot;&gt;**Watch out!**&lt;/span&gt; This paragraph of text has been &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;emphasized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; with the &lt;span class=&quot;sb&quot;&gt;`{: .notice--primary}`&lt;/span&gt; class.
-{: .notice--primary}
-
-&lt;span class=&quot;gs&quot;&gt;**Watch out!**&lt;/span&gt; This paragraph of text has been &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;emphasized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; with the &lt;span class=&quot;sb&quot;&gt;`{: .notice--info}`&lt;/span&gt; class.
-{: .notice--info}
-
-&lt;span class=&quot;gs&quot;&gt;**Watch out!**&lt;/span&gt; This paragraph of text has been &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;emphasized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; with the &lt;span class=&quot;sb&quot;&gt;`{: .notice--warning}`&lt;/span&gt; class.
-{: .notice--warning}
-
-&lt;span class=&quot;gs&quot;&gt;**Watch out!**&lt;/span&gt; This paragraph of text has been &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;emphasized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; with the &lt;span class=&quot;sb&quot;&gt;`{: .notice--success}`&lt;/span&gt; class.
-{: .notice--success}
-
-&lt;span class=&quot;gs&quot;&gt;**Watch out!**&lt;/span&gt; This paragraph of text has been &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;emphasized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; with the &lt;span class=&quot;sb&quot;&gt;`{: .notice--danger}`&lt;/span&gt; class.
-{: .notice--danger}&lt;span class=&quot;sb&quot;&gt;
-
-
-&lt;/span&gt;{% capture notice-text %} 
-You can also add the .notice class to a div element.
-&lt;span class=&quot;p&quot;&gt;
-*&lt;/span&gt; Bullet point 1
-&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; Bullet point 2
-{% endcapture %}
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;notice--info&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;h4&amp;gt;&lt;/span&gt;Notice Headline:&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h4&amp;gt;&lt;/span&gt;
-  {{ notice-text | markdownify }} 
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p class=&quot;notice&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;{: .notice}&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;p class=&quot;notice--primary&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;{: .notice--primary}&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;p class=&quot;notice--info&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;{: .notice--info}&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;{: .notice--warning}&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;p class=&quot;notice--success&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;{: .notice--success}&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;p class=&quot;notice--danger&quot;&gt;&lt;strong&gt;Watch out!&lt;/strong&gt; This paragraph of text has been &lt;a href=&quot;#&quot;&gt;emphasized&lt;/a&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;{: .notice--danger}&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;div class=&quot;notice--info&quot;&gt;
-  &lt;h4&gt;Notice Headline:&lt;/h4&gt;
-  
-&lt;p&gt;You can also add the &lt;code class=&quot;highlighter-rouge&quot;&gt;.notice&lt;/code&gt; class to a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; element.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Bullet point 1&lt;/li&gt;
-  &lt;li&gt;Bullet point 2&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;h2 id=&quot;정의&quot;&gt;정의&lt;/h2&gt;
-&lt;dl&gt;
-  &lt;dt&gt;사과 나무&lt;/dt&gt;
-  &lt;dd&gt;사과나무는 장미목 장미과 배나무아과 사과나무속에 딸린 종이다. 4월에서 5월 사이에 꽃을 피운다. 열매는 8~9월에 꽃받침이 자라면서 녹색 또는 붉은색으로 생긴다. 70~100여 년간 살고 경제적 가치가 있는 열매를 생산하는 시기는 40~50살 쯤이다. 그 열매는 사과라 하며, 세계적으로 가장 널리 재배되는 과일 품종 가운데 하나이다. 평과라고도 한다.&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;h2 id=&quot;수평선&quot;&gt;수평선&lt;/h2&gt;
-
-&lt;h2 class=&quot;no_toc&quot; id=&quot;---&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;---&lt;/code&gt;&lt;/h2&gt;
-
-&lt;h2 id=&quot;축약어&quot;&gt;(축)약어&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HTML은 하이퍼텍스트 마크업 언어(HyperText Markup Language, 문화어: 초본문표식달기언어, 하이퍼본문표식달기언어)라는 의미의 웹 페이지를 위한 지배적인 마크업 언어다.
-
-*[HTML]: HyperText Markup Language
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt;은 하이퍼텍스트 마크업 언어(HyperText Markup Language, 문화어: 초본문표식달기언어, 하이퍼본문표식달기언어)라는 의미의 웹 페이지를 위한 지배적인 마크업 언어다.&lt;/p&gt;
-
-&lt;h2 id=&quot;주석&quot;&gt;주석&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{::comment}
-이곳은 표시되지 않습니다.
-{:/comment}
-
-{::comment}이곳 또한 표시되지 않습니다.{:/}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;!-- 이곳은 표시되지 않습니다. --&gt;
-
-&lt;p&gt;&lt;!-- 이곳 또한 표시되지 않습니다. --&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;각주&quot;&gt;각주&lt;/h2&gt;
-&lt;p&gt;페이지 최하단에 표시되어집니다.&lt;/p&gt;
-
-&lt;p&gt;각주1 &lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, 각주2 &lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;각주 내용 1 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;각주 내용 2 &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="jekyll" /><category term="markdown" /><category term="kramdown" /><summary type="html">다양한 마크다운 문법과 테마에서 지원하는 기능들을 간단하게 미리보기</summary></entry></feed>
+&lt;p&gt;문제 화면에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt; 를 입력하면 끝!&lt;/p&gt;</content><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><category term="web" /><category term="webhackinag.kr" /><summary type="html">*…?</summary></entry></feed>
