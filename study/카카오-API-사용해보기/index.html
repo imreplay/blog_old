@@ -402,19 +402,19 @@
       <span class="na">container</span><span class="p">:</span> <span class="s1">'#kakao-link-btn'</span><span class="p">,</span>
       <span class="na">objectType</span><span class="p">:</span> <span class="s1">'feed'</span><span class="p">,</span>
       <span class="na">content</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">title</span><span class="p">:</span> <span class="s2">"카카오 API 사용해보기"</span><span class="p">,</span>
+        <span class="na">title</span><span class="p">:</span> <span class="s2">"{{ page.title }}"</span><span class="p">,</span>
         <span class="na">imageUrl</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
         <span class="na">link</span><span class="p">:</span> <span class="p">{</span>
-          <span class="na">mobileWebUrl</span><span class="p">:</span> <span class="s1">'https%3A%2F%2Fimreplay.com%2Fstudy%2F%25EC%25B9%25B4%25EC%25B9%25B4%25EC%2598%25A4-API-%25EC%2582%25AC%25EC%259A%25A9%25ED%2595%25B4%25EB%25B3%25B4%25EA%25B8%25B0%2F'</span><span class="p">,</span>
-          <span class="na">webUrl</span><span class="p">:</span> <span class="s1">'https%3A%2F%2Fimreplay.com%2Fstudy%2F%25EC%25B9%25B4%25EC%25B9%25B4%25EC%2598%25A4-API-%25EC%2582%25AC%25EC%259A%25A9%25ED%2595%25B4%25EB%25B3%25B4%25EA%25B8%25B0%2F'</span>
+          <span class="na">mobileWebUrl</span><span class="p">:</span> <span class="s1">'{{ page.url | absolute_url | url_encode }}'</span><span class="p">,</span>
+          <span class="na">webUrl</span><span class="p">:</span> <span class="s1">'{{ page.url | absolute_url | url_encode }}'</span>
         <span class="p">}</span>
       <span class="p">},</span>
       <span class="na">buttons</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="na">title</span><span class="p">:</span> <span class="s1">'웹으로 보기'</span><span class="p">,</span>
           <span class="na">link</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">mobileWebUrl</span><span class="p">:</span> <span class="s1">'https%3A%2F%2Fimreplay.com%2Fstudy%2F%25EC%25B9%25B4%25EC%25B9%25B4%25EC%2598%25A4-API-%25EC%2582%25AC%25EC%259A%25A9%25ED%2595%25B4%25EB%25B3%25B4%25EA%25B8%25B0%2F'</span><span class="p">,</span>
-            <span class="na">webUrl</span><span class="p">:</span> <span class="s1">'https%3A%2F%2Fimreplay.com%2Fstudy%2F%25EC%25B9%25B4%25EC%25B9%25B4%25EC%2598%25A4-API-%25EC%2582%25AC%25EC%259A%25A9%25ED%2595%25B4%25EB%25B3%25B4%25EA%25B8%25B0%2F'</span>
+            <span class="na">mobileWebUrl</span><span class="p">:</span> <span class="s1">'{{ page.url | absolute_url | url_encode }}{% enbraw %}'</span><span class="p">,</span>
+            <span class="na">webUrl</span><span class="p">:</span> <span class="s1">'{% raw %}{{ page.url | absolute_url | url_encode }}'</span>
           <span class="p">}</span>
         <span class="p">},</span>
       <span class="p">]</span>
