@@ -9,16 +9,19 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Post about Study - Imreplay blog</title>
-<meta name="description" content="Imreplay’s study blog.">
+<!-- begin _includes/seo.html --><title>[Webhacking.kr] 4번(150) 문제 풀이 - Imreplay blog</title>
+<meta name="description" content="4번 문제 풀이">
 
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Imreplay blog">
-<meta property="og:title" content="Post about Study">
-<meta property="og:url" content="https://imreplay.com/categories/study">
+<meta property="og:title" content="[Webhacking.kr] 4번(150) 문제 풀이">
+<meta property="og:url" content="https://imreplay.com/wargame/Webhacking-kr-04/">
+
+
+  <meta property="og:description" content="4번 문제 풀이">
 
 
 
@@ -26,8 +29,11 @@
 
 
 
+  <meta property="article:published_time" content="2018-10-06T00:00:00+09:00">
 
 
+
+  <meta property="article:modified_time" content="2018-10-06T23:08:00+09:00">
 
 
 
@@ -36,7 +42,7 @@
   
 
 
-<link rel="canonical" href="https://imreplay.com/categories/study">
+<link rel="canonical" href="https://imreplay.com/wargame/Webhacking-kr-04/">
 
 
 
@@ -112,7 +118,7 @@
 
   </head>
 
-  <body class="layout--archive wide">
+  <body class="layout--single wide">
 
     <!--[if lt IE 9]>
 <div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
@@ -287,118 +293,314 @@
 
   
     
-  
-    <nav class="nav__list">
+      
+      
+      
+    
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  <h3 class="nav__title" style="padding-left: 0;">Wargame 카테고리</h3>
   <input id="ac-toc" name="accordion-toc" type="checkbox" />
   <label for="ac-toc">Toggle</label>
-  <ul class="nav__items" id="category_tag_menu">
+  <ul class="nav__items">
+    
       <li>
-        <span class="nav__sub-title" v-on:click='togglec()'>Categories</span>
-        <ul v-show="flag_c">
         
-           <li><a href="/categories/blogging" class="">Blogging (6)</a></li>
+          <span class="nav__sub-title">Web</span>
         
-           <li><a href="/categories/wargame" class="">Wargame (11)</a></li>
+
         
-           <li><a href="/categories/study" class="">Study (3)</a></li>
-        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/tags/#webhackinag-kr" class="">webhacking.kr</a></li>
+          
         </ul>
         
-        <span class="nav__sub-title" v-on:click='togglet()'>tags</span>
-        <ul v-show="flag_t">
+      </li>
+    
+      <li>
         
-           <li><a href="/tags/#jekyll" class="">Jekyll (4)</a></li>
+          <span class="nav__sub-title">System</span>
         
-           <li><a href="/tags/#travis-ci" class="">Travis-ci (1)</a></li>
+
         
-           <li><a href="/tags/#disqus" class="">Disqus (1)</a></li>
-        
-           <li><a href="/tags/#markdown" class="">Markdown (1)</a></li>
-        
-           <li><a href="/tags/#kramdown" class="">Kramdown (1)</a></li>
-        
-           <li><a href="/tags/#web" class="">Web (7)</a></li>
-        
-           <li><a href="/tags/#webhackinag-kr" class="">Webhackinag.kr (7)</a></li>
-        
-           <li><a href="/tags/#system" class="">System (4)</a></li>
-        
-           <li><a href="/tags/#pwnable-kr" class="">Pwnable.kr (4)</a></li>
-        
-           <li><a href="/tags/#정보보안산업기사" class="">정보보안산업기사 (2)</a></li>
-        
-           <li><a href="/tags/#kakao" class="">Kakao (1)</a></li>
-        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/tags/#pwnable-kr" class="">pwnable.kr</a></li>
+          
         </ul>
         
       </li>
     
   </ul>
 </nav>
-
-
+    
+  
+    
   
     
   </div>
 
 
-  <div class="archive">
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Webhacking.kr] 4번(150) 문제 풀이">
+    <meta itemprop="description" content="4번 문제 풀이">
+    <meta itemprop="datePublished" content="October 06, 2018">
+    <meta itemprop="dateModified" content="October 06, 2018">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[Webhacking.kr] 4번(150) 문제 풀이
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h3 id="4번-문제-풀이">4번 문제 풀이</h3>
+
+<p><code class="highlighter-rouge">YzQwMzNiZmY5NGI1NjdhMTkwZTMzZmFhNTUxZjQxMWNhZWY0NDRmMg==</code></p>
+
+<p>Base64 느낌이 물씬 나는 문자열이다.</p>
+
+<p>디코딩을 해보자.</p>
+
+<p><code class="highlighter-rouge">c4033bff94b567a190e33faa551f411caef444f2</code></p>
+
+<p>16진수 40글자로 이루어진 해시 sha1으로 추정 된다.</p>
+
+<blockquote>
+  <p>md5는 32글자 / sha256은 64글자이다.</p>
+</blockquote>
+
+<p>다시한번 디코딩을 시도해보자.</p>
+
+<p><code class="highlighter-rouge">a94a8fe5ccb19ba61c4c0873d391e987982fbbd3</code></p>
+
+<p>이번에도 40글자! 다시 한 번 디코딩을 시도하자.</p>
+
+<p>결과로 나온 값이 정답이다.</p>
+
+<p>끝.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
     
-      <h1 id="page-title" class="page__title">Post about Study</h1>
+      
+      
+      <a href="/tags/#web" class="page__taxonomy-item" rel="tag">web</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#webhackinag-kr" class="page__taxonomy-item" rel="tag">webhackinag.kr</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#wargame" class="page__taxonomy-item" rel="tag">Wargame</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2018-10-06">October 06, 2018</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BWebhacking.kr%5D+4%EB%B2%88%28150%29+%EB%AC%B8%EC%A0%9C+%ED%92%80%EC%9D%B4%20https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-04%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-04%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-04%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-04%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+
+  <a id="kakao-link-btn" href="javascript:;">
+    <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_small.png"/>
+  </a>
+
+</section>
+
+<script type='text/javascript'>
+  //<![CDATA[
+    // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+    Kakao.Link.createDefaultButton({
+      container: '#kakao-link-btn',
+      objectType: 'feed',
+      content: {
+        title: "[Webhacking.kr] 4번(150) 문제 풀이",
+        imageUrl: '',
+        link: {
+          mobileWebUrl: 'https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-04%2F',
+          webUrl: 'https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-04%2F'
+        }
+      },
+      buttons: [
+        {
+          title: '웹으로 보기',
+          link: {
+            mobileWebUrl: 'https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-04%2F',
+            webUrl: 'https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-04%2F'
+          }
+        },
+      ]
+    });
+  //]]>
+</script>
+
+      
+  <nav class="pagination">
+    
+      <a href="/wargame/Webhacking-kr-03/" class="pagination--pager" title="[Webhacking.kr] 3번(350) 문제 풀이
+">이전</a>
     
     
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="http://schema.org/CreativeWork">
+      <a href="/wargame/Webhacking-kr-05/" class="pagination--pager" title="[Webhacking.kr] 5번(300) 문제 풀이
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">관련 글 더보기</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EA%B0%9C%EC%9A%94-0711/" rel="permalink">[정보보안산업기사] 정보보호 개요 정리
+        <a href="/wargame/Webhacking-kr-05/" rel="permalink">[Webhacking.kr] 5번(300) 문제 풀이
 </a>
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">
-  
-    
-      
-        
-          공부내용 정리 (정보보호 개요)
-        
-      
-    
-  
+    <p class="archive__item-excerpt" itemprop="description">5번 문제 풀이
 
 </p>
   </article>
 </div>
+        
+          
 
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="http://schema.org/CreativeWork">
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/study/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC-%EC%95%94%ED%98%B8%ED%95%99%EA%B0%9C%EC%9A%94-0714/" rel="permalink">[정보보안산업기사] 암호화 개요 요약
+        <a href="/wargame/Webhacking-kr-03/" rel="permalink">[Webhacking.kr] 3번(350) 문제 풀이
 </a>
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">
-  
-    
-      
-        
-          공부내용 정리 (암호학 개요)
-        
-      
-    
-  
+    <p class="archive__item-excerpt" itemprop="description">3번 문제 풀이
 
 </p>
   </article>
 </div>
+        
+          
 
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="http://schema.org/CreativeWork">
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/wargame/Webhacking-kr-01/" rel="permalink">[Webhacking.kr] 1번(200) 문제 풀이
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">1번 문제 풀이
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -411,9 +613,11 @@
 </p>
   </article>
 </div>
-
-
-  </div>
+        
+      </div>
+    </div>
+  
+  
 </div>
     </div>
 
@@ -531,6 +735,26 @@ search.start();
 
 
 
+
+
+    
+
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://imreplay.com/wargame/Webhacking-kr-04/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/wargame/Webhacking-kr-04"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://imreplay-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
 
 
 <script type="text/javascript" async

@@ -9,40 +9,40 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Pwnable.kr] Toddler’s Bottle - flag 풀이 - Imreplay blog</title>
-<meta name="description" content="pwnable.kr flag 풀이">
+<!-- begin _includes/seo.html --><title>[Webhacking.kr] 3번(350) 문제 풀이 - Imreplay blog</title>
+<meta name="description" content="3번 문제 풀이">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Imreplay blog">
-<meta property="og:title" content="[Pwnable.kr] Toddler’s Bottle - flag 풀이">
-<meta property="og:url" content="https://imreplay.com/wargame/pwnablekr-flag/">
+<meta property="og:title" content="[Webhacking.kr] 3번(350) 문제 풀이">
+<meta property="og:url" content="https://imreplay.com/wargame/Webhacking-kr-03/">
 
 
-  <meta property="og:description" content="pwnable.kr flag 풀이">
-
-
-
+  <meta property="og:description" content="3번 문제 풀이">
 
 
 
 
-  <meta property="article:published_time" content="2018-07-15T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2018-07-15T22:45:00+09:00">
+  <meta property="article:published_time" content="2018-10-06T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2018-10-06T22:50:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="https://imreplay.com/wargame/pwnablekr-flag/">
+
+<link rel="canonical" href="https://imreplay.com/wargame/Webhacking-kr-03/">
 
 
 
@@ -361,15 +361,15 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[Pwnable.kr] Toddler’s Bottle - flag 풀이">
-    <meta itemprop="description" content="pwnable.kr flag 풀이">
-    <meta itemprop="datePublished" content="July 15, 2018">
-    <meta itemprop="dateModified" content="July 15, 2018">
+    <meta itemprop="headline" content="[Webhacking.kr] 3번(350) 문제 풀이">
+    <meta itemprop="description" content="3번 문제 풀이">
+    <meta itemprop="datePublished" content="October 06, 2018">
+    <meta itemprop="dateModified" content="October 06, 2018">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[Pwnable.kr] Toddler’s Bottle - flag 풀이
+          <h1 id="page-title" class="page__title" itemprop="headline">[Webhacking.kr] 3번(350) 문제 풀이
 </h1>
           
         </header>
@@ -377,84 +377,70 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>문제</p>
+        <h3 id="3번-문제-풀이">3번 문제 풀이</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Papa brought me a packed present! let's open it.
+<p>문제를 클릭해서 접속하게되면 다음과 같은 화면을 볼 수 있다.</p>
 
-Download : http://pwnable.kr/bin/flag
+<p><img src="/assets/img/webhacking/web-03.jpg" alt="quest" /></p>
 
-This is reversing task. all you need is binary
+<p>어릴 적 풀던 네모로직과 비슷해보이니 풀어서 <code class="highlighter-rouge">gogo</code> 버튼을 눌러 다음 페이지로 이동한다.</p>
+
+<p><img src="/assets/img/webhacking/web-03-1.jpg" alt="name" /></p>
+
+<p>이름을 입력할 수 있는 부분이 나온다. 입력하고 write 해 보자.</p>
+
+<p><img src="/assets/img/webhacking/web-03-2.jpg" alt="name" /></p>
+
+<p>결과가 썩 맘에 들지는 않는다..</p>
+
+<p>내가 입력한 <code class="highlighter-rouge">admin</code> 이라는 단어는 name 부분에 들어가 있고, 입력한 적이 없는 1010..부분은 answer 부분에 들어가 있다.</p>
+
+<p>다시 값을 입력하는 부분으로 돌아와서 소스를 한번 살펴보자.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;title&gt;</span>Challenge 3<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;center&gt;</span>Puzzle<span class="nt">&lt;/center&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+<span class="nt">&lt;hr&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">name=</span><span class="s">kk</span> <span class="na">method=</span><span class="s">get</span> <span class="na">action=</span><span class="s">index.php</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">post</span> <span class="na">action=</span><span class="s">index.php</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">hidden</span> <span class="na">name=</span><span class="s">answer</span> <span class="na">value=</span><span class="s">1010100000011100101011111</span><span class="nt">&gt;</span>
+name : 
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">text</span> <span class="na">name=</span><span class="s">id</span> <span class="na">maxlength=</span><span class="s">10</span> <span class="na">size=</span><span class="s">10</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">submit</span> <span class="na">value=</span><span class="s">'write'</span><span class="nt">&gt;</span>
 </code></pre></div></div>
+<p>음… answer라는 값이 1010100000011100101011111 로 고정되어있고</p>
 
-<p>문제 파일은 http://pwnable.kr/bin/flag 에서 다운로드 받을 수 있다.</p>
+<p>이름을 입력해서 전달했을 때 answer부분에 들어갈 내용인 것 같다.</p>
 
-<p>어떤 파일인지 간단하게 확인해 보자.</p>
+<p>개발자 도구를 통해 value=”1010100000011100101011111<strong>or1</strong>” 로 뒤에 or 1을 추가해 주었다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ file flag
-flag: ELF 64-bit LSB  executable, x86-64, version 1 (GNU/Linux), statically linked, stripped
-</code></pre></div></div>
-<p>ELF파일 포맷을 가지고 있는 실행파일인 것 같다.</p>
+<p><img src="/assets/img/webhacking/web-03-3.jpg" alt="or1" /></p>
 
-<p>문제에서 packed 선물을 사주었다고 하는 것을 보니 패킹된 파일 인 듯 하다.</p>
+<p><strong>no hack</strong> 이라는 경고를 띄우는 것으로 보아 정답에 어느 정도 가까워진 느낌이다.</p>
 
-<p>일단 gdb에서 확인해 보려했지만, 분석을 하지 못한다.</p>
+<p>다시 이전 페이지로 돌아가서</p>
 
-<p>strings 명령어를 통해 내부 문자열을 확인해보았다.</p>
+<table>
+  <tbody>
+    <tr>
+      <td>value 값으로 “1010100000011100101011111**</td>
+      <td> </td>
+      <td>1**” 을 설정해 준후 제출해보았다.</td>
+    </tr>
+  </tbody>
+</table>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~~ 중략 ~~
+<p><img src="/assets/img/webhacking/web-03-4.jpg" alt="clear" /></p>
 
-$Info: This file is packed with the UPX executable packer http://upx.sf.net $
-$Id: UPX 3.08 Copyright (C) 1996-2011 the UPX Team. All Rights Reserved. $
-
-~~ 중략 ~~
-</code></pre></div></div>
-
-<p>UPX 패킹이 되어있는 것 같다.</p>
-
-<p>upx 도구를 다운 받아서 decompress를 해주었다.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./upx -d ../flag -o ../d_flag
-                       Ultimate Packer for eXecutables
-                          Copyright (C) 1996 - 2017
-UPX 3.94        Markus Oberhumer, Laszlo Molnar &amp; John Reiser   May 12th 2017
-
-        File size         Ratio      Format      Name
-   --------------------   ------   -----------   -----------
-    883745 &lt;-    335288   37.94%   linux/amd64   d_flag
-
-Unpacked 1 file.
-</code></pre></div></div>
-
-<p>이제 gdb를 통해 다시 확인 해보자.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># gdb d_flag -q
-Reading symbols from d_flag...(no debugging symbols found)...done.
-gdb-peda$ pdisas main
-Dump of assembler code for function main:
-   0x0000000000401164 &lt;+0&gt;:     push   rbp
-   0x0000000000401165 &lt;+1&gt;:     mov    rbp,rsp
-   0x0000000000401168 &lt;+4&gt;:     sub    rsp,0x10
-   0x000000000040116c &lt;+8&gt;:     mov    edi,0x496658
-   0x0000000000401171 &lt;+13&gt;:    call   0x402080 &lt;puts&gt;
-   0x0000000000401176 &lt;+18&gt;:    mov    edi,0x64
-   0x000000000040117b &lt;+23&gt;:    call   0x4099d0 &lt;malloc&gt;
-   0x0000000000401180 &lt;+28&gt;:    mov    QWORD PTR [rbp-0x8],rax
-   0x0000000000401184 &lt;+32&gt;:    mov    rdx,QWORD PTR [rip+0x2c0ee5]        # 0x6c2070 &lt;flag&gt;
-   0x000000000040118b &lt;+39&gt;:    mov    rax,QWORD PTR [rbp-0x8]
-   0x000000000040118f &lt;+43&gt;:    mov    rsi,rdx
-   0x0000000000401192 &lt;+46&gt;:    mov    rdi,rax
-   0x0000000000401195 &lt;+49&gt;:    call   0x400320
-   0x000000000040119a &lt;+54&gt;:    mov    eax,0x0
-   0x000000000040119f &lt;+59&gt;:    leave
-   0x00000000004011a0 &lt;+60&gt;:    ret
-End of assembler dump.
-gdb-peda$ x/s *0x6c2070
-0x496628:       "UPX...? sounds like a delivery service :)"
-gdb-peda$
-</code></pre></div></div>
-
-<p>x/s 를 통해 flag라고 적혀있는 부분의 문자열을 읽어왔다.</p>
-
+<p>끝.</p>
 
         
       </section>
@@ -475,11 +461,11 @@ gdb-peda$
     
       
       
-      <a href="/tags/#pwnable-kr" class="page__taxonomy-item" rel="tag">Pwnable.kr</a><span class="sep">, </span>
+      <a href="/tags/#web" class="page__taxonomy-item" rel="tag">web</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/#system" class="page__taxonomy-item" rel="tag">system</a>
+      <a href="/tags/#webhackinag-kr" class="page__taxonomy-item" rel="tag">webhackinag.kr</a>
     
     </span>
   </p>
@@ -507,7 +493,7 @@ gdb-peda$
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2018-07-15">July 15, 2018</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2018-10-06">October 06, 2018</time></p>
         
       </footer>
 
@@ -516,13 +502,13 @@ gdb-peda$
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BPwnable.kr%5D+Toddler%27s+Bottle+-+flag+%ED%92%80%EC%9D%B4%20https%3A%2F%2Fimreplay.com%2Fwargame%2Fpwnablekr-flag%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BWebhacking.kr%5D+3%EB%B2%88%28350%29+%EB%AC%B8%EC%A0%9C+%ED%92%80%EC%9D%B4%20https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-03%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimreplay.com%2Fwargame%2Fpwnablekr-flag%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-03%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://plus.google.com/share?url=https%3A%2F%2Fimreplay.com%2Fwargame%2Fpwnablekr-flag%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-03%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fimreplay.com%2Fwargame%2Fpwnablekr-flag%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-03%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 
   <a id="kakao-link-btn" href="javascript:;">
     <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_small.png"/>
@@ -537,19 +523,19 @@ gdb-peda$
       container: '#kakao-link-btn',
       objectType: 'feed',
       content: {
-        title: "[Pwnable.kr] Toddler's Bottle - flag 풀이",
+        title: "[Webhacking.kr] 3번(350) 문제 풀이",
         imageUrl: '',
         link: {
-          mobileWebUrl: 'https%3A%2F%2Fimreplay.com%2Fwargame%2Fpwnablekr-flag%2F',
-          webUrl: 'https%3A%2F%2Fimreplay.com%2Fwargame%2Fpwnablekr-flag%2F'
+          mobileWebUrl: 'https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-03%2F',
+          webUrl: 'https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-03%2F'
         }
       },
       buttons: [
         {
           title: '웹으로 보기',
           link: {
-            mobileWebUrl: 'https%3A%2F%2Fimreplay.com%2Fwargame%2Fpwnablekr-flag%2F',
-            webUrl: 'https%3A%2F%2Fimreplay.com%2Fwargame%2Fpwnablekr-flag%2F'
+            mobileWebUrl: 'https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-03%2F',
+            webUrl: 'https%3A%2F%2Fimreplay.com%2Fwargame%2FWebhacking-kr-03%2F'
           }
         },
       ]
@@ -560,11 +546,11 @@ gdb-peda$
       
   <nav class="pagination">
     
-      <a href="/wargame/pwnablekr-col/" class="pagination--pager" title="[Pwnable.kr] Toddler’s Bottle - collision 풀이
+      <a href="/wargame/Webhacking-kr-01/" class="pagination--pager" title="[Webhacking.kr] 1번(200) 문제 풀이
 ">이전</a>
     
     
-      <a href="/study/%EC%B9%B4%EC%B9%B4%EC%98%A4-API-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0/" class="pagination--pager" title="카카오 API 사용해보기
+      <a href="/wargame/Webhacking-kr-04/" class="pagination--pager" title="[Webhacking.kr] 4번(150) 문제 풀이
 ">다음</a>
     
   </nav>
@@ -637,12 +623,12 @@ gdb-peda$
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/wargame/Webhacking-kr-03/" rel="permalink">[Webhacking.kr] 3번(350) 문제 풀이
+        <a href="/wargame/Webhacking-kr-01/" rel="permalink">[Webhacking.kr] 1번(200) 문제 풀이
 </a>
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">3번 문제 풀이
+    <p class="archive__item-excerpt" itemprop="description">1번 문제 풀이
 
 </p>
   </article>
@@ -657,13 +643,12 @@ gdb-peda$
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/wargame/Webhacking-kr-01/" rel="permalink">[Webhacking.kr] 1번(200) 문제 풀이
+        <a href="/study/%EC%B9%B4%EC%B9%B4%EC%98%A4-API-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0/" rel="permalink">카카오 API 사용해보기
 </a>
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">1번 문제 풀이
-
+    <p class="archive__item-excerpt" itemprop="description">플러스친구 추가 링크, 카카오톡으로 공유하기 기능 추가
 </p>
   </article>
 </div>
@@ -795,8 +780,8 @@ search.start();
 
   <script>
     var disqus_config = function () {
-      this.page.url = "https://imreplay.com/wargame/pwnablekr-flag/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/wargame/pwnablekr-flag"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "https://imreplay.com/wargame/Webhacking-kr-03/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/wargame/Webhacking-kr-03"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');
