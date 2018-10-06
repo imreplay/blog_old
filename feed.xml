@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.3">Jekyll</generator><link href="https://imreplay.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imreplay.com/" rel="alternate" type="text/html" /><updated>2018-10-07T00:01:15+09:00</updated><id>https://imreplay.com/feed.xml</id><title type="html">Imreplay blog</title><subtitle>Imreplay's study blog.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><entry><title type="html">[Webhacking.kr] 1번(200) 문제 풀이</title><link href="https://imreplay.com/wargame/Webhacking-kr-01/" rel="alternate" type="text/html" title="[Webhacking.kr] 1번(200) 문제 풀이" /><published>2018-10-06T00:00:00+09:00</published><updated>2018-10-06T19:20:00+09:00</updated><id>https://imreplay.com/wargame/Webhacking-kr-01</id><content type="html" xml:base="https://imreplay.com/wargame/Webhacking-kr-01/">&lt;h3 id=&quot;1번-문제-풀이&quot;&gt;1번 문제 풀이&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.3">Jekyll</generator><link href="https://imreplay.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imreplay.com/" rel="alternate" type="text/html" /><updated>2018-10-07T00:07:40+09:00</updated><id>https://imreplay.com/feed.xml</id><title type="html">Imreplay blog</title><subtitle>Imreplay's study blog.</subtitle><author><name>Imreplay</name><email>imreplay@imreplay.com</email></author><entry><title type="html">[Webhacking.kr] 1번(200) 문제 풀이</title><link href="https://imreplay.com/wargame/Webhacking-kr-01/" rel="alternate" type="text/html" title="[Webhacking.kr] 1번(200) 문제 풀이" /><published>2018-10-06T00:00:00+09:00</published><updated>2018-10-06T19:20:00+09:00</updated><id>https://imreplay.com/wargame/Webhacking-kr-01</id><content type="html" xml:base="https://imreplay.com/wargame/Webhacking-kr-01/">&lt;h3 id=&quot;1번-문제-풀이&quot;&gt;1번 문제 풀이&lt;/h3&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---------------------
 
@@ -113,15 +113,7 @@ name :
 
 &lt;p&gt;다시 이전 페이지로 돌아가서&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;value 값으로 “1010100000011100101011111**&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;1**” 을 설정해 준후 제출해보았다.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;value 값으로 “1010100000011100101011111&lt;strong&gt;||1&lt;/strong&gt;” 을 설정해 준후 제출해보았다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/webhacking/web-03-4.jpg&quot; alt=&quot;clear&quot; /&gt;&lt;/p&gt;
 
