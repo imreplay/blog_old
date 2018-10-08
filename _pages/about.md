@@ -59,10 +59,8 @@ toc: true
   * 보안관련 워게임 / 문제 풀이 기록[^wargame]
   * 짤막한 이런저런 파이썬 코드 기록[^py]
   * 책읽고 요약정리
-  
 
-
-
+<div class="fb-comments" data-href="https://imreplay.com/about" data-numposts="5"></div>
   
 ##### 각주[Footnote]
 
