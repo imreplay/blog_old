@@ -79,7 +79,7 @@
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta property="fb:app_id" content="196726300751751" />
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
 </script>
@@ -501,18 +501,24 @@ for i in range(32,60):
     <h4 class="page__share-title">공유하기</h4>
   
 
+    <!-- Facebook like button -->
+  <a>
+    <div class="fb-like" data-href="https%3A%2F%2Fimreplay.com%2Fwargame%2Fpwnablekr-bof%2F" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+  </a>
+  
   <a href="https://twitter.com/intent/tweet?text=%5BPwnable.kr%5D+Toddler%27s+Bottle+-+bof+%ED%92%80%EC%9D%B4%20https%3A%2F%2Fimreplay.com%2Fwargame%2Fpwnablekr-bof%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
-
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimreplay.com%2Fwargame%2Fpwnablekr-bof%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
   <a href="https://plus.google.com/share?url=https%3A%2F%2Fimreplay.com%2Fwargame%2Fpwnablekr-bof%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
   <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fimreplay.com%2Fwargame%2Fpwnablekr-bof%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  
+<!-- 카카오 like button -->
+<a id="kakao-link-btn" href="javascript:;">
+<img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_small.png"/>
+</a>
 
-  <a id="kakao-link-btn" href="javascript:;">
-    <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_small.png"/>
-  </a>
-
+	
+	
 </section>
 
 <script type='text/javascript'>
@@ -844,6 +850,16 @@ search.start();
 
 </script>
 
+<!-- facebook API -->
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.1&appId=196726300751751';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
   </body>
 </html>
