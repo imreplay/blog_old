@@ -108,14 +108,14 @@ author:
   email            : "imreplay@imreplay.com"
   uri              : 
   home             : "https://imreplay.com" # null (default), "absolute or relative url to link to author home"
-  bitbucket        :
+  bitbucket        : "imreplay"
   codepen          :
   dribbble         :
   flickr           :
   facebook         : "imreplay08"
   foursquare       :
   github           : "imreplay"
-  gitlab           :
+  gitlab           : "imreplay"
   google_plus      :
   keybase          :
   instagram        :
