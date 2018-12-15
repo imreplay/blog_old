@@ -698,7 +698,7 @@ Githib pages 를 사용한 환경은 <a href="https://community.algolia.com/jeky
   
   
       <h4 class="page__comments-title">댓글남기기</h4>
-      <section id="disqus_thread"></section>
+      <section class="fb-comments" data-href="https://imreplay.com/blogging/%EA%B2%80%EC%83%89-%EB%8F%84%EA%B5%AC%EC%9D%B8-Algolia%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90/" data-mobile="true" data-num-posts="5" data-width="100%" data-colorscheme="light"></section>
     
 </div>
     
@@ -917,23 +917,14 @@ search.start();
 
 
 
-    
-
-  <script>
-    var disqus_config = function () {
-      this.page.url = "https://imreplay.com/blogging/%EA%B2%80%EC%83%89-%EB%8F%84%EA%B5%AC%EC%9D%B8-Algolia%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/blogging/검색 도구인 Algolia를 적용해보자"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    (function() { // DON'T EDIT BELOW THIS LINE
-      var d = document, s = d.createElement('script');
-      s.src = 'https://imreplay-blog.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=196726300751751";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
   
 
 
