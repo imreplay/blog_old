@@ -3,6 +3,7 @@ permalink: /about/
 title: "About"
 excerpt: "About Me"
 search: true
+layout : 
 gallery:
   - url: /assets/img/fromis.PNG
     image_path: /assets/img/fromis.PNG
