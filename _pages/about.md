@@ -4,10 +4,6 @@ title: "About"
 excerpt: "About Me"
 search: true
 gallery:
-  - url: /assets/img/fromis.PNG
-    image_path: /assets/img/fromis.PNG
-    alt: "프로미스나인 팬페이지"
-    title: "fromis9.kr"
   - url: /assets/img/git.PNG
     image_path: /assets/img/git.PNG
     alt: "자체 GIT 서버"
@@ -17,7 +13,7 @@ gallery:
     alt: "메일 서버"
     title: Mail Server
 
-last_modified_at: 2018-07-08T00:11:24+09:00
+last_modified_at: 2019-02-15T00:20:07+09:00
 toc: true
 
 ---
@@ -37,7 +33,6 @@ toc: true
   <img src="https://developers.kakao.com/assets/img/about/logos/plusfriend/friendadd_small_yellow_rect.png"/>
 </a>
  - **개인 메일서버** 및 연구실용 **GIT 서버** 구축[^lab]
- - github.io와 jekyll공부를 위해 [프로미스나인팬페이지](https://fromis9.kr) 구축[^fromis9]
 {% include gallery id="gallery" caption="My Projects" %}
 
 ## History
@@ -48,9 +43,9 @@ toc: true
 * **18.10.01 카카오톡 플러스친구 링크 추가**
 
 ## 짦은 소개
-현재 공군 정보보호병 복무중[^rokaf]
+현재 목포대학교 정보보호학과 재학 중
 
-군대와서 내내 놀다가 공부하려니 하나도 기억이 나지 않아 천천히, 조금씩, 꾸준히 공부하며 기록으로 남겨두기 위한 블로그.
+천천히, 조금씩, 꾸준히 공부하며 기록으로 남겨두기 위한 블로그.
 
 
 포스팅 계획:
@@ -69,6 +64,6 @@ toc: true
 [^rokaf]: [UBUN](https://ubun.net) 이라는 친구와 대학동기인데 군대도 같은곳으로 왔다. 전역하고 2년이다 더 봐야한다니 어휴..
 [^bot]: 2년동안 운영했는데 얻은건 Django개발방법 약간과 파이썬으로 ~~간단한~~ 챗봇만드는 능력정도..?
 [^lab]: gogs 활용 / 같이쓰려고 만든건데 나 혼자 다쓴다 전역하면 도메인 새로 사서 같이 써야지!
-[^fromis9]: jekyll블로그 만드는데 가장 많은 공부를 할 수 있었던 페이지, 만들었지만 관리가...
+
 
 
