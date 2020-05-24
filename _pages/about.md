@@ -3,17 +3,8 @@ permalink: /about/
 title: "About"
 excerpt: "About Me"
 search: true
-gallery:
-  - url: /assets/img/git.PNG
-    image_path: /assets/img/git.PNG
-    alt: "자체 GIT 서버"
-    title: "git Server"
-  - url: /assets/img/mail.PNG
-    image_path: /assets/img/mail.PNG
-    alt: "메일 서버"
-    title: Mail Server
 
-last_modified_at: 2019-02-15T00:20:07+09:00
+last_modified_at: 2020-05-25T06:22:00+09:00
 toc: true
 
 ---
@@ -26,44 +17,35 @@ toc: true
 ## Education
  - 목포대학교 정보보호학과 상황기반 모바일 인증 알고리즘 연구실 학부연구생(2015~)
  - 목포대학교 정보보호학과 정보보호 동아리 SecuMaster 부회장 (2016)
- - 대학정보보호동아리연합회 KUCIS 호남권 운영진(2016)
+ - 대학정보보호동아리연합회 KUCIS 호남권역 운영진(2016)
+ 
+ - 목포대학교 정보보호페스티벌 해킹대회 대상(2015,2016)
+ - 국군사이버사령부 주관 해킹방어대회 화이트햇콘테스트 참가(2015)
+ - 코드게이트 국제해킹방어대회 대학생부 본선 진출(2016)
+ - KISA주관 해킹방어대회 HDCON 참가(2016)
+ - 목포대학교 정보보호페스티벌 해킹대회 운영 및 문제 출제(2019)
+ - 목포대학교 정보보호영재교육원 해킹대회 운영 및 문제 출제(2019)
+ 
+ 
+ 
+ - 스마트미디어학회 추계학술대회 우수논문상 수상(2019)
+ 
+ - KUCIS 호남권역 학술세미나 참가(2015)
+ - KUCIS 하계워크숍 참가(2015)
+ - KUCIS 서울/경기/강원권역 학술세미나 참가 및 운영(2016)
+ - KUCIS 충청권역 학술세미나 참가 및 운영(2016)
+ - KUCIS 호남권역 학술세미나 참가 및 운영(2016)
+ - KUCIS 영남권역 학술세미나 참가 및 운영(2016)
+ - KUCIS 10주년기념 하계워크숍 참가 및 운영(2016)
+ 
+ - '한국인터넷진흥원 호남정보보호지원센터 ITㆍ정보보호 교육' 14시간 수료(2015)
+ - 한국인터넷진흥원 주관 '운영체제 보안실무교육(16h)','네트워크 보안(16h)','정보시스템운영을위한 네트워크패킷분석 교육(24h)', '모바일 앱 취약점 분석 교육(16h)', '무선 네트워크 특강(2h)' 수료(2016)
+ - 호남 정보보호 컨퍼런스, 인공지능과 정보보호의 융합 교육 5시간 이수(2019)
+ 
 
-## What I did
- - 카카오톡 API 이용 **[목포대학교 정보봇](http://pf.kakao.com/_RdDHM)** 제작[^bot] <a href="javascript:void plusFriendChat('_RdDHM')">
-  <img src="https://developers.kakao.com/assets/img/about/logos/plusfriend/friendadd_small_yellow_rect.png"/>
-</a>
- - **개인 메일서버** 및 연구실용 **GIT 서버** 구축[^lab]
-{% include gallery id="gallery" caption="My Projects" %}
-
-## History
-
-* **18.06.27 블로그 개설**
-* **18.07.07 블로그 기능 추가완료 및 Blogging 카테고리 글 작성 완료**
-* **18.07.10 사이드바 개선(카테고리 및 태그 자동표시)**
-* **18.10.01 카카오톡 플러스친구 링크 추가**
-
-## 짦은 소개
-현재 목포대학교 정보보호학과 재학 중
-
-천천히, 조금씩, 꾸준히 공부하며 기록으로 남겨두기 위한 블로그.
-
-
-포스팅 계획:
-  * 블로그 만들기 과정 포스팅 (18.07.07 [완료](/categories/#blogging))
-  * 정보보안산업기사 공부내용 정리
-  * 보안관련 워게임 / 문제 풀이 기록[^wargame]
-  * 짤막한 이런저런 파이썬 코드 기록[^py]
-  * 책읽고 요약정리
 
 <div class="fb-comments" data-href="https://imreplay.com/about" data-numposts="5"></div>
   
-##### 각주[Footnote]
-
-[^wargame]: 아직 어떤 문제를 풀지, 어떤 분야를 풀지 고민중 그냥 다하는것도 재밌을거같다
-[^py]: 코딩을 정말 더럽게 한다는 친구([UBUN](https://ubun.net))의 말이 있었다. UBUN曰 : "니 코드는 어휴..."
-[^rokaf]: [UBUN](https://ubun.net) 이라는 친구와 대학동기인데 군대도 같은곳으로 왔다. 전역하고 2년이다 더 봐야한다니 어휴..
-[^bot]: 2년동안 운영했는데 얻은건 Django개발방법 약간과 파이썬으로 ~~간단한~~ 챗봇만드는 능력정도..?
-[^lab]: gogs 활용 / 같이쓰려고 만든건데 나 혼자 다쓴다 전역하면 도메인 새로 사서 같이 써야지!
 
 
 
