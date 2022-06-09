@@ -7,4 +7,3 @@ git add --all  /workspace/blog-jekyll/
 git commit -m "$message"
 
 git push
-123
